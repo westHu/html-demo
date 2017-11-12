@@ -146,7 +146,7 @@
                         </ul>
                     </li>
                 </ul>
-s                <ul class="nav navbar-nav navbar-right">
+                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
@@ -388,11 +388,13 @@ s                <ul class="nav navbar-nav navbar-right">
  <script type="text/javascript">
         var map = new AMap.Map('mapView',{
             pitch:75,
-			zoom: 12,
+			zoom: 11,
 			expandZoomRange:true,
-			zooms:[10,14],
+			zooms:[10,12],
 			center:[121.586777,29.8501]
         });
+
+        //定位在宁波
         map.plugin(["AMap.CitySearch"], function() {
             var citysearch = new AMap.CitySearch();
             citysearch.getLocalCity();
@@ -406,6 +408,7 @@ s                <ul class="nav navbar-nav navbar-right">
         });
         map.setLimitBounds(map.getBounds());
 
+        //设置卫星图
         AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
 			//添加一个缩放控件
 			map.addControl(new BasicControl.Zoom({
@@ -424,7 +427,7 @@ s                <ul class="nav navbar-nav navbar-right">
             }));
         });
 
-
+        //地图着色
         function initPage(DistrictCluster, $) {
 
             var distCluster = new DistrictCluster({
@@ -449,7 +452,7 @@ s                <ul class="nav navbar-nav navbar-right">
                         strokeStyle: 'rgb(31, 119, 180)', //描边色
                         //鼠标Hover后的样式
                         hoverOptions: {
-                            fillStyle: 'rgba(255,255,255,0.2)'
+                            fillStyle: 'rgba(255,255,0,0.2)'
                         }
                     },
                     //特定区划级别的默认样式
@@ -473,18 +476,52 @@ s                <ul class="nav navbar-nav navbar-right">
                     },
                     //直接定义某写区划面的样式
                     getFeatureStyle: function(feature, dataItems) {
-
-                        if (dataItems.length > 3000) {
+                        console.info("dataItems--> " + dataItems.length);
+                        if (dataItems.length == 1390) {
 
                             return {
-                                fillStyle: 'red'
+                                fillStyle: '#FFEFDB'
                             };
 
-                        } else if (dataItems.length > 1000) {
+
+
+
+                        } else if (dataItems.length == 221) { //海曙区
                             return {
-                                fillStyle: 'orange'
+                                fillStyle: '#d4beb7'
+                            };
+                        }else if (dataItems.length == 71) { //奉化区
+                            return {
+                                fillStyle: '#a9d412'
+                            };
+                        }else if (dataItems.length == 53) { //宁海区
+                            return {
+                                fillStyle: '#D4D4D4'
+                            };
+                        }else if (dataItems.length == 117) { //余姚
+                            return {
+                                fillStyle: '#D4D4D4'
+                            };
+                        }else if (dataItems.length == 164) { //慈溪
+                            return {
+                                fillStyle: '#0dd459'
+                            };
+                        }else if (dataItems.length == 161) { //北仑
+                            return {
+                                fillStyle: '#d44d38'
+                            };
+                        }else if (dataItems.length == 30) { //象山
+                            return {
+                                fillStyle: '#49a5ee'
                             };
                         }
+
+
+                        /*else if (dataItems.length > 1000) {
+                            return {
+                                fillStyle: '#D4D4D4'
+                            };
+                        }*/
 
                         return {};
                     }
