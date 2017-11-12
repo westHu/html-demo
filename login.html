@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<head>
+  <title>海绵城市管理平台</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/templatemo_misc.css">
+  <link rel="stylesheet" href="css/templatemo_style.css">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="css/base.css">
+  <link rel="stylesheet" type="text/css" href="css/common.css" />
+  <link rel="stylesheet" type="text/css" href="css/login.css" />
+  <link rel="stylesheet" type="text/css" href="css/patch_20171110.css" />
+  <!--  上面导入样式文件的顺序不要乱-->
+
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/jquery.lightbox.js"></script>
+  <script src="js/templatemo_custom.js"></script>
+
+  <script type="text/javascript" src="js/login.js"></script>
+<script language=javascript>
+$(document).ready(function(){
+    init();
+    
+    
+});
+
+function loginHandler(){
+
+    //点击登录按钮，call后台时，禁止登录按钮操作，直到后台返回结果
+    $("#loginBtn").attr("disabled",true);
+    $("#loginBtn").removeClass("normal").addClass("disabledBtn");
+	
+    window.location.href="index.html";
+/*  
+    var strTxtName = encodeURI($("#freename").val());
+    var strTxtPass = encodeURI($("#freepassword").val());
+    var strTxtCheckcode = encodeURI($("#checkcode").val());
+    
+    $.ajax({
+        url: "login.aspx",
+        dataType: "html",
+        data: {txtName:strTxtName, txtPass:strTxtPass, txtCheckcode:strTxtCheckcode},
+        success:function(strValue){
+            //根据返回值进行状态显示
+            alert(strValue);
+            //用户不存在，则用户输入框显示错误；其余验证图标都不显示；
+            if(strValue==1){
+                alert(1);
+                $("em").css("display","none");
+                $("#freename").next("em").removeClass().addClass("error").show();
+            }
+            //当用户存在的情况下 密码错误，用户验证显示正确，密码验证显示错误，其余验证显示不显示；
+            else if(strValue==2){
+                $("em").css("display","none");
+                $("#freename").next("em").removeClass().addClass("error success").show();
+                $("#freepassword").next("em").removeClass().addClass("error").show();
+            }
+            //用户名、密码正确，验证码错误，其余验证显示正确，验证码验证显示错误。
+            else if(strValue==3){
+                $("#checkcode").next("em").removeClass().addClass("error").show();
+            }
+            else{
+                $.ajax({
+                    url: "index.html",
+                    dataType: "html"
+                });
+            }
+        }
+    });
+    */
+    var strTxtName = $("#freename").val();
+    var strTxtPass = $("#freepassword").val();
+    var strTxtCheckcode = $("#checkcode").val();
+    //用户不存在
+    if(strTxtName != "admin"){
+        //alert(1);
+        $("em").css("display","none");
+        $("#freename").next("em").removeClass().addClass("error").show();
+    }
+    //当用户存在的情况下 密码错误
+    else if(strTxtName == "admin" && strTxtPass != "123456"){
+        //alert(2);
+        $("em").css("display","none");
+        $("#freename").next("em").removeClass().addClass("error success").show();
+        $("#freepassword").next("em").removeClass().addClass("error").show();
+    }
+    //用户名、密码正确，验证码错误
+    else if(strTxtName == "admin" && strTxtPass == "123456" && strTxtCheckcode != "hv5s"){
+        //alert(3);
+        $("#checkcode").next("em").removeClass().addClass("error").show();
+    }
+    //全部正确
+    else{
+        window.location.href="index.html";
+    }
+}
+
+</script>
+</head>
+
+<body>
+  <div class="site-header">
+    <div class="container">
+      <div class="row templatemo_gallerygap">
+        <div class="col-md-12 responsive-menu">
+          <a href="#" class="menu-toggle-btn">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        <!-- /.col-md-12 -->
+        <div class="col-md-3 col-sm-12">
+          <a href="#"><img src="images/templatemo_logo.jpg" alt="Polygon Template"></a>
+        </div>
+
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.site-header -->
+  <div id="menu-container">
+    <!-- 系统展览 start -->
+    <div class="container">
+      <div class="row templatemorow">
+        <div class="hex col-sm-6">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/1.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/1.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hex col-sm-6">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/2.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/2.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hex col-sm-6 templatemo-hex-top2">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/3.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/3.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hex col-sm-6 templatemo-hex-top3">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/4.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/4.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hex col-sm-6 templatemo-hex-top3">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/5.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/5.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hex col-sm-6 hex-offset templatemo-hex-top1 templatemo-hex-top2">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/6.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/6.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hex col-sm-6 templatemo-hex-top1 templatemo-hex-top3">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/7.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/7.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top3">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/8.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/8.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hex col-sm-6 templatemo-hex-top1  templatemo-hex-top2">
+          <div>
+            <div class="hexagon hexagon2 gallery-item">
+              <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url(images/gallery/9.jpg);">
+                  <div class="overlay">
+                    <a href="images/gallery/9.jpg" data-rel="lightbox" class="fa fa-expand"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 系统展览 end -->
+    <!-- 登录框-->
+    <div class="login_wrapper">
+      <div class="login_form">
+        <form class="" id="myform" name="myform" action="" method="">
+          <table id="form_tab" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td colspan="2">
+                <h3 style="float: left;">欢迎进入</h3>
+              </td>
+            </tr>
+            <tr style="box-sizing: content-box;">
+              <td colspan="2">
+                <div id="usernameBox" class="inputBox focus">
+                  <span class="userIcon"></span>
+                  <input tabindex="1" id="freename" name="freename" type="text" class="login_input username {validate:{required:true, maxlength:24, messages:{required:' ',maxlength:' '}}}" value=""></input>
+                  <label for="freename" class="placeholder">输入用户/邮箱名</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <div id="passwordBox" class="inputBox">
+                  <span class="psdIcon"></span>
+                  <input tabindex="2" id="freepassword" name="freepassword" type="password" class="login_input password {validate:{required:true, messages:{required:' '}}}" value="" />
+                  <label for="freepassword" class="placeholder">输入密码</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input tabindex="3" id="store" type="checkbox" />
+                <label for="store">下次自动登录</label>
+                <a class="help" title="什么是自动登录">&nbsp;</a>
+              </td>
+              <td align="right" style="padding-right:45px"><a>忘记密码</a></td>
+            </tr>
+            <tr>
+              <td align="left" valign="top" width="170px">
+                <div id="checkcodeBox" class="inputBox">
+                  <input tabindex="4" id="checkcode" name="checkcode" type="text" class="login_input {validate:{required:true, messages:{required:' '}}}" value="" />
+                  <label for="checkcode" class="placeholder">验证码</label>
+
+                </div>
+              </td>
+              <td align="right" valign="top" style="padding-right:45px">
+                <div id="checkcodeImg"><img src="images/checkcode.gif" /></div>
+                <a class="CL block" style="padding-top:6px">看不清，换一张</a>
+              </td>
+            </tr>
+            <tr>
+
+              <th colspan="3">
+                <span id="msg" style="display:none; color:#F00"></span>
+                <input tabindex="5" type="submit" id="loginBtn" class="normal" value=" " onclick="loginHandler()" /></th>
+
+            </tr>
+          </table>
+        </form>
+        <div class="loginFormIcon"></div>
+      </div>
+
+
+    </div>
+    <!-- 登录框-->
+  </div>
+  <!--脚-->
+  <div class="templatemo_footer" style="position:fixed;bottom:0;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-sm-12">Copyright &copy; 2017 Company Name |
+          <a href="#">lyzh.com</a> Collect from
+          <a href="#">lyzh.com</a> |
+          <a rel="nofollow" href="#">Disign</a> by West.Hu</div>
+        <div class="col-md-3 col-sm-12 templatemo_rfooter">
+          <a href="#">
+            <div class="hex_footer">
+              <span class="fa fa-weibo"></span>
+            </div>
+          </a>
+          <a href="#">
+            <div class="hex_footer">
+              <span class="fa fa-html5"></span>
+            </div>
+          </a>
+          <a href="#">
+            <div class="hex_footer">
+              <span class="fa fa-android"></span>
+            </div>
+          </a>
+          <a href="#">
+            <div class="hex_footer">
+              <span class="fa fa-apple"></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--脚-->
+  <script>
+  </script>
+</body>
+
+</html>

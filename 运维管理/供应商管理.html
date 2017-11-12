@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>供应商管理</title>
+  
+  <!--dynamic table-->
+  <link href="../js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+  <link href="../js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+  <link href="../js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/style-responsive.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+	.dataTable tr.odd.gradeA td.sorting_1, .dataTable tr.odd td.sorting_1, .dataTable tr.even.gradeA td.sorting_1 {
+		background-color: #f9f9f9;
+	)
+		
+  </style>
+</head>
+
+<body class="horizontal-menu-page">
+
+
+<section>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="../images/tem-inner-logo.png" alt="">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首 页</a></li>
+                    <li><a href="综合管理.html">综合管理</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 运行控制管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">土壤含水量监测</a></li>
+                            <li><a href="#">小区雨量监测</a></li>
+                            <li><a href="#">管道流量</a></li>
+                            <li><a href="#">河道监测</a></li>
+                            <li><a href="#">泵闸站监测</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">设备自检管理</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">水雨情 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="#">雨情管理</a></li>
+                            <li><a href="#">风情管理</a></li>
+                            <li><a href="#">水情管理</a></li>
+                            <li><a href="#">潮位管理</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">管网分析 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">流量分析</a></li>
+                            <li><a href="#">横截面分析</a></li>
+                            <li><a href="#">纵界面分析</a></li>
+                            <li><a href="#">坡度分析</a></li>
+                            <li><a href="#">污染溯源分析</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">设备管理</a></li>
+                            <li><a href="#">巡检管理</a></li>
+                           
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">应急响应管理</a></li>
+                            <li><a href="#">现场指挥管理</a></li>
+                            <li><a href="#">应急演练管理</a></li>
+                            <li><a href="#">应急信息管理</a></li>
+                            
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">综合评价 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">国家和地方标准</a></li>
+                            <li><a href="#">绩效和考核</a></li>
+                            <li><a href="#">排水能力负荷</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">基础设置 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">人员管理</a></li>
+                            <li><a href="#">组织管理</a></li>
+                            <li><a href="#">资源管理</a></li>
+                            <li><a href="#">角色管理</a></li>
+                            <li><a href="#">消息管理</a></li>
+							<li><a href="#">流程管理</a></li>
+                        </ul>
+                    </li>
+                </ul>
+				
+				
+				
+				
+				
+				
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="百度">
+                            </div>
+                        </form>
+                    </li>
+					
+					<li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">待办任务【3】</h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>设备巡检任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                <span class="">40%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>日常巡查任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-success">
+                                                <span class="">90%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>日常水位记录任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" role="progressbar" class="progress-bar progress-bar-info">
+                                                <span class="">66% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                              
+                                <li class="new"><a href="">查看所有待办任务</a></li>
+                            </ul>
+                        </div>
+                    </li>
+					
+					<li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">邮件【4】 </h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user1.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">卢云晓 <span class="badge badge-success">new</span></span>
+                                          <span class="msg">泵运行情况...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user2.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">卢云晓</span>
+                                          <span class="msg">帮忙批阅以下文件...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                              
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user4.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">赵胤君</span>
+                                          <span class="msg">日常更改巡检计划...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user5.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">袁公子</span>
+                                          <span class="msg">防止海潮倒灌办法...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">查看所有邮件</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">通知【4】</h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">机房日志.  </span>
+                                        <em class="small">机房今日运行正常...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">潮位通知.  </span>
+                                        <em class="small">今日最好潮位...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">泵站数据异常.  </span>
+                                        <em class="small">城内河泵站数据...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">会议通知.  </span>
+                                        <em class="small">今日下午2点会议...</em>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">查看所有通知</a></li>
+                            </ul>
+                        </div>
+                    </li>
+					
+					
+					
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="../images/photos/user-avatar.png"> 超级管理员 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">主页</a></li>
+                            <li><a href="#">设置</a></li>
+                            <li><a href="login.html">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+	
+	
+    <!-- main content start-->
+    <div class="main-content"  style="margin-left: 120px; margin-right: 120px;">
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                供应商管理
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="../index.html">运维管理</a>
+                </li>
+                <li>
+                    <a href="#">设备管理</a>
+                </li>
+                <li class="active"> 供应商管理 </li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        
+        <!--body wrapper start-->
+        <div class="wrapper">
+			<div class="row">
+				<div class="col-sm-12">
+					<section class="panel">
+						<header class="panel-heading">
+							供应商新增
+							<span class="tools pull-right">
+								<a href="javascript:;" class="fa fa-chevron-up"></a>
+							 </span>
+						</header>
+						<div class="panel-body" style="display: none;">
+							<div class="col-sm-12">
+								<form class="device-inbound-form" method="post">
+									
+									<div class="row">
+										<label class="control-label"  style="float: left">供应商编号</label>
+										<div class="col-md-2">
+											<input type="hidden" class="form-control"  name="id"  id="id" value="${devicePurchase.id}">
+											<input class="form-control" placeholder="purchaseCode" value=".系统生成" readonly>
+										</div>
+
+										<label class="control-label"  style="float: left">企业简称</label>
+										<div class="col-md-2">
+											<input class="form-control" placeholder="企业简称" required>
+										</div>
+
+										<label class="control-label" style="float: left">是否经销商</label>
+										<div class="col-md-2">
+											<select class="form-control">
+												<option value="1">属于经销商</option>
+												<option value="2">属于厂家</option>
+												<option value="2">属于代理商</option>
+											</select>
+										</div>
+										
+										<label class="control-label" style="float: left">供应范围</label>
+										<div class="col-md-2">
+											<input class="form-control" placeholder="供应范围" required>
+										</div>
+									</div>
+									
+									<br>
+									<div class="row">
+										
+										<label class="control-label"  style="float: left">供应商备注</label>
+										<div class="col-sm-4">
+											<textarea rows="3" class="form-control textarea">请填写公司备注</textarea>
+										</div>
+										
+									
+									</div>		
+									<span class="tools pull-right">
+										<button class="btn btn-primary" type="button">确定添加</button>
+										<button class="btn btn-primary" type="reset">重 置</button>
+									</span>
+											
+										
+								</form>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<section class="panel">
+						<header class="panel-heading">
+							供应商列表
+							<span class="tools pull-right">
+								<div class="btn-group">
+                                    <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
+                                        批量操作 <span class="caret"></span>
+                                    </button>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="#myModal2" data-toggle="modal">导入供应商</a></li>
+                                        <li><a href="#">导出供应商</a></li>
+                                    </ul>
+                               </div>
+							</span>
+						</header>
+						<div class="panel-body">
+							<div class="adv-table">
+								<table class="display table table-bordered table-striped" id="dynamic-table">
+									<thead>
+										<tr>
+											<th>供应商编号</th>
+											<th>企业简称</th>
+											<th>是否经销商</th>
+											<th>经营范围</th>
+											<th>评审等级</th>
+											<th>联系人</th>
+											<th>联系方式</th>
+											<th>评审状态</th>
+											<th>供应商状态</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class= "sorting_1">GYS-HU-14570221</td>
+											<td>杭州宁德机械</td>
+											<td>经销商</td>
+											<td>1300-10000</td>
+											<td>良好</td>
+											<td>勾文曲</td>
+											<td>0571-28192831</td>
+											<td>已评审</td>
+											<td>已复核</td>
+											<td>
+												<div class="btn-group">
+													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
+														供应商操作 <span class="caret"></span>
+													</button>
+													<ul role="menu" class="dropdown-menu">
+														<li><a href="#">编辑供应商</a></li>
+														<li><a href="#">删除供应商</a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class= "sorting_1">GYS-HU-14570221</td>
+											<td>山东蓝翔科技</td>
+											<td>经销商</td>
+											<td>100-10000</td>
+											<td>优秀</td>
+											<td>蓝翔</td>
+											<td>0121-28192831</td>
+											<td>已评审</td>
+											<td>已复核</td>
+											<td>
+												<div class="btn-group">
+													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
+														供应商操作 <span class="caret"></span>
+													</button>
+													<ul role="menu" class="dropdown-menu">
+														<li><a href="#">编辑供应商</a></li>
+														<li><a href="#">删除供应商</a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class= "sorting_1">GYS-HU-14570221</td>
+											<td>萧山爱课室科技</td>
+											<td>经销商</td>
+											<td>10-100000</td>
+											<td>良好</td>
+											<td>爱客室</td>
+											<td>0571-28192831</td>
+											<td>已评审</td>
+											<td>已复核</td>
+											<td>
+												<div class="btn-group">
+													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
+														供应商操作 <span class="caret"></span>
+													</button>
+													<ul role="menu" class="dropdown-menu">
+														<li><a href="#">编辑供应商</a></li>
+														<li><a href="#">删除供应商</a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class= "sorting_1">GYS-HU-14570221</td>
+											<td>北京全新科技</td>
+											<td>经销商</td>
+											<td>100-500000</td>
+											<td>优秀</td>
+											<td>胡铨鑫</td>
+											<td>000-93092912</td>
+											<td>已评审</td>
+											<td>已复核</td>
+											<td>
+												<div class="btn-group">
+													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
+														供应商操作 <span class="caret"></span>
+													</button>
+													<ul role="menu" class="dropdown-menu">
+														<li><a href="#">编辑供应商</a></li>
+														<li><a href="#">删除供应商</a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class= "sorting_1">GYS-HU-14570221</td>
+											<td>福建必知机械制造</td>
+											<td>生产厂家</td>
+											<td>0-10000</td>
+											<td>良好</td>
+											<td>李碧珍</td>
+											<td>0921-28192831</td>
+											<td>已评审</td>
+											<td>已复核</td>
+											<td>
+												<div class="btn-group">
+													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
+														供应商操作 <span class="caret"></span>
+													</button>
+													<ul role="menu" class="dropdown-menu">
+														<li><a href="#">编辑供应商</a></li>
+														<li><a href="#">删除供应商</a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class= "sorting_1">GYS-HU-14570221</td>
+											<td>海南速记机械</td>
+											<td>生产厂家</td>
+											<td>100-10000</td>
+											<td>良好</td>
+											<td>高书记</td>
+											<td>0921-28192831</td>
+											<td>已评审</td>
+											<td>已复核</td>
+											<td>
+												<div class="btn-group">
+													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
+														供应商操作 <span class="caret"></span>
+													</button>
+													<ul role="menu" class="dropdown-menu">
+														<li><a href="#">编辑供应商</a></li>
+														<li><a href="#">删除供应商</a></li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										
+										
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            2017 &copy; 海绵 by <a href="#" target="_blank">hup</a>
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+
+
+<!--dynamic table-->
+<script type="text/javascript" language="javascript" src="../js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="../js/data-tables/DT_bootstrap.js"></script>
+<!--dynamic table initialization -->
+<script type="text/javascript" src="../js/dynamic_table_init.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="../js/scripts.js"></script>
+<script type="text/javascript">
+    	
+</script>
+
+</body>
+</html>
