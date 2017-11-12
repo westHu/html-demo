@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="#" type="image/png">
 
   <title>雨情管理</title>
-  
+
   <!--icheck-->
   <link href="../js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
   <link href="../js/iCheck/skins/square/square.css" rel="stylesheet">
@@ -73,7 +73,6 @@
                     <img src="../images/tem-inner-logo.png" alt="">
                 </a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                  <ul class="nav navbar-nav">
@@ -147,14 +146,7 @@
                         </ul>
                     </li>
                 </ul>
-				
-				
-				
-				
-				
-				
-
-                <ul class="nav navbar-nav navbar-right">
+s                <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form class="navbar-form navbar-left" role="search">
                             <div class="form-group">
@@ -392,18 +384,29 @@
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=1020aebdfa5dfd15c5bc40bd8fc88117"></script>
  <!-- UI组件库 1.0 -->
  <script src="../js/gaode-map/ui-main.js"></script>
-<!--script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script-->
+<script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
  <script type="text/javascript">
         var map = new AMap.Map('mapView',{
             pitch:75,
-			
 			zoom: 12,
 			expandZoomRange:true,
 			zooms:[10,14],
 			center:[121.586777,29.8501]
         });
-		
-		AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
+        map.plugin(["AMap.CitySearch"], function() {
+            var citysearch = new AMap.CitySearch();
+            citysearch.getLocalCity();
+            AMap.event.addListener(citysearch, "complete", function(result) {
+                var citybounds;
+                if (result && result.city && result.bounds) {
+                    citybounds = result.bounds;
+                    map.setBounds(citybounds);
+                }
+            });
+        });
+        map.setLimitBounds(map.getBounds());
+
+        AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
 			//添加一个缩放控件
 			map.addControl(new BasicControl.Zoom({
 				position: 'lt'
@@ -418,9 +421,95 @@
 			//图层切换控件
 			map.addControl(new BasicControl.LayerSwitcher({
 				position: 'rt'
-        }));
-    });
-		
+            }));
+        });
+
+
+        function initPage(DistrictCluster, $) {
+
+            var distCluster = new DistrictCluster({
+                map: map, //所属的地图实例
+
+                getPosition: function(item) {
+
+                    if (!item) {
+                        return null;
+                    }
+
+                    var parts = item.split(',');
+
+                    //返回经纬度
+                    return [parseFloat(parts[0]), parseFloat(parts[1])];
+                },
+                renderOptions: {
+                    //基础样式
+                    featureStyle: {
+                        fillStyle: 'rgba(102,170,0,0.5)', //填充色
+                        lineWidth: 2, //描边线宽
+                        strokeStyle: 'rgb(31, 119, 180)', //描边色
+                        //鼠标Hover后的样式
+                        hoverOptions: {
+                            fillStyle: 'rgba(255,255,255,0.2)'
+                        }
+                    },
+                    //特定区划级别的默认样式
+                    featureStyleByLevel: {
+                        //全国
+                        country: {
+                            fillStyle: 'rgba(49, 163, 84, 0.8)'
+                        },
+                        //省
+                        province: {
+                            fillStyle: 'rgba(116, 196, 118, 0.7)'
+                        },
+                        //市
+                        city: {
+                            fillStyle: 'rgba(161, 217, 155, 0.6)'
+                        },
+                        //区县
+                        district: {
+                            fillStyle: 'rgba(199, 233, 192, 0.5)'
+                        }
+                    },
+                    //直接定义某写区划面的样式
+                    getFeatureStyle: function(feature, dataItems) {
+
+                        if (dataItems.length > 3000) {
+
+                            return {
+                                fillStyle: 'red'
+                            };
+
+                        } else if (dataItems.length > 1000) {
+                            return {
+                                fillStyle: 'orange'
+                            };
+                        }
+
+                        return {};
+                    }
+                }
+            });
+
+            window.distCluster = distCluster;
+
+            $('<div id="loadingTip">加载数据，请稍候...</div>').appendTo(document.body);
+            $.get('http://a.amap.com/amap-ui/static/data/10w.txt', function(csv) {
+
+                $('#loadingTip').remove();
+
+                var data = csv.split('\n');
+
+                distCluster.setData(data);
+            });
+        }
+
+        //加载相关组件
+        AMapUI.load(['ui/geo/DistrictCluster', 'lib/$'], function(DistrictCluster, $) {
+
+            //启动页面
+            initPage(DistrictCluster, $);
+        });
     </script>
 
 </body>
