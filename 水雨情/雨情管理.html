@@ -49,9 +49,28 @@
 			border-radius:15px;
 			-moz-border-radius:15px; /* Old Firefox */
 			box-shadow: 10px 10px 5px #888888;
-		} 
-		
-		
+		}
+     .color-panel {
+         width: 130px;
+         height: 230px;
+         position: fixed ! important;
+         right: 50px;
+         top: -200px;
+         z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/
+         margin-top: 20%;
+         margin-left: -209px;
+         background-color :#ffffff;
+         -webkit-transition: .5s ease-in-out;/* css的transition允许css的属性值在一定的时间内从一个状态平滑的过渡到另一个状态 */
+         -moz-transition: .5s ease-in-out;/*这里为了兼容其他浏览器*/
+         -o-transition: .5s ease-in-out;
+         background-color :#ffffff;
+         bolder: 1px #000;
+         border:2px solid;
+         border-radius:15px;
+         -moz-border-radius:15px; /* Old Firefox */
+         box-shadow: 10px 10px 5px #888888;
+     }
+
   </style>
 </head>
 
@@ -313,24 +332,58 @@
     <div class="main-content" style="margin-left:0px;min-height:860px;">
 		<div id="mapView" style="height:860px;border:1px solid #000;margin:5px"></div>
 		<div class="tl"></div>
-        <!-- page heading start-->
-   
-        <!-- page heading end-->
+        <div class="color-panel">
+            <!--<span class="label label-default" style="height:20px; width:50px;  margin: 10px;">Default</span>
+            <span class="label label-primary" style="height:20px; width:50px;  margin: 10px;">Primary</span>
+            <span class="label label-success" style="height:20px; width:50px;  margin: 10px;">Success</span>
+            <span class="label label-warning" style="height:20px; width:50px;  margin: 10px;">Warning</span>
+            <span class="label label-danger"  style="height:20px; width:50px;  margin: 10px;">Danger</span>-->
+            <table>
+                <tbody>
 
-        <!--body wrapper start-->
-        <!-- div class="wrapper" style="height:750px">
-			<div class="row">
-					<div class="col-sm-12">
-						<section class="panel" style="height:700px">
-							
-							<div class="panel-body">
-								<div id="mapView" class="vmaps" style="height:685px"></div>
-							</div>
-						</section>
-					</div>
-				</div>
-				
-			</div -->
+
+
+
+
+
+
+
+                <tr>
+                    <td><div style="height:20px; width:50px; background-color: #767676; margin-left: 15px; margin-top: 5px; margin-right: 5px"></div></td>
+                    <td>100ml</td>
+                </tr>
+                <tr>
+                    <td><div style="height:20px; width:50px; background-color: #FFEFDB; margin-left: 15px; margin-top: 5px; margin-right: 5px"></div></td>
+                    <td>200ml</td>
+                </tr>
+                <tr>
+                    <td><div style="height:20px; width:50px; background-color: #9b8fff; margin-left: 15px; margin-top: 5px; margin-right: 5px"></div></td>
+                    <td>300ml</td>
+                </tr>
+                <tr>
+                    <td><div style="height:20px; width:50px; background-color: #a9d412; margin-left: 15px; margin-top: 5px; margin-right: 5px"></div></td>
+                    <td>400ml</td>
+                </tr>
+                <tr>
+                    <td><div style="height:20px; width:50px; background-color: #eeea51; margin-left: 15px; margin-top: 5px; margin-right: 5px"></div></td>
+                    <td>600ml</td>
+                </tr>
+                <tr>
+                    <td><div style="height:20px; width:50px; background-color: #0dd459; margin-left: 15px; margin-top: 5px; margin-right: 5px"></div></td>
+                    <td>800ml</td>
+                </tr>
+                <tr>
+                    <td><div style="height:20px; width:50px; background-color: #17d455; margin-left: 15px; margin-top: 5px; margin-right: 5px"></div></td>
+                    <td>1000ml</td>
+                </tr>
+                <tr>
+                    <td><div style="height:20px; width:50px; background-color: #00FF00; margin-left: 15px; margin-top: 10px; margin-right: 5px"></div></td>
+                    <td>1500ml </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
         </div >
         <!--body wrapper end-->
 
@@ -391,7 +444,7 @@
 			zoom: 11,
 			expandZoomRange:true,
 			zooms:[10,12],
-			center:[121.586777,29.8501]
+			center:[121.680676,29.804232]
         });
 
         //定位在宁波
@@ -422,9 +475,9 @@
 			}));
 
 			//图层切换控件
-			map.addControl(new BasicControl.LayerSwitcher({
+			/*map.addControl(new BasicControl.LayerSwitcher({
 				position: 'rt'
-            }));
+            }));*/
         });
 
         //地图着色
@@ -488,7 +541,7 @@
 
                         } else if (dataItems.length == 221) { //海曙区
                             return {
-                                fillStyle: '#d4beb7'
+                                fillStyle: '#03a806'
                             };
                         }else if (dataItems.length == 71) { //奉化区
                             return {
@@ -496,11 +549,11 @@
                             };
                         }else if (dataItems.length == 53) { //宁海区
                             return {
-                                fillStyle: '#D4D4D4'
+                                fillStyle: '#17d455'
                             };
                         }else if (dataItems.length == 117) { //余姚
                             return {
-                                fillStyle: '#D4D4D4'
+                                fillStyle: '#d4d426'
                             };
                         }else if (dataItems.length == 164) { //慈溪
                             return {
@@ -508,11 +561,11 @@
                             };
                         }else if (dataItems.length == 161) { //北仑
                             return {
-                                fillStyle: '#d44d38'
+                                fillStyle: '#c3c3c3'
                             };
                         }else if (dataItems.length == 30) { //象山
                             return {
-                                fillStyle: '#49a5ee'
+                                fillStyle: '#eeea51'
                             };
                         }
 
@@ -547,6 +600,9 @@
             //启动页面
             initPage(DistrictCluster, $);
         });
+
+
+
     </script>
 
 </body>
