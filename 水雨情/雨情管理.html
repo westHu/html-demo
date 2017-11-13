@@ -362,12 +362,12 @@
                     <td><h4 style="width:135px; margin-top: 15px; margin-left: 20px">雨情管理</h4></td>
                     <td></td>
                     <td><button type="button" class="btn btn-primary">返回首页</button></td>
-                    <td><button type="button" class="btn btn-primary">雨水采集点列表</button></td>
+                    <td><button type="button" class="btn btn-primary" onclick="showT1View()">雨水采集点列表</button></td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        <div class="tl-view">
+        <div id="tl-view" class="tl-view" data-id="1">
             <table>
                 <tbody>
                     <tr>
@@ -585,6 +585,13 @@
 <script src="https://webapi.amap.com/js/marker.js"></script>
 <script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
  <script type="text/javascript">
+    /* jQuery(document).ready(function() {
+
+     });*/
+    window.setInterval("addMarker()",3000); //定时执行
+    //window.setTimeout("addMarker()",3000);//定时执行，只执行一次
+
+
         var map = new AMap.Map('mapView',{
             pitch:75,
 			zoom: 11,
@@ -596,40 +603,47 @@
 
 
         var markerArr = [
-            { title: "雅戈尔动物园", point: "121.673123,29.801551", address: "0", tel: "1852345000",rainfall:"1900ml"},
-            { title: "东钱湖小普陀景区 ", point: "121.659482,29.76876", address: "#", tel: "1823320000" ,rainfall:"282ml"},
-            { title: "外国语学校", point: "121.628583,29.740742", address: "#", tel: "18523500000" ,rainfall:"230ml"},
-            { title: "天童寺", point: "121.794408,29.800345", address: "#", tel: "12341000000",rainfall:"90ml" },
-            { title: "市政府", point: "121.625493,29.960507", address: "#", tel: "128234000",rainfall:"290ml" },
-            { title: "海洋公园:", point: "121.625493,29.860507", address: "0", tel: "1392800000",rainfall:"1920ml" },
-            { title: "江南一品:", point: "121.619313,29.884919", address: "#", tel: "18209000000",rainfall:"120ml" },
-            { title: "天一广场:", point: "121.555455,29.870034", address: "0", tel: "182902000",rainfall:"1000ml" },
-            { title: "汽车北站", point: "121.599057,29.903373", address: "#", tel: "1128372100",rainfall:"150ml" },
+            { title: "雅戈尔动物园", point: "121.673123,29.801551", address: "0", tel: "1852345000",rainfall:"300"},
+            { title: "东钱湖小普陀景区 ", point: "121.659482,29.76876", address: "#", tel: "1823320000" ,rainfall:"282"},
+            { title: "外国语学校", point: "121.628583,29.740742", address: "#", tel: "18523500000" ,rainfall:"230"},
+            { title: "天童寺", point: "121.794408,29.800345", address: "#", tel: "12341000000",rainfall:"90" },
+            { title: "市政府", point: "121.625493,29.960507", address: "#", tel: "128234000",rainfall:"290" },
+            { title: "海洋公园:", point: "121.625493,29.860507", address: "0", tel: "1392800000",rainfall:"220" },
+            { title: "江南一品:", point: "121.619313,29.884919", address: "#", tel: "18209000000",rainfall:"120" },
+            { title: "天一广场:", point: "121.555455,29.870034", address: "0", tel: "182902000",rainfall:"180" },
+            { title: "汽车北站", point: "121.599057,29.903373", address: "#", tel: "1128372100",rainfall:"150" },
 
-            { title: "冠成汽车站", point: "121.404904,30.164134", address: "0", tel: "1852345000",rainfall:"1000ml"},
-            { title: "慈溪市体育中心 ", point: "121.315983,30.201825", address: "#", tel: "1823320000" ,rainfall:"282ml"},
-            { title: "慈溪市客运中心", point: "121.316327,30.203012", address: "#", tel: "18523500000" ,rainfall:"230ml"},
-            { title: "郑家铺村", point: "121.42928,30.24573", address: "#", tel: "12341000000",rainfall:"90ml" },
-            { title: "宁波工程学院", point: "121.242169,30.316589", address: "#", tel: "128234000",rainfall:"290ml" },
-            { title: "国家湿地公园:", point: "121.154622,30.31481", address: "0", tel: "1392800000",rainfall:"1020ml" },
-            { title: "余姚第二中学:", point: "121.127843,30.143651", address: "#", tel: "18209000000",rainfall:"120ml" },
-            { title: "四明湖:", point: "121.051282,29.943044", address: "0", tel: "182902000",rainfall:"1200ml" },
-            { title: "黄海田岗", point: "121.001843,29.662573", address: "#", tel: "1128372100",rainfall:"150ml" },
+            { title: "冠成汽车站", point: "121.404904,30.164134", address: "0", tel: "1852345000",rainfall:"110"},
+            { title: "慈溪市体育中心 ", point: "121.315983,30.201825", address: "#", tel: "1823320000" ,rainfall:"282"},
+            { title: "慈溪市客运中心", point: "121.316327,30.203012", address: "#", tel: "18523500000" ,rainfall:"230"},
+            { title: "郑家铺村", point: "121.42928,30.24573", address: "#", tel: "12341000000",rainfall:"90" },
+            { title: "宁波工程学院", point: "121.242169,30.316589", address: "#", tel: "128234000",rainfall:"20" },
+            { title: "国家湿地公园:", point: "121.154622,30.31481", address: "0", tel: "1392800000",rainfall:"102" },
+            { title: "余姚第二中学:", point: "121.127843,30.143651", address: "#", tel: "18209000000",rainfall:"120" },
+            { title: "四明湖:", point: "121.051282,29.943044", address: "0", tel: "182902000",rainfall:"420" },
+            { title: "黄海田岗", point: "121.001843,29.662573", address: "#", tel: "1128372100",rainfall:"150" },
 
 
-            { title: "象山客运中心", point: "121.867763,29.452329", address: "0", tel: "1852345000",rainfall:"1000ml"},
-            { title: "龙蛇坑 ", point: "121.771632,29.432596", address: "#", tel: "1823320000" ,rainfall:"282ml"},
-            { title: "送浪送国家公圆", point: "121.963206,29.431699", address: "#", tel: "18523500000" ,rainfall:"230ml"},
-            { title: "象山饮食成", point: "121.850596,29.279986", address: "#", tel: "12341000000",rainfall:"90ml" },
-            { title: "里龙塘森林公园", point: "121.689921,29.415252", address: "#", tel: "128234000",rainfall:"290ml" },
-            { title: "天台山国家风景区:", point: "121.103526,29.269205", address: "0", tel: "1392800000",rainfall:"1020ml" },
-            { title: "桑田政采集点", point: "121.415263,29.617814", address: "#", tel: "18209000000",rainfall:"120ml" },
-            { title: "白虎山:", point: "121.939689,29.878482", address: "0", tel: "182902000",rainfall:"1200ml" },
-            { title: "小山公园", point: "121.857635,29.907205", address: "#", tel: "1128372100",rainfall:"150ml" },
+            { title: "象山客运中心", point: "121.867763,29.452329", address: "0", tel: "1852345000",rainfall:"1000"},
+            { title: "龙蛇坑 ", point: "121.771632,29.432596", address: "#", tel: "1823320000" ,rainfall:"282"},
+            { title: "送浪送国家公圆", point: "121.963206,29.431699", address: "#", tel: "18523500000" ,rainfall:"230"},
+            { title: "象山饮食成", point: "121.850596,29.279986", address: "#", tel: "12341000000",rainfall:"90" },
+            { title: "里龙塘森林公园", point: "121.689921,29.415252", address: "#", tel: "128234000",rainfall:"290" },
+            { title: "天台山国家风景区:", point: "121.103526,29.269205", address: "0", tel: "1392800000",rainfall:"1020" },
+            { title: "桑田政采集点", point: "121.415263,29.617814", address: "#", tel: "18209000000",rainfall:"120" },
+            { title: "白虎山:", point: "121.939689,29.878482", address: "0", tel: "182902000",rainfall:"1200" },
+            { title: "小山公园", point: "121.857635,29.907205", address: "#", tel: "1128372100",rainfall:"150" },
 
-            { title: "万科广场", point: "121.62206,29.923906", address: "#", tel: "18192832100",rainfall:"120ml" }
+            { title: "宁海森林温泉", point: "121.350399,29.374922", address: "#", tel: "1128372100",rainfall:"350" },
+            { title: "里南山", point: "121.196247,29.503488", address: "#", tel: "1128372100",rainfall:"550" },
+            { title: "风水山", point: "121.201225,29.62279", address: "#", tel: "1128372100",rainfall:"450" },
+
+
+
+            { title: "万科广场", point: "121.62206,29.923906", address: "#", tel: "18192832100",rainfall:"120" }
 
         ]
+        var markers = [];
         for (var i = 0; i < markerArr.length; i++) {
             //console.info("markerArr[i].point = " + markerArr[i].point)
             var	marker = new AMap.Marker({
@@ -640,19 +654,19 @@
                 map: map
             });
 
-            if (markerArr[i].address == "0") {
+            if ( Number(markerArr[i].rainfall) > 500) {
                 marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                     offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall+"</strong></p>"
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'><strong>" + markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall + "ml" + "</strong></p>"
                 });
             }else {
                 // 设置label标签
                 marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                     offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall+"</strong></p>"
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall + "ml" + "</strong></p>"
                 });
             }
-
+            markers.push(marker);
         }
         map.setFitView();
 
@@ -807,8 +821,43 @@
             initPage(DistrictCluster, $);
         });
 
+        function addMarker() {
+//            var label = markers.length;
+            //console.info("marker label = " + markers.length)
+            for (var i = 0; i< markers.length; i ++) {
+                //console.info("内容 --" + markers[i].getLabel().content)
+                //console.info("内容 22--" + markers[i].getContent())
+                var rainfallNew  = Math.ceil(Math.random()*500) + Number(markerArr[i].rainfall);
 
+                if (Number(rainfallNew) > 500) {
+                    markers[i].setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                        content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + rainfallNew + "ml" + "</strong></p>"
+                    });
+                }else {
+                    // 设置label标签
+                    markers[i].setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                        offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                        content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + rainfallNew + "ml" + "</strong></p>"
+                    });
+                }
 
+            }
+            //map.markOnAMAP();
+        }
+
+    </script>
+    <script>
+        function showT1View() {
+            var t = $("#tl-view").data("id");
+            if (t == "1"){
+                $("#tl-view").hide();
+                $("#tl-view").data("id","0");
+            }else {
+                $("#tl-view").show();
+                $("#tl-view").data("id","1");
+            }
+        }
     </script>
 
 </body>
