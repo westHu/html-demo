@@ -31,7 +31,7 @@
   <![endif]-->
   <style type="text/css">
      .tl {  
-			width: 400px;  
+			width: 380px;
 			height: 50px;  
 			position: fixed ! important; 
 			right: 350px; 
@@ -50,6 +50,27 @@
 			-moz-border-radius:15px; /* Old Firefox */
 			box-shadow: 10px 10px 5px #888888;
 		}
+
+     .tl-view {
+         width: 180px;
+         height: 450px;
+         position: fixed ! important;
+         right: 350px;
+         top: -240px;
+         z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/
+         margin-top: 20%;
+         margin-left: -209px;
+         background-color :#ffffff;
+         -webkit-transition: .5s ease-in-out;/* css的transition允许css的属性值在一定的时间内从一个状态平滑的过渡到另一个状态 */
+         -moz-transition: .5s ease-in-out;/*这里为了兼容其他浏览器*/
+         -o-transition: .5s ease-in-out;
+         background-color :#ffffff;
+         bolder: 1px #000;
+         border:2px solid;
+         border-radius:15px;
+         -moz-border-radius:15px; /* Old Firefox */
+         box-shadow: 10px 10px 5px #888888;
+     }
      .color-panel {
          width: 130px;
          height: 230px;
@@ -70,7 +91,10 @@
          -moz-border-radius:15px; /* Old Firefox */
          box-shadow: 10px 10px 5px #888888;
      }
-
+     .amap-marker-label {
+         border: 2px solid;
+         border-radius: 10px;
+     }
   </style>
 </head>
 
@@ -331,7 +355,135 @@
  <!-- main content start-->
     <div class="main-content" style="margin-left:0px;min-height:860px;">
 		<div id="mapView" style="height:860px;border:1px solid #000;margin:5px"></div>
-		<div class="tl"></div>
+		<div class="tl">
+            <table>
+                <tbody>
+                <tr>
+                    <td><h4 style="width:135px; margin-top: 15px; margin-left: 20px">雨情管理</h4></td>
+                    <td></td>
+                    <td><button type="button" class="btn btn-primary">返回首页</button></td>
+                    <td><button type="button" class="btn btn-primary">雨水采集点列表</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tl-view">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 海洋公园采集点</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 天童寺采集点</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 江南一品采集点</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 汽车北站采集点</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 冠成汽车站采集点</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 客运中心采集点</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 体育中心采集点</p></td>
+                    </tr><tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 黄海田岗采集点</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 宁波工学院采集点</p></td>
+                    </tr><tr>
+                        <td>
+                            <div class="square single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 郑家铺村采集点</p></td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
         <div class="color-panel">
             <!--<span class="label label-default" style="height:20px; width:50px;  margin: 10px;">Default</span>
             <span class="label label-primary" style="height:20px; width:50px;  margin: 10px;">Primary</span>
@@ -340,14 +492,6 @@
             <span class="label label-danger"  style="height:20px; width:50px;  margin: 10px;">Danger</span>-->
             <table>
                 <tbody>
-
-
-
-
-
-
-
-
                 <tr>
                     <td><div style="height:20px; width:50px; background-color: #767676; margin-left: 15px; margin-top: 5px; margin-right: 5px"></div></td>
                     <td>100ml</td>
@@ -438,6 +582,8 @@
  <!-- UI组件库 1.0 -->
  <script src="../js/gaode-map/ui-main.js"></script>
 <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+<script src="https://webapi.amap.com/js/marker.js"></script>
+<script type="text/javascript" src="https://webapi.amap.com/demos/js/liteToolbar.js"></script>
  <script type="text/javascript">
         var map = new AMap.Map('mapView',{
             pitch:75,
@@ -446,6 +592,69 @@
 			zooms:[10,12],
 			center:[121.680676,29.804232]
         });
+
+
+
+        var markerArr = [
+            { title: "雅戈尔动物园", point: "121.673123,29.801551", address: "0", tel: "1852345000",rainfall:"1900ml"},
+            { title: "东钱湖小普陀景区 ", point: "121.659482,29.76876", address: "#", tel: "1823320000" ,rainfall:"282ml"},
+            { title: "外国语学校", point: "121.628583,29.740742", address: "#", tel: "18523500000" ,rainfall:"230ml"},
+            { title: "天童寺", point: "121.794408,29.800345", address: "#", tel: "12341000000",rainfall:"90ml" },
+            { title: "市政府", point: "121.625493,29.960507", address: "#", tel: "128234000",rainfall:"290ml" },
+            { title: "海洋公园:", point: "121.625493,29.860507", address: "0", tel: "1392800000",rainfall:"1920ml" },
+            { title: "江南一品:", point: "121.619313,29.884919", address: "#", tel: "18209000000",rainfall:"120ml" },
+            { title: "天一广场:", point: "121.555455,29.870034", address: "0", tel: "182902000",rainfall:"1000ml" },
+            { title: "汽车北站", point: "121.599057,29.903373", address: "#", tel: "1128372100",rainfall:"150ml" },
+
+            { title: "冠成汽车站", point: "121.404904,30.164134", address: "0", tel: "1852345000",rainfall:"1000ml"},
+            { title: "慈溪市体育中心 ", point: "121.315983,30.201825", address: "#", tel: "1823320000" ,rainfall:"282ml"},
+            { title: "慈溪市客运中心", point: "121.316327,30.203012", address: "#", tel: "18523500000" ,rainfall:"230ml"},
+            { title: "郑家铺村", point: "121.42928,30.24573", address: "#", tel: "12341000000",rainfall:"90ml" },
+            { title: "宁波工程学院", point: "121.242169,30.316589", address: "#", tel: "128234000",rainfall:"290ml" },
+            { title: "国家湿地公园:", point: "121.154622,30.31481", address: "0", tel: "1392800000",rainfall:"1020ml" },
+            { title: "余姚第二中学:", point: "121.127843,30.143651", address: "#", tel: "18209000000",rainfall:"120ml" },
+            { title: "四明湖:", point: "121.051282,29.943044", address: "0", tel: "182902000",rainfall:"1200ml" },
+            { title: "黄海田岗", point: "121.001843,29.662573", address: "#", tel: "1128372100",rainfall:"150ml" },
+
+
+            { title: "象山客运中心", point: "121.867763,29.452329", address: "0", tel: "1852345000",rainfall:"1000ml"},
+            { title: "龙蛇坑 ", point: "121.771632,29.432596", address: "#", tel: "1823320000" ,rainfall:"282ml"},
+            { title: "送浪送国家公圆", point: "121.963206,29.431699", address: "#", tel: "18523500000" ,rainfall:"230ml"},
+            { title: "象山饮食成", point: "121.850596,29.279986", address: "#", tel: "12341000000",rainfall:"90ml" },
+            { title: "里龙塘森林公园", point: "121.689921,29.415252", address: "#", tel: "128234000",rainfall:"290ml" },
+            { title: "天台山国家风景区:", point: "121.103526,29.269205", address: "0", tel: "1392800000",rainfall:"1020ml" },
+            { title: "桑田政采集点", point: "121.415263,29.617814", address: "#", tel: "18209000000",rainfall:"120ml" },
+            { title: "白虎山:", point: "121.939689,29.878482", address: "0", tel: "182902000",rainfall:"1200ml" },
+            { title: "小山公园", point: "121.857635,29.907205", address: "#", tel: "1128372100",rainfall:"150ml" },
+
+            { title: "万科广场", point: "121.62206,29.923906", address: "#", tel: "18192832100",rainfall:"120ml" }
+
+        ]
+        for (var i = 0; i < markerArr.length; i++) {
+            //console.info("markerArr[i].point = " + markerArr[i].point)
+            var	marker = new AMap.Marker({
+                position: markerArr[i].point.split(','),
+                offset: new AMap.Pixel(-12,-12),
+                zIndex: 101,
+                title: markerArr[i].title,
+                map: map
+            });
+
+            if (markerArr[i].address == "0") {
+                marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                    offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall+"</strong></p>"
+                });
+            }else {
+                // 设置label标签
+                marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                    offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall+"</strong></p>"
+                });
+            }
+
+        }
+        map.setFitView();
 
         //定位在宁波
         map.plugin(["AMap.CitySearch"], function() {
@@ -529,15 +738,12 @@
                     },
                     //直接定义某写区划面的样式
                     getFeatureStyle: function(feature, dataItems) {
-                        console.info("dataItems--> " + dataItems.length);
+//                        console.info("dataItems--> " + dataItems.length);
                         if (dataItems.length == 1390) {
 
                             return {
                                 fillStyle: '#FFEFDB'
                             };
-
-
-
 
                         } else if (dataItems.length == 221) { //海曙区
                             return {
