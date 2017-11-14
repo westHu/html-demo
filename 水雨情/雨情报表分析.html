@@ -16,10 +16,7 @@
   <link rel="stylesheet" type="text/css" href="../js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
   <link rel="stylesheet" type="text/css" href="../js/bootstrap-datetimepicker/css/datetimepicker-custom.css" />
   
-  <!--dynamic table-->
-  <link href="../js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-  <link href="../js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
-  <link href="../js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+
 
   <link href="../css/style.css" rel="stylesheet">
   <link href="../css/style-responsive.css" rel="stylesheet">
@@ -304,7 +301,6 @@
 	
     <!-- main content start-->
     <div class="main-content"  style="margin-left: 120px; margin-right: 120px;">
-
         <!-- page heading start-->
         <div class="page-heading">
             <h3>
@@ -322,7 +318,6 @@
         </div>
         <!-- page heading end-->
 
-        
         <!--body wrapper start-->
         <div class="wrapper">
             <div class="row">
@@ -336,258 +331,65 @@
                             </span>-->
                         </header>
                         <div class="panel-body">
-                            <section id="unseen">
-                                <table class="table table-bordered table-striped table-condensed">
-                                    <thead>
-                                        <tr>
-                                            <th>县（市）区</th>
-                                            <th>今日雨量</th>
-                                            <th class="numeric">昨日雨量</th>
-                                            <th class="numeric">前日雨量</th>
-                                            <th class="numeric">累计雨量</th>
-                                            <th class="numeric">最大雨量点（今日）</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>宁波市</td>
-                                            <td>0.0</td>
-                                            <td class="numeric">1.38</td>
-                                            <td class="numeric">0.01</td>
-                                            <td class="numeric">0.36</td>
-                                            <td class="numeric">榧树潭(1.0)、大横山水库(0.5)</td>
+                            <section  style="width: 100%; height: 400px">
+                                <div id="bar-graph" style="float: left">报表加载中...!</div>
+                                <div id="pie-graph" style="float: left; margin-left: 5px">报表加载中...!</div>
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <!--<div class="col-sm-4">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            县市区站点雨量（毫米）（2017-11-13）
+                        </header>
+                        <div class="panel-body">
+                            <section  style="width: 100%; height: 400px">
+                                <div id="chart-container-1" align="left">Chart will load here</div>
+                            </section>
+                        </div>
+                    </section>
+                </div>-->
+            </div>
 
-                                        </tr>
-                                        <tr>
-                                            <td>市区(绕城内)</td>
-                                            <td>1.13</td>
-                                            <td class="numeric">1.15</td>
-                                            <td class="numeric">0.02</td>
-                                            <td class="numeric">1.32</td>
-                                            <td class="numeric">榧树潭(1.0)、花龙庄(0.5)</td>
-                                        </tr>
-                                        <tr>
-                                            <td>海曙区</td>
-                                            <td>2.98</td>
-                                            <td class="numeric">4.00</td>
-                                            <td class="numeric">0.04</td>
-                                            <td class="numeric">0.99</td>
-                                            <td class="numeric">榧树潭(1.0)、花龙庄(0.5)</td>
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            全市月平均雨量排行榜（毫米）
+                        </header>
+                        <div class="panel-body" style="padding-top: 0px;">
+                            <section  style="width: 100%; height: 450px">
+                                <!--<div id="search-top-last" style="height: 100px">
+                                    <div class="row">
+                                        <label class="control-label" style="float: left">计划名称：</label>
+                                        <div class="col-md-2">
+                                            <input class="form-control">
+                                        </div>
 
-                                        </tr>
-                                        <tr>
-                                            <td>鄞州区</td>
-                                            <td>0.0</td>
-                                            <td class="numeric">3.00</td>
-                                            <td class="numeric">0.06</td>
-                                            <td class="numeric">2.04</td>
-                                            <td class="numeric">2.98</td>
+                                        <label class="control-label" style="float: left">计划描述：</label>
+                                        <div class="col-md-2">
+                                            <input class="form-control">
+                                        </div>
 
-                                        </tr>
-                                       <!-- <tr>
-                                            <td>江北区</td>
-                                            <td>0.0</td>
-                                            <td class="numeric">1.91</td>
-                                            <td class="numeric">0.00</td>
-                                            <td class="numeric">0.00</td>
-                                            <td class="numeric">1.92</td>
-
-                                        </tr>-->
-                                        <tr>
-                                            <td>镇海区</td>
-                                            <td>0.0</td>
-                                            <td class="numeric">0.77</td>
-                                            <td class="numeric">0.02</td>
-                                            <td class="numeric">2.00</td>
-                                            <td class="numeric">榧树潭(1.0)、花龙庄(0.5)</td>
-
-                                        </tr>
-                                        <!--<tr>
-                                            <td>北仑区</td>
-                                            <td>0.21</td>
-                                            <td class="numeric">3.71</td>
-                                            <td class="numeric">0.01</td>
-                                            <td class="numeric">0.14</td>
-                                            <td class="numeric">3.70</td>
-
-                                        </tr>-->
-                                        <tr>
-                                            <td>奉化区</td>
-                                            <td>0.73</td>
-                                            <td class="numeric">0.72</td>
-                                            <td class="numeric">0.00</td>
-                                            <td class="numeric">0.00</td>
-                                            <td class="numeric">纺车岩水库(0.5)、大茅岙水库(0.5)</td>
-
-                                        </tr>
-                                        <!--<tr>
-                                            <td>余姚市</td>
-                                            <td>7.82</td>
-                                            <td class="numeric">7.81</td>
-                                            <td class="numeric">0.22</td>
-                                            <td class="numeric">2.74</td>
-                                            <td class="numeric">望海岗(0.5)、华顶山(0.5)</td>
-
-                                        </tr>-->
-                                        <!--<tr>
-                                            <td>慈溪市</td>
-                                            <td>3.83</td>
-                                            <td class="numeric">13.82</td>
-                                            <td class="numeric">0.02</td>
-                                            <td class="numeric">0.14</td>
-                                            <td class="numeric">望海岗(0.5)、华顶山(0.5)</td>
-
-                                        </tr>-->
-                                        <tr>
-                                            <td>宁海县</td>
-                                            <td>3.11</td>
-                                            <td class="numeric">3.17</td>
-                                            <td class="numeric">0.02</td>
-                                            <td class="numeric">0.47</td>
-                                            <td class="numeric">董家彦(0.5)、班竹石门(0.5)</td>
-                                        </tr>
-                                        <tr>
-                                            <td>象山县</td>
-                                            <td>0.11</td>
-                                            <td class="numeric">1.17</td>
-                                            <td class="numeric">0.22</td>
-                                            <td class="numeric">0.17</td>
-                                            <td class="numeric">梨洲(0.5)、花龙庄(0.5)</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                        <label class="control-label" style="float: left">起止时间</label>
+                                        <div class="col-md-3">
+                                            <div class="input-group input-large custom-date-range" data-date="2017-11-11" data-date-format="yyyy-mm-dd">
+                                                <input type="text" class="form-control dpd1" name="planBegin" required>
+                                                <span class="input-group-addon">To</span>
+                                                <input type="text" class="form-control dpd2" name="planEnd" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                <div id="top30" style="float: left">top30 报表加载中...</div>
+                                <div id="last30" style="float: left; margin-left: 5px">last30 报表加载中...</div>
                             </section>
                         </div>
                     </section>
                 </div>
             </div>
 
-			<div class="row">
-				<div class="col-sm-12">
-					<section class="panel">
-						<header class="panel-heading">
-							县市区站点雨量（毫米）（2017-11-13）
-						</header>
-						<div class="panel-body">
-                            <section id="brand">
-                                <!--<h4 class="page-header">Brand Icons</h4>-->
-                                <div class="alert alert-success">
-                                    <ul class="margin-bottom-none padding-left-lg">
-                                        <li>全市所有的雨水采集站点实时数据</li>
-                                        <li>实时数据绿色表示警戒雨量，黄色表示接近警戒雨量，红色表示超过警戒雨量</li>
-                                    </ul>
-                                </div>
-                                <div class="row fontawesome-icon-list">
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">百丈岗水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">车厩水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">慈江:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">祝家坑水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">小港:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">香灵庵水库:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">杨岙:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">大池墩水库:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">乌竹园水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">瑞岩寺水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">上台岙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">后杨岙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">千亩岙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">郭巨:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">华盖山:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">昆亭:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">梨园殿水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">杜徐:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">华岩寺水库:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">华峙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">黄龙坑水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">官佩:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">岙张水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">白峰:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">城湾水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">穿山碶:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">大碶:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">黄土岭:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">开丰桥:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">梨洲:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">梁弄:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">牟山湖:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">前溪湖水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">陶家路老闸:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">夏家岭:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">相岙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">穴湖水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">岩下山水库:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">云龙:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">丈梅水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">钟家潭:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">掌起桂水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">匡堰岗墩村:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">观磊寺:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">大塘江闸:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">漾山路泵:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">潮塘横江:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">灵峰浦:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">百丈岗水库:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">车厩水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">慈江:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">祝家坑水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">小港:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">香灵庵水库:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">杨岙:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">大池墩水库:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">乌竹园水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">瑞岩寺水库:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">上台岙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">后杨岙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">千亩岙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">郭巨:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">华盖山:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">昆亭:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">梨园殿水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">杜徐:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">华岩寺水库:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">华峙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">黄龙坑水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">官佩:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">岙张水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">白峰:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">城湾水库:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">穿山碶:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">大碶:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">黄土岭:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">开丰桥:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">梨洲:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">梁弄:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">牟山湖:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">前溪湖水库:  </div><i class="fa fa-umbrella"></i><span class="label label-warning"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">陶家路老闸:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">夏家岭:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">相岙水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">穴湖水库:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">岩下山水库:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">云龙:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">丈梅水库:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">钟家潭:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">掌起桂水库:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">匡堰岗墩村:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">观磊寺:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">大塘江闸:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">漾山路泵:  </div><i class="fa fa-umbrella"></i><span class="label label-success"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">潮塘横江:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-                                    <div class="fa-hover col-md-3 col-sm-4"><div class="col-sm-4">灵峰浦:  </div><i class="fa fa-umbrella"></i><span class="label label-danger"> 0.2109 ml</span></div>
-
-
-                                </div>
-                            </section>
-						</div>
-					</section>
-				</div>
-			</div>
 
 
 
@@ -615,11 +417,7 @@
 <script src="../js/jquery.nicescroll.js"></script>
 
 
-<!--dynamic table-->
-<script type="text/javascript" language="javascript" src="../js/advanced-datatable/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="../js/data-tables/DT_bootstrap.js"></script>
-<!--dynamic table initialization -->
-<script type="text/javascript" src="../js/dynamic_table_init.js"></script>
+
 
 
 <!--pickers plugins-->
@@ -632,13 +430,673 @@
 
 <!--pickers initialization-->
 <script type="text/javascript" src="../js/pickers-init.js"></script>
-
-
 <!--common scripts for all pages-->
 <script src="../js/scripts.js"></script>
-<script type="text/javascript">
-    	
+
+<script type="text/javascript" src="../js/fusionCharts/fusioncharts.js"></script>
+<script type="text/javascript" src="../js/fusionCharts/themes/fusioncharts.theme.fint.js"></script>
+
+<script>
+    /** ===========饼状图============== */
+    FusionCharts.ready(function () {
+        var revenueChart = new FusionCharts({
+            type: 'pie2d',
+            renderAt: 'pie-graph',
+            width: '500',
+            height: '400',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "Letters Used in a Novel",
+                    "formatnumberscale": "0",
+                    "showBorder": "0",
+                    "showLegend": "1",
+                    "theme" : "fint",
+                    "showPercentValues":"1",
+                    "showPercentInToolTip":"0",
+                    //Setting legend to appear on right side
+                    "legendPosition" : "right",
+                    //Caption for legend
+                    "legendCaption" : "Alphabet Used: ",
+                    //Customization for legend scroll bar cosmetics
+                    "legendScrollBgColor": "#cccccc",
+                    "bgColor": "#8c8c8c",
+                    "legendScrollBarColor": "#999999"
+                },
+                "data": [{
+                    "label": "A",
+                    "value": "91852"
+                },{
+                    "label": "B",
+                    "value": "51852"
+                }, {
+                    "label": "C",
+                    "value": "88168"
+                }, {
+                    "label": "D",
+                    "value": "73897"
+                }, {
+                    "label": "E",
+                    "value": "93933"
+                }, {
+                    "label": "F",
+                    "value": "19289"
+                }, {
+                    "label": "G",
+                    "value": "79623"
+                }, {
+                    "label": "H",
+                    "value": "48262"
+                }, {
+                    "label": "I",
+                    "value": "29162"
+                }, {
+                    "label": "J",
+                    "value": "96878"
+                }, {
+                    "label": "K",
+                    "value": "81241"
+                }, {
+                    "label": "L",
+                    "value": "40652",
+                    "issliced": "1"
+                }, {
+                    "label": "M",
+                    "value": "37581",
+                    "issliced": "1"
+                }, {
+                    "label": "N",
+                    "value": "2882"
+                }, {
+                    "label": "O",
+                    "value": "746"
+                }, {
+                    "label": "P",
+                    "value": "7155"
+                }, {
+                    "label": "Q",
+                    "value": "12072"
+                }, {
+                    "label": "R",
+                    "value": "45608"
+                }, {
+                    "label": "S",
+                    "value": "72570"
+                }, {
+                    "label": "T",
+                    "value": "44799"
+                }, {
+                    "label": "U",
+                    "value": "71887"
+                }, {
+                    "label": "V",
+                    "value": "78170"
+                }, {
+                    "label": "W",
+                    "value": "94345"
+                }, {
+                    "label": "X",
+                    "value": "5434"
+                }, {
+                    "label": "Y",
+                    "value": "34355"
+                }, {
+                    "label": "Z",
+                    "value": "2323"
+                }]
+            }
+        });
+
+        revenueChart.render();
+    });
+
+    /** ===========柱状图============== */
+    FusionCharts.ready(function () {
+        var revenueChart = new FusionCharts({
+            type: 'stackedcolumn3dline',
+            renderAt: 'bar-graph',
+            width: '1100',
+            height: '400',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "showvalues": "1",
+                    "caption": "采集点分时降水量",
+                    "subcaption": "单位：小时",
+                    "numberSuffix": " ml",
+                    "xaxisname": "时间",
+                    "yaxisname": "降雨量",
+                    "paletteColors": "#17d455,#f2c500",
+                    "bgColor": "#c3c3c3",
+                    "borderAlpha": "20",
+                    "showCanvasBorder": "0",
+                    "usePlotGradientColor": "0",
+                    "plotBorderAlpha": "10",
+                    "legendBorderAlpha": "0",
+                    "legendShadow": "0",
+                    "legendBgAlpha": "0",
+                    "valueFontColor": "#ffffff",
+                    "showXAxisLine": "1",
+                    "xAxisLineColor": "#999999",
+                    "divlineColor": "#999999",
+                    "divLineIsDashed": "1",
+                    "showAlternateHGridColor": "0",
+                    "subcaptionFontBold": "0",
+                    "subcaptionFontSize": "14",
+                    "showHoverEffect":"1"
+                },
+                "categories": [
+                    {
+                        "category": [
+                            {
+                                "label": "14h"
+                            },
+                            {
+                                "label": "15h"
+                            },
+                            {
+                                "label": "16h"
+                            },
+                            {
+                                "label": "17h"
+                            },
+                            {
+                                "label": "18h"
+                            },
+                            {
+                                "label": "19h"
+                            },
+                            {
+                                "label": "20h"
+                            },
+                            {
+                                "label": "21h"
+                            },
+                            {
+                                "label": "20h"
+                            },
+                            {
+                                "label": "21h"
+                            },
+                            {
+                                "label": "22h"
+                            },
+                            {
+                                "label": "23h"
+                            },
+                            {
+                                "label": "24h"
+                            },
+                            {
+                                "label": "01h"
+                            },
+                            {
+                                "label": "02h"
+                            },
+                            {
+                                "label": "03h"
+                            },
+                            {
+                                "label": "04h"
+                            },
+                            {
+                                "label": "05h"
+                            },
+                            {
+                                "label": "06h"
+                            },
+                            {
+                                "label": "07h"
+                            },
+                            {
+                                "label": "08h"
+                            },
+                            {
+                                "label": "09h"
+                            },
+                            {
+                                "label": "10h"
+                            },
+                            {
+                                "label": "11h"
+                            },
+                            {
+                                "label": "12h"
+                            },
+                            {
+                                "label": "13h"
+                            },
+                            {
+                                "label": "14h"
+                            },
+                            {
+                                "label": "15h"
+                            },
+                            {
+                                "label": "16h"
+                            },
+                            {
+                                "label": "17h"
+                            },
+                            {
+                                "label": "18h"
+                            },
+                            {
+                                "label": "19h"
+                            },
+                            {
+                                "label": "20h"
+                            },
+                            {
+                                "label": "21h"
+                            }
+
+                        ]
+                    }
+                ],
+                "dataset": [
+                    {
+                        "seriesname": "柱状图",
+                        "data": [
+                            {
+                                "value": "72.01"
+                            },
+                            {
+                                "value": "53.92"
+                            },
+                            {
+                                "value": "88.83"
+                            },
+                            {
+                                "value": "76.92"
+                            },
+                            {
+                                "value": "53.92"
+                            },
+                            {
+                                "value": "38.73"
+                            },
+                            {
+                                "value": "40.32"
+                            },
+                            {
+                                "value": "53.26"
+                            },
+                            {
+                                "value": "50.21"
+                            },
+                            {
+                                "value": "68.83"
+                            },
+                            {
+                                "value": "53.20"
+                            },
+                            {
+                                "value": "63.26"
+                            },
+                            {
+                                "value": "82.27"
+                            },
+                            {
+                                "value": "68.83"
+                            },
+                            {
+                                "value": "53.09"
+                            },
+                            {
+                                "value": "63.26"
+                            },
+                            {
+                                "value": "40.21"
+                            },
+                            {
+                                "value": "66.26"
+                            },
+                            {
+                                "value": "43.20"
+                            },
+                            {
+                                "value": "63.26"
+                            },
+                            {
+                                "value": "61.26"
+                            },
+                            {
+                                "value": "81.27"
+                            },
+                            {
+                                "value": "53.09"
+                            },
+                            {
+                                "value": "60.49"
+                            },
+                            {
+                                "value": "73.32"
+                            },
+                            {
+                                "value": "30.92"
+                            },
+                            {
+                                "value": "53.26"
+                            },
+                            {
+                                "value": "68.00"
+                            },
+                            {
+                                "value": "30.49"
+                            },
+                            {
+                                "value": "53.84"
+                            },
+                            {
+                                "value": "65.49"
+                            },
+                            {
+                                "value": "78.03"
+                            },
+                            {
+                                "value": "61.26"
+                            },
+                            {
+                                "value": "76.38"
+                            }
+                        ]
+                    },
+                    {
+                        "seriesname": "折线图",
+                        "renderAs": "Line",
+                        "showValues":"0",
+                        "data": [
+                            {
+                                "value": "72.01"
+                            },
+                            {
+                                "value": "53.92"
+                            },
+                            {
+                                "value": "88.83"
+                            },
+                            {
+                                "value": "76.92"
+                            },
+                            {
+                                "value": "53.92"
+                            },
+                            {
+                                "value": "38.73"
+                            },
+                            {
+                                "value": "40.32"
+                            },
+                            {
+                                "value": "53.26"
+                            },
+                            {
+                                "value": "50.21"
+                            },
+                            {
+                                "value": "68.83"
+                            },
+                            {
+                                "value": "53.20"
+                            },
+                            {
+                                "value": "63.26"
+                            },
+                            {
+                                "value": "82.27"
+                            },
+                            {
+                                "value": "68.83"
+                            },
+                            {
+                                "value": "53.09"
+                            },
+                            {
+                                "value": "63.26"
+                            },
+                            {
+                                "value": "40.21"
+                            },
+                            {
+                                "value": "66.26"
+                            },
+                            {
+                                "value": "43.20"
+                            },
+                            {
+                                "value": "63.26"
+                            },
+                            {
+                                "value": "61.26"
+                            },
+                            {
+                                "value": "81.27"
+                            },
+                            {
+                                "value": "53.09"
+                            },
+                            {
+                                "value": "60.49"
+                            },
+                            {
+                                "value": "73.32"
+                            },
+                            {
+                                "value": "30.92"
+                            },
+                            {
+                                "value": "53.26"
+                            },
+                            {
+                                "value": "68.00"
+                            },
+                            {
+                                "value": "30.49"
+                            },
+                            {
+                                "value": "53.84"
+                            },
+                            {
+                                "value": "65.49"
+                            },
+                            {
+                                "value": "78.03"
+                            },
+                            {
+                                "value": "61.26"
+                            },
+                            {
+                                "value": "76.38"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }).render();
+    });
 </script>
 
+<!--月降水量top last-->
+<script type="text/javascript">
+    FusionCharts.ready(function () {
+        var salesChart = new FusionCharts({
+            type: 'bar3d',
+            renderAt: 'top30',
+            width: '800',
+            height: '450',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "本月降雨量（前15名）",
+                    "subCaption": "2017.11.1 - 2017.11.31",
+                    "xAxisName": "雨水采集点列表",
+                    "yAxisName": "月降雨量",
+//                    "numberPrefix": "ml",
+                    "numberSuffix":" ml",
+                    "alignCaptionWithCanvas": "0",
+                    "canvasBgAlpha": "0",
+                    //Theme
+                    "bgColor": "#c3c3c3",
+                    "paletteColors": "#17d455",
+                    "theme" : "fint"
+                },
+                "data": [
+                    {
+                        "label": "百丈岗水库",
+                        "value": "332.29"
+                    },
+                    {
+                        "label": "祝家坑水库",
+                        "value": "300.21"
+                    },
+                    {
+                        "label": "乌竹园水库",
+                        "value": "280.01"
+                    },
+                    {
+                        "label": "瑞岩寺水库",
+                        "value": "270.90"
+                    },
+                    {
+                        "label": "后杨岙水库",
+                        "value": "252.21"
+                    },
+                    {
+                        "label": "梨园殿水库",
+                        "value": "250.02"
+                    },
+                    {
+                        "label": "前溪湖水库",
+                        "value": "223.30"
+                    },
+                    {
+                        "label": "陶家路老闸",
+                        "value": "203.10"
+                    },
+                    {
+                        "label": "岩下山水库",
+                        "value": "191.81"
+                    },
+                    {
+                        "label": "穴湖水库",
+                        "value": "180.30"
+                    },{
+                        "label": "掌起桂水库",
+                        "value": "169.20"
+                    },
+                    {
+                        "label": "相岙水库",
+                        "value": "154.60"
+                    },
+                    {
+                        "label": "穴湖水库",
+                        "value": "146.08"
+                    },
+                    {
+                        "label": "丈梅水库",
+                        "value": "142.98"
+                    },
+                    {
+                        "label": "大塘江闸",
+                        "value": "142.01"
+                    }
+                ]
+            }
+        })
+            .render();
+    });
+
+    FusionCharts.ready(function () {
+        var salesChart = new FusionCharts({
+            type: 'bar3d',
+            renderAt: 'last30',
+            width: '800',
+            height: '450',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "本月降雨量（后15名）",
+                    "subCaption": "2017.11.1 - 2017.11.31",
+                    "xAxisName": "雨水采集点列表",
+                    "yAxisName": "月降雨量",
+//                    "numberPrefix": "ml",
+                    "numberSuffix":" ml",
+                    "alignCaptionWithCanvas": "0",
+                    "canvasBgAlpha": "0",
+                    //Theme
+                    "bgColor": "#c3c3c3",
+                    "paletteColors": "#eeaa31",
+                    "theme" : "fint"
+                },
+                "data": [
+                    {
+                        "label": "百丈岗水库",
+                        "value": "5.29"
+                    },
+                    {
+                        "label": "祝家坑水库",
+                        "value": "8.21"
+                    },
+                    {
+                        "label": "香灵庵水库",
+                        "value": "10.09"
+                    },
+                    {
+                        "label": "乌竹园水库",
+                        "value": "16.01"
+                    },
+                    {
+                        "label": "瑞岩寺水库",
+                        "value": "18.90"
+                    },
+                    {
+                        "label": "后杨岙水库",
+                        "value": "20.21"
+                    },
+                    {
+                        "label": "梨园殿水库",
+                        "value": "25.02"
+                    },
+                    {
+                        "label": "岙张水库",
+                        "value": "27.32"
+                    },
+                    {
+                        "label": "陶家路老闸",
+                        "value": "37.10"
+                    },
+                    {
+                        "label": "穴湖水库",
+                        "value": "47.30"
+                    },{
+                        "label": "掌起桂水库",
+                        "value": "54.20"
+                    },
+                    {
+                        "label": "相岙水库",
+                        "value": "55.60"
+                    },
+                    {
+                        "label": "穴湖水库",
+                        "value": "56.08"
+                    },
+                    {
+                        "label": "丈梅水库",
+                        "value": "60.98"
+                    },
+                    {
+                        "label": "大塘江闸",
+                        "value": "69.01"
+                    }
+                ]
+            }
+        })
+            .render();
+    });
+</script>
+
+
+<!--17-->
 </body>
 </html>
