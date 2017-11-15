@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>水情管理</title>
+  <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+  <!--icheck-->
+  <link href="../js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
+  <link href="../js/iCheck/skins/square/square.css" rel="stylesheet">
+  <link href="../js/iCheck/skins/square/red.css" rel="stylesheet">
+  <link href="../js/iCheck/skins/square/blue.css" rel="stylesheet">
+  
+    <!--dashboard calendar-->
+  <link href="../css/clndr.css" rel="stylesheet">
+
+  <!--Morris Chart CSS -->
+  <link rel="stylesheet" href="../js/morris-chart/morris.css">
+
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/style-responsive.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+  <style type="text/css">
+     .tl {  
+			width: 380px;
+			height: 50px;  
+			position: fixed ! important; 
+			right: 350px; 
+			top: -300px;
+			z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/  
+			margin-top: 20%;  
+			margin-left: -209px;   
+			background-color :#ffffff;  
+			-webkit-transition: .5s ease-in-out;/* css的transition允许css的属性值在一定的时间内从一个状态平滑的过渡到另一个状态 */  
+			-moz-transition: .5s ease-in-out;/*这里为了兼容其他浏览器*/  
+			-o-transition: .5s ease-in-out;  
+			background-color :#ffffff;  
+			bolder: 1px #000;
+			border:2px solid;
+			border-radius:15px;
+			-moz-border-radius:15px; /* Old Firefox */
+			box-shadow: 10px 10px 5px #888888;
+		}
+
+     .tl-view {
+         width: 180px;
+         height: 450px;
+         position: fixed ! important;
+         right: 350px;
+         top: -240px;
+         z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/
+         margin-top: 20%;
+         margin-left: -209px;
+         background-color :#ffffff;
+         -webkit-transition: .5s ease-in-out;/* css的transition允许css的属性值在一定的时间内从一个状态平滑的过渡到另一个状态 */
+         -moz-transition: .5s ease-in-out;/*这里为了兼容其他浏览器*/
+         -o-transition: .5s ease-in-out;
+         background-color :#ffffff;
+         bolder: 1px #000;
+         border:2px solid;
+         border-radius:15px;
+         -moz-border-radius:15px; /* Old Firefox */
+         box-shadow: 10px 10px 5px #888888;
+     }
+
+     .amap-marker-label {
+         border: 2px solid;
+         border-radius: 10px;
+     }
+  </style>
+</head>
+
+<body class="horizontal-menu-page">
+
+
+<section>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="../images/tem-inner-logo.png" alt="">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                 <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首 页</a></li>
+                    <li><a href="综合管理.html">综合管理</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 运行控制管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">土壤含水量监测</a></li>
+                            <li><a href="#">小区雨量监测</a></li>
+                            <li><a href="#">管道流量</a></li>
+                            <li><a href="#">河道监测</a></li>
+                            <li><a href="#">泵闸站监测</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">设备自检管理</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">水雨情 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="#">雨情管理</a></li>
+                            <li><a href="#">风情管理</a></li>
+                            <li><a href="#">水情管理</a></li>
+                            <li><a href="#">潮位管理</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">管网分析 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">流量分析</a></li>
+                            <li><a href="#">横截面分析</a></li>
+                            <li><a href="#">纵界面分析</a></li>
+                            <li><a href="#">坡度分析</a></li>
+                            <li><a href="#">污染溯源分析</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">设备管理</a></li>
+                            <li><a href="#">巡检管理</a></li>
+                           
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">应急响应管理</a></li>
+                            <li><a href="#">现场指挥管理</a></li>
+                            <li><a href="#">应急演练管理</a></li>
+                            <li><a href="#">应急信息管理</a></li>
+                            
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">综合评价 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">国家和地方标准</a></li>
+                            <li><a href="#">绩效和考核</a></li>
+                            <li><a href="#">排水能力负荷</a></li>
+                        </ul>
+                    </li>
+					<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">基础设置 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">人员管理</a></li>
+                            <li><a href="#">组织管理</a></li>
+                            <li><a href="#">资源管理</a></li>
+                            <li><a href="#">角色管理</a></li>
+                            <li><a href="#">消息管理</a></li>
+							<li><a href="#">流程管理</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                 <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="百度">
+                            </div>
+                        </form>
+                    </li>
+					
+					<li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">待办任务【3】</h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>设备巡检任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                <span class="">40%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>日常巡查任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-success">
+                                                <span class="">90%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>日常水位记录任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" role="progressbar" class="progress-bar progress-bar-info">
+                                                <span class="">66% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>                              
+                                <li class="new"><a href="">查看所有待办任务</a></li>
+                            </ul>
+                        </div>
+                    </li>
+					
+					<li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">邮件【4】 </h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user1.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">卢云晓 <span class="badge badge-success">new</span></span>
+                                          <span class="msg">泵运行情况...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user2.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">卢云晓</span>
+                                          <span class="msg">帮忙批阅以下文件...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                              
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user4.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">赵胤君</span>
+                                          <span class="msg">日常更改巡检计划...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user5.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">袁公子</span>
+                                          <span class="msg">防止海潮倒灌办法...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">查看所有邮件</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">通知【4】</h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">机房日志.  </span>
+                                        <em class="small">机房今日运行正常...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">潮位通知.  </span>
+                                        <em class="small">今日最好潮位...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">泵站数据异常.  </span>
+                                        <em class="small">城内河泵站数据...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">会议通知.  </span>
+                                        <em class="small">今日下午2点会议...</em>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">查看所有通知</a></li>
+                            </ul>
+                        </div>
+                    </li>
+					
+					
+					
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="../images/photos/user-avatar.png"> 超级管理员 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">主页</a></li>
+                            <li><a href="#">设置</a></li>
+                            <li><a href="login.html">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+ <!-- main content start-->
+    <div class="main-content" style="margin-left:0px;min-height:860px;">
+		<div id="waterMapView" style="height:860px;border:1px solid #000;margin:5px"></div>
+        <div class="button-group">
+            <input type="button" class="button" value="显示热力图" onclick="heatmap.show()"/>
+            <input type="button" class="button" value="关闭热力图" onclick="heatmap.hide()"/>
+        </div>
+		<div class="tl">
+            <table>
+                <tbody>
+                <tr>
+                    <td><h4 style="width:135px; margin-top: 15px; margin-left: 20px">水情管理</h4></td>
+                    <td></td>
+                    <td><button type="button" class="btn btn-primary">返回首页</button></td>
+                    <td><button type="button" class="btn btn-primary" onclick="showT1View()">水位采集点列表</button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="tl-view" class="tl-view" data-id="1">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 滴水岩水库</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 东岙外庵水库</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 东风水库</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 东钱湖</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 大湖底水库</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 大池墩水库</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 陈家路水库</p></td>
+                    </tr><tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 大桥江</p></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 大松溪坑</p></td>
+                    </tr><tr>
+                        <td>
+                            <div class="square-blue single-row">
+                                <div class="checkbox ">
+                                    <input type="checkbox" checked>
+                                    <!--<label>Black Checkbox </label>-->
+                                </div>
+                            </div>
+                        </td>
+                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 白礁水道</p></td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+        </div >
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            2017 &copy; 海绵 by <a href="#" target="_blank">Hup</a>
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+
+
+<!--easy pie chart-->
+<script src="../js/easypiechart/jquery.easypiechart.js"></script>
+<script src="../js/easypiechart/easypiechart-init.js"></script>
+
+<!--Sparkline Chart-->
+<script src="../js/sparkline/jquery.sparkline.js"></script>
+<script src="../js/sparkline/sparkline-init.js"></script>
+
+<!--icheck -->
+<script src="../js/iCheck/jquery.icheck.js"></script>
+<script src="../js/icheck-init.js"></script>
+
+<!-- jQuery Flot Chart-->
+<script src="../js/flot-chart/jquery.flot.js"></script>
+<script src="../js/flot-chart/jquery.flot.tooltip.js"></script>
+<script src="../js/flot-chart/jquery.flot.resize.js"></script>
+
+
+<!--Morris Chart-->
+<script src="../js/morris-chart/morris.js"></script>
+<script src="../js/morris-chart/raphael-min.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="../js/scripts.js"></script>
+
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=1020aebdfa5dfd15c5bc40bd8fc88117"></script>
+<script type="text/javascript" src="../js/gaode-map/ui-main.js"></script>
+<script type="text/javascript" src="../js/water-map-view.js"></script>
+<script type="text/javascript" src="../js/water-map-data.js"></script>
+<script>
+
+    window.setInterval("addMarker()",3000); //定时执行
+    //window.setTimeout("addMarker()",3000);//定时执行，只执行一次
+
+    var map = new AMap.Map("waterMapView", {
+        pitch:75,
+        zoom: 11,
+        expandZoomRange:true,
+        zooms:[10,12],
+        center:[121.680676,29.804232]
+    });
+
+    var markerArr = [
+        { title: "雅戈尔动物园", point: "121.673123,29.801551", address: "0", tel: "1852345000",rainfall:"300"},
+        { title: "东钱湖小普陀景区 ", point: "121.659482,29.76876", address: "#", tel: "1823320000" ,rainfall:"282"},
+        { title: "外国语学校", point: "121.628583,29.740742", address: "#", tel: "18523500000" ,rainfall:"230"},
+        { title: "天童寺", point: "121.794408,29.800345", address: "#", tel: "12341000000",rainfall:"90" },
+        { title: "市政府", point: "121.625493,29.960507", address: "#", tel: "128234000",rainfall:"290" },
+        { title: "海洋公园:", point: "121.625493,29.860507", address: "0", tel: "1392800000",rainfall:"220" },
+        { title: "江南一品:", point: "121.619313,29.884919", address: "#", tel: "18209000000",rainfall:"120" },
+        { title: "天一广场:", point: "121.555455,29.870034", address: "0", tel: "182902000",rainfall:"180" },
+        { title: "汽车北站", point: "121.599057,29.903373", address: "#", tel: "1128372100",rainfall:"150" },
+
+        { title: "冠成汽车站", point: "121.404904,30.164134", address: "0", tel: "1852345000",rainfall:"110"},
+        { title: "慈溪市体育中心 ", point: "121.315983,30.201825", address: "#", tel: "1823320000" ,rainfall:"282"},
+        { title: "慈溪市客运中心", point: "121.316327,30.203012", address: "#", tel: "18523500000" ,rainfall:"230"},
+        { title: "郑家铺村", point: "121.42928,30.24573", address: "#", tel: "12341000000",rainfall:"90" },
+        { title: "宁波工程学院", point: "121.242169,30.316589", address: "#", tel: "128234000",rainfall:"20" },
+        { title: "国家湿地公园:", point: "121.154622,30.31481", address: "0", tel: "1392800000",rainfall:"102" },
+        { title: "余姚第二中学:", point: "121.127843,30.143651", address: "#", tel: "18209000000",rainfall:"120" },
+        { title: "四明湖:", point: "121.051282,29.943044", address: "0", tel: "182902000",rainfall:"420" },
+        { title: "黄海田岗", point: "121.001843,29.662573", address: "#", tel: "1128372100",rainfall:"150" },
+
+
+        { title: "象山客运中心", point: "121.867763,29.452329", address: "0", tel: "1852345000",rainfall:"1000"},
+        { title: "龙蛇坑 ", point: "121.771632,29.432596", address: "#", tel: "1823320000" ,rainfall:"282"},
+        { title: "送浪送国家公圆", point: "121.963206,29.431699", address: "#", tel: "18523500000" ,rainfall:"230"},
+        { title: "象山饮食成", point: "121.850596,29.279986", address: "#", tel: "12341000000",rainfall:"90" },
+        { title: "里龙塘森林公园", point: "121.689921,29.415252", address: "#", tel: "128234000",rainfall:"290" },
+        { title: "天台山国家风景区:", point: "121.103526,29.269205", address: "0", tel: "1392800000",rainfall:"1020" },
+        { title: "桑田政采集点", point: "121.415263,29.617814", address: "#", tel: "18209000000",rainfall:"120" },
+        { title: "白虎山:", point: "121.939689,29.878482", address: "0", tel: "182902000",rainfall:"1200" },
+        { title: "小山公园", point: "121.857635,29.907205", address: "#", tel: "1128372100",rainfall:"150" },
+
+        { title: "宁海森林温泉", point: "121.350399,29.374922", address: "#", tel: "1128372100",rainfall:"350" },
+        { title: "里南山", point: "121.196247,29.503488", address: "#", tel: "1128372100",rainfall:"550" },
+        { title: "风水山", point: "121.201225,29.62279", address: "#", tel: "1128372100",rainfall:"450" },
+
+
+
+        { title: "万科广场", point: "121.62206,29.923906", address: "#", tel: "18192832100",rainfall:"120" }
+
+    ]
+    var markers = [];
+    for (var i = 0; i < markerArr.length; i++) {
+        //console.info("markerArr[i].point = " + markerArr[i].point)
+        var	marker = new AMap.Marker({
+            position: markerArr[i].point.split(','),
+            offset: new AMap.Pixel(-12,-12),
+            zIndex: 101,
+            title: markerArr[i].title,
+            map: map
+        });
+
+        if ( Number(markerArr[i].rainfall) > 500) {
+            marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'>" + markerArr[i].title + "</br> 水位：" + markerArr[i].rainfall + "ml" + "</p>"
+            });
+        }else {
+            // 设置label标签
+            marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'>"+markerArr[i].title + "</br> 水位：" + markerArr[i].rainfall + "ml" + "</p>"
+            });
+        }
+        markers.push(marker);
+    }
+    map.setFitView();
+
+    //定位在宁波
+    map.plugin(["AMap.CitySearch"], function() {
+        var citysearch = new AMap.CitySearch();
+        citysearch.getLocalCity();
+        AMap.event.addListener(citysearch, "complete", function(result) {
+            var citybounds;
+            if (result && result.city && result.bounds) {
+                citybounds = result.bounds;
+                map.setBounds(citybounds);
+            }
+        });
+    });
+    map.setLimitBounds(map.getBounds());
+
+    //设置卫星图
+    AMapUI.loadUI(['control/BasicControl'], function(BasicControl) {
+        //添加一个缩放控件
+        map.addControl(new BasicControl.Zoom({
+            position: 'lt'
+        }));
+
+        //缩放控件，显示Zoom值
+        map.addControl(new BasicControl.Zoom({
+            position: 'lb',
+            showZoomNum: true
+        }));
+
+        //图层切换控件
+        /*map.addControl(new BasicControl.LayerSwitcher({
+            position: 'rt'
+        }));*/
+    });
+
+    //地图着色
+    function initPage(DistrictCluster, $) {
+
+        var distCluster = new DistrictCluster({
+            map: map, //所属的地图实例
+
+            getPosition: function(item) {
+
+                if (!item) {
+                    return null;
+                }
+
+                var parts = item.split(',');
+
+                //返回经纬度
+                return [parseFloat(parts[0]), parseFloat(parts[1])];
+            },
+            renderOptions: {
+                //基础样式
+                featureStyle: {
+                    fillStyle: 'rgba(102,170,0,0.5)', //填充色
+                    lineWidth: 2, //描边线宽
+                    strokeStyle: 'rgb(31, 119, 180)', //描边色
+                    //鼠标Hover后的样式
+                    hoverOptions: {
+                        fillStyle: 'rgba(255,255,0,0.2)'
+                    }
+                },
+                //特定区划级别的默认样式
+                featureStyleByLevel: {
+                    //全国
+                    country: {
+                        fillStyle: 'rgba(49, 163, 84, 0.8)'
+                    }
+
+                },
+                //直接定义某写区划面的样式
+                getFeatureStyle: function(feature, dataItems) {
+//                        console.info("dataItems--> " + dataItems.length);
+                    if (dataItems.length == 1390 || dataItems.length == 221 || dataItems.length == 71 || dataItems.length == 53
+                        || dataItems.length == 117  || dataItems.length == 164 || dataItems.length == 161 || dataItems.length == 30) {
+
+                        return {
+                            fillStyle: '#FFEFDB'
+                        };
+
+                    } ;
+                }
+            }
+        });
+
+        window.distCluster = distCluster;
+
+        $('<div id="loadingTip">加载数据，请稍候...</div>').appendTo(document.body);
+        $.get('http://a.amap.com/amap-ui/static/data/10w.txt', function(csv) {
+
+            $('#loadingTip').remove();
+
+            var data = csv.split('\n');
+
+            distCluster.setData(data);
+        });
+    }
+
+    //加载相关组件
+    AMapUI.load(['ui/geo/DistrictCluster', 'lib/$'], function(DistrictCluster, $) {
+
+        //启动页面
+        initPage(DistrictCluster, $);
+    });
+
+    function addMarker() {
+//            var label = markers.length;
+        //console.info("marker label = " + markers.length)
+        for (var i = 0; i< markers.length; i ++) {
+            //console.info("内容 --" + markers[i].getLabel().content)
+            //console.info("内容 22--" + markers[i].getContent())
+            var rainfallNew  = Math.ceil(Math.random()*500) + Number(markerArr[i].rainfall);
+
+            if (Number(rainfallNew) > 500) {
+                markers[i].setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                    offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'>"+markerArr[i].title + "</br> 水位：" + rainfallNew + "ml" + "</p>"
+                });
+            }else {
+                // 设置label标签
+                markers[i].setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
+                    offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'>"+markerArr[i].title + "</br> 水位：" + rainfallNew + "ml" + "</p>"
+                });
+            }
+
+        }
+        //map.markOnAMAP();
+    }
+
+    if (!isSupportCanvas()) {
+        alert('热力图仅对支持canvas的浏览器适用,您所使用的浏览器不能使用热力图功能,请换个浏览器试试~')
+    }
+    //详细的参数,可以查看heatmap.js的文档 http://www.patrick-wied.at/static/heatmapjs/docs.html
+    //参数说明如下:
+    /* visible 热力图是否显示,默认为true
+     * opacity 热力图的透明度,分别对应heatmap.js的minOpacity和maxOpacity
+     * radius 势力图的每个点的半径大小
+     * gradient  {JSON} 热力图的渐变区间 . gradient如下所示
+     *	{
+     .2:'rgb(0, 255, 255)',
+     .5:'rgb(0, 110, 255)',
+     .8:'rgb(100, 0, 255)'
+     }
+     其中 key 表示插值的位置, 0-1
+     value 为颜色值
+     */
+    var heatmap;
+    map.plugin(["AMap.Heatmap"], function() {
+        //初始化heatmap对象
+        heatmap = new AMap.Heatmap(map, {
+            radius: 25, //给定半径
+            opacity: [0, 0.8]
+            ,gradient:{
+            0.5: 'blue',
+            0.65: 'rgb(117,211,248)',
+            0.7: 'rgb(0, 255, 0)',
+            0.9: '#ffea00',
+            1.0: '#09993A'
+            }
+        });
+        //设置数据集：该数据为北京部分“公园”数据
+        heatmap.setDataSet({
+            data: heatmapData,
+            max: 100
+        });
+    });
+    //判断浏览区是否支持canvas
+    function isSupportCanvas() {
+        var elem = document.createElement('canvas');
+        return !!(elem.getContext && elem.getContext('2d'));
+    }
+</script>
+
+<script>
+    function showT1View() {
+        var t = $("#tl-view").data("id");
+        if (t == "1"){
+            $("#tl-view").hide();
+            $("#tl-view").data("id","0");
+        }else {
+            $("#tl-view").show();
+            $("#tl-view").data("id","1");
+        }
+    }
+</script>
+
+</body>
+</html>
