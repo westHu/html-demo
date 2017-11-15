@@ -7,7 +7,7 @@
   <meta name="author" content="ThemeBucket">
   <link rel="shortcut icon" href="#" type="image/png">
 
-  <title>雨情实时概况</title>
+  <title>雨情报表分析</title>
   
    <!--pickers css-->
   <link rel="stylesheet" type="text/css" href="../js/bootstrap-datepicker/css/datepicker-custom.css" />
@@ -313,7 +313,7 @@
         <!-- page heading start-->
         <div class="page-heading">
             <h3>
-                雨情实时概况
+                雨情报表分析
             </h3>
             <ul class="breadcrumb">
                 <li>
@@ -322,7 +322,7 @@
                 <li>
                     <a href="#">雨情管理</a>
                 </li>
-                <li class="active"> 雨情实时概况 </li>
+                <li class="active"> 雨情报表分析 </li>
             </ul>
         </div>
         <!-- page heading end-->
@@ -338,20 +338,20 @@
                                 <div style="width:100%; height:100%;">
                                     <label class="control-label" style="float: left; margin-top: 30px; margin-left: 100px">行政区：</label>
                                     <div class="col-md-2" style="margin-top: 20px;">
-                                        <input class="form-control">
+                                        <input class="form-control" value="宁波市">
                                     </div>
 
                                     <label class="control-label" style="float: left; margin-top: 30px;">采集点：</label>
                                     <div class="col-md-2" style=" margin-top: 20px;">
-                                        <input class="form-control">
+                                        <input class="form-control" value="大塘江闸">
                                     </div>
 
                                     <label class="control-label" style="float: left; margin-top: 30px;">起止时间</label>
                                     <div class="col-md-3" style=" margin-top: 20px;">
                                         <div class="input-group input-large custom-date-range" data-date="2017-11-11" data-date-format="yyyy-mm-dd">
-                                            <input type="text" class="form-control dpd1" name="planBegin" required>
+                                            <input type="text" class="form-control dpd1" name="planBegin" value="2017-12-01">
                                             <span class="input-group-addon">To</span>
-                                            <input type="text" class="form-control dpd2" name="planEnd" required>
+                                            <input type="text" class="form-control dpd2" name="planEnd" value="2017-12-31">
                                         </div>
                                     </div>
                                     <div class="col-md-3" style=" margin-top: 20px;">
@@ -564,7 +564,7 @@
             dataSource: {
                 "chart": {
                     "showvalues": "1",
-                    "caption": "采集点分时降水量",
+                    "caption": "【大塘江闸】采集点分时降水量",
                     "subcaption": "单位：小时",
                     "numberSuffix": " ml",
                     "xaxisname": "时间",

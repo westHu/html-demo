@@ -657,13 +657,13 @@
             if ( Number(markerArr[i].rainfall) > 500) {
                 marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                     offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'><strong>" + markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall + "ml" + "</strong></p>"
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'>" + markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall + "ml" + "</p>"
                 });
             }else {
                 // 设置label标签
                 marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                     offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall + "ml" + "</strong></p>"
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + markerArr[i].rainfall + "ml" + "</p>"
                 });
             }
             markers.push(marker);
@@ -832,13 +832,13 @@
                 if (Number(rainfallNew) > 500) {
                     markers[i].setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                         offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                        content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + rainfallNew + "ml" + "</strong></p>"
+                        content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + rainfallNew + "ml" + "</p>"
                     });
                 }else {
                     // 设置label标签
                     markers[i].setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                         offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                        content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'><strong>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + rainfallNew + "ml" + "</strong></p>"
+                        content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'>"+markerArr[i].title + "</br>电话：" + markerArr[i].tel + "</br> 降雨量：" + rainfallNew + "ml" + "</p>"
                     });
                 }
 
