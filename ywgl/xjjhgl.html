@@ -30,10 +30,9 @@
   <script src="js/respond.min.js"></script>
   <![endif]-->
   <style type="text/css">
-	.dataTable tr.odd.gradeA td.sorting_1, .dataTable tr.odd td.sorting_1, .dataTable tr.even.gradeA td.sorting_1 {
-		background-color: #f9f9f9;
-	)
-		
+    .point tr td{
+        line-height: 0.628571;
+    }
   </style>
 </head>
 
@@ -323,7 +322,7 @@
         
         <!--body wrapper start-->
         <div class="wrapper">
-			<div class="row">
+			<!--<div class="row">
 				<div class="col-sm-12">
 					<section class="panel">
 						<header class="panel-heading">
@@ -335,11 +334,11 @@
 						<div class="panel-body" style="display: none;">
 							<div class="col-sm-12">
 								<form class="device-inbound-form" method="post">
-									
+
 									<div class="row">
 										<label class="control-label"  style="float: left">计划编号</label>
 										<div class="col-md-2">
-											
+
 											<input class="form-control"  value=".系统生成" readonly>
 										</div>
 
@@ -356,14 +355,14 @@
 												<option value="2">每月计划</option>
 											</select>
 										</div>
-										
+
 										<label class="control-label" style="float: left">巡检设备</label>
 										<div class="col-md-2">
 											<input class="form-control" placeholder="巡检设备" required>
 										</div>
 									</div>
-									
-									
+
+
 									<br>
 									<div class="row">
 										<label class="control-label"  style="float: left">注意事项</label>
@@ -371,21 +370,21 @@
 											<textarea rows="3" class="form-control textarea">请填写巡检注意事项</textarea>
 										</div>
 									</div>
-										
-										
-										
+
+
+
 									<span class="tools pull-right">
 										<button class="btn btn-primary" type="button">添加巡检计划</button>
 										<button class="btn btn-primary" type="reset">重 置</button>
 									</span>
-											
-										
+
+
 								</form>
 							</div>
 						</div>
 					</section>
 				</div>
-			</div>
+			</div>-->
 			<div class="row">
 				<div class="col-sm-12">
 					<section class="panel">
@@ -418,7 +417,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
+										<tr class="gradeA">
 											<td>XJJH-HU-20171102211</td>
 											<td>高雪、李兴业</td>
 											<td> 09:00:00 ~ 15:00:00</td>
@@ -439,7 +438,7 @@
 												<button type="button" class="btn btn-primary">推荐路线</button>
 											</td>
 										</tr>
-										<tr>
+										<tr class="gradeA">
 											<td>XJJH-HU-20171102211</td>
 											<td>高雪、李兴业</td>
 											<td> 09:00:00 ~ 15:00:00</td>
@@ -460,7 +459,7 @@
 												<button type="button" class="btn btn-primary">推荐路线</button>
 											</td>
 										</tr>
-										<tr>
+										<tr class="gradeA">
 											<td>XJJH-HU-20171102211</td>
 											<td>高雪、李兴业</td>
 											<td> 09:00:00 ~ 15:00:00</td>
@@ -481,7 +480,7 @@
 												<button type="button" class="btn btn-primary">推荐路线</button>
 											</td>
 										</tr>
-										<tr>
+										<tr class="gradeA">
 											<td>XJJH-HU-20171102211</td>
 											<td>高雪、李兴业</td>
 											<td> 09:00:00 ~ 15:00:00</td>
@@ -502,7 +501,7 @@
 												<button type="button" class="btn btn-primary">推荐路线</button>
 											</td>
 										</tr>
-										<tr>
+										<tr class="gradeA">
 											<td>XJJH-HU-20171102211</td>
 											<td>高雪、李兴业</td>
 											<td> 09:00:00 ~ 15:00:00</td>
@@ -523,7 +522,7 @@
 												<button type="button" class="btn btn-primary">推荐路线</button>
 											</td>
 										</tr>
-										<tr>
+										<tr class="gradeA">
 											<td>XJJH-HU-20171102211</td>
 											<td>高雪、李兴业</td>
 											<td> 09:00:00 ~ 15:00:00</td>
@@ -544,11 +543,6 @@
 												<button type="button" class="btn btn-primary">推荐路线</button>
 											</td>
 										</tr>
-										
-										
-										
-										
-										
 									</tbody>
 								</table>
 							</div>
@@ -556,6 +550,95 @@
 					</section>
 				</div>
 			</div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            关联巡检点
+                            <span class="tools pull-right">
+								<a href="javascript:;" class="fa fa-chevron-down"></a>
+							 </span>
+                        </header>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th>编码</th>
+                                    <th>巡检点</th>
+                                    <th>巡检点名称</th>
+                                    <th>坐标</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>办公楼</td>
+                                    <td>综合行政办公楼</td>
+                                    <td>[121.392832, 29.328374]</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>物资仓库</td>
+                                    <td>设备4#仓库</td>
+                                    <td>[121.338232, 29.327774]</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>泵闸站</td>
+                                    <td>宁江8#泵站</td>
+                                    <td>[121.392102, 29.326743]</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+				<div class="col-sm-6">
+					<section class="panel">
+						<header class="panel-heading">
+                            关联巡检设备
+							<span class="tools pull-right">
+								<a href="javascript:;" class="fa fa-chevron-up"></a>
+							 </span>
+						</header>
+						<div class="panel-body">
+                            <table class="table table-striped point">
+                                <thead>
+                                <tr>
+                                    <th>设备编码</th>
+                                    <th>设备名称</th>
+                                    <th>巡检注意点</th>
+                                    <th>备注</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>SBTZ-HU-2017298372</td>
+                                    <td>中央空调发电机</td>
+                                    <td>电机声响、光点、数据参数..</td>
+                                    <td>记录参数、图片、语音</td>
+                                </tr>
+                                <tr>
+                                    <td>SBTZ-HU-2017383743</td>
+                                    <td>仓库车辆</td>
+                                    <td>车辆运行情况..</td>
+                                    <td>记录参数、图片、语音</td>
+                                </tr>
+                                <tr>
+                                    <td>SBTZ-HU-2017291191</td>
+                                    <td>1~6 号泵机</td>
+                                    <td>电机声响、光点、数据参数..</td>
+                                    <td>记录参数、图片、语音</td>
+                                </tr>
+                                </tbody>
+                            </table>
+						</div>
+					</section>
+				</div>
+
+			</div>
+
+
         </div>
         <!--body wrapper end-->
 

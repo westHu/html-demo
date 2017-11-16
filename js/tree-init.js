@@ -26,10 +26,15 @@ var TreeView = function () {
             // INITIALIZING TREE
             var treeDataSource = new DataSourceTree({
                 data: [
-                    { name: 'Dashboard', type: 'folder', additionalParameters: { id: 'F1' } },
-                    { name: 'Elements', type: 'folder', additionalParameters: { id: 'F2' } },
-                    { name: 'View Category', type: 'item', additionalParameters: { id: 'I1' } },
-                    { name: 'Testing', type: 'item', additionalParameters: { id: 'I2' } }
+                    { name: '机械手', type: 'folder', additionalParameters: { id: 'F1' } },
+                    { name: '电源模块', type: 'folder', additionalParameters: { id: 'F2' } },
+                    { name: 'DI模块', type: 'folder', additionalParameters: { id: 'F2' } },
+                    { name: 'DO模块', type: 'folder', additionalParameters: { id: 'F2' } },
+                    { name: 'AI模块', type: 'folder', additionalParameters: { id: 'F2' } },
+                    { name: '中间继电器', type: 'item', additionalParameters: { id: 'I1' } },
+                    { name: '温度控制器', type: 'item', additionalParameters: { id: 'I2' } },
+                    { name: '压力变送器', type: 'item', additionalParameters: { id: 'I2' } },
+                    { name: '隔离器', type: 'item', additionalParameters: { id: 'I2' } }
                 ],
                 delay: 400
             });

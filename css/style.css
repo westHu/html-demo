@@ -2907,7 +2907,7 @@ div.tagsinput span.tag a {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     box-shadow: 0 5px 0 #e5e5e5;
-    width: 110%;
+    /*width: 110%;*/
     margin-left: -10px;
 }
 

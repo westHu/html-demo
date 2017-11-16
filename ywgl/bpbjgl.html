@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="ThemeBucket">
-  <link rel="shortcut icon" href="#" type="image/png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
 
-  <title>设备台账管理</title>
-  
-  <!--dynamic table-->
-  <link href="../js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-  <link href="../js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
-  <link href="../js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+    <title>备品备件管理</title>
 
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/style-responsive.css" rel="stylesheet">
+    <!--dynamic table-->
+    <link href="../js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="../js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link href="../js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+    <!--gritter css 小提示-->
+    <link rel="stylesheet" type="text/css" href="../js/gritter/css/jquery.gritter.css" />
+    <!--jquery-confirm-->
+    <link rel="stylesheet" href="../js/jquery-confirm/jquery-confirm.min.css" />
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+    <!--external css-->
+    <link rel="stylesheet" type="text/css" href="../js/fuelux/css/tree-style.css" />
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
 
-  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-  <script src="js/html5shiv.js"></script>
-  <script src="js/respond.min.js"></script>
-  <![endif]-->
-  <style type="text/css">
-     	
-		
-  </style>
+
+    </style>
 </head>
 
 <body class="horizontal-menu-page">
@@ -49,7 +53,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                 <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
                     <li><a href="../index.html">首 页</a></li>
                     <li><a href="综合管理.html">综合管理</a></li>
                     <li class="dropdown">
@@ -72,7 +76,7 @@
                             <li><a href="#">潮位管理</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">管网分析 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">流量分析</a></li>
@@ -82,25 +86,25 @@
                             <li><a href="#">污染溯源分析</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">设备管理</a></li>
                             <li><a href="#">巡检管理</a></li>
-                           
+
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">应急响应管理</a></li>
                             <li><a href="#">现场指挥管理</a></li>
                             <li><a href="#">应急演练管理</a></li>
                             <li><a href="#">应急信息管理</a></li>
-                            
+
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">综合评价 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">国家和地方标准</a></li>
@@ -108,7 +112,7 @@
                             <li><a href="#">排水能力负荷</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">基础设置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">人员管理</a></li>
@@ -116,17 +120,10 @@
                             <li><a href="#">资源管理</a></li>
                             <li><a href="#">角色管理</a></li>
                             <li><a href="#">消息管理</a></li>
-							<li><a href="#">流程管理</a></li>
+                            <li><a href="#">流程管理</a></li>
                         </ul>
                     </li>
                 </ul>
-				
-				
-				
-				
-				
-				
-
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <form class="navbar-form navbar-left" role="search">
@@ -135,8 +132,8 @@
                             </div>
                         </form>
                     </li>
-					
-					<li>
+
+                    <li>
                         <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
                             <i class="fa fa-tasks"></i>
                             <span class="badge">3</span>
@@ -179,13 +176,13 @@
                                             </div>
                                         </div>
                                     </a>
-                                </li>                              
+                                </li>
                                 <li class="new"><a href="">查看所有待办任务</a></li>
                             </ul>
                         </div>
                     </li>
-					
-					<li>
+
+                    <li>
                         <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge">4</span>
@@ -211,7 +208,7 @@
                                         </span>
                                     </a>
                                 </li>
-                              
+
                                 <li>
                                     <a href="">
                                         <span class="thumb"><img src="../images/photos/user4.png" alt="" /></span>
@@ -274,9 +271,9 @@
                             </ul>
                         </div>
                     </li>
-					
-					
-					
+
+
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="../images/photos/user-avatar.png"> 超级管理员 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -289,15 +286,15 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-	
-	
+
+
     <!-- main content start-->
     <div class="main-content"  style="margin-left: 120px; margin-right: 120px;">
 
         <!-- page heading start-->
         <div class="page-heading">
             <h3>
-                台账管理
+                备品备件管理
             </h3>
             <ul class="breadcrumb">
                 <li>
@@ -306,108 +303,121 @@
                 <li>
                     <a href="#">设备管理</a>
                 </li>
-                <li class="active"> 台账管理 </li>
+                <li class="active"> 备品备件管理 </li>
             </ul>
         </div>
         <!-- page heading end-->
 
-        <!--body wrapper start-->
+        <!--body wrapper start  备件名称 备件型号 备件数量 返修数量应用设备 存放位置-->
         <div class="wrapper">
-			<div class="row">
-				<div class="col-sm-12">
-					<section class="panel">
-						<header class="panel-heading">
-							新增设备
-							<span class="tools pull-right">
-								<a href="javascript:;" class="fa fa-chevron-up"></a>
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            新增设备
+                            <span class="tools pull-right">
+								<a id="chevron-btn" href="javascript:;" class="fa fa-chevron-up"></a>
 							 </span>
-						</header>
-						<div class="panel-body" style="display: none;">
-							<div class="col-sm-12">
-								<form class="device-inbound-form" method="post">
-									
-									<div class="row">
-										<label class="control-label"  style="float: left">设备单号</label>
-										<div class="col-md-2">
-											<input type="hidden" class="form-control"  name="id"  id="id" value="${devicePurchase.id}">
-											<input class="form-control" placeholder="purchaseCode" value=".系统生成" readonly>
-										</div>
+                        </header>
+                        <div id="add-panel" class="panel-body" style="display: none;">
+                            <div class="col-sm-12">
+                                <form class="device-inbound-form" method="post">
 
-										<label class="control-label"  style="float: left">设备名称</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="设备名称" required>
-										</div>
+                                    <div class="row">
+                                        <label class="control-label"  style="float: left">备件编号</label>
+                                        <div class="col-md-2">
+                                            <input class="form-control" placeholder="purchaseCode" value=".系统生成" readonly>
+                                        </div>
 
-										<label class="control-label" style="float: left">设备类型</label>
-										<div class="col-md-2">
-											<select class="form-control">
-												<option value="1">生产设备</option>
-												<option value="2">运营设备</option>
-												<option value="2">工具设备</option>
-												<option value="4">监控设备</option>
-											</select>
-										</div>
-										
-										<label class="control-label" style="float: left">设备型号</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="设备型号" required>
-										</div>
-										
-									</div>
-									<br>
-									<div class="row">
-										<label class="control-label"  style="float: left">设备规格</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="设备规格">
-										</div>
+                                        <label class="control-label"  style="float: left">备件名称</label>
+                                        <div class="col-md-2">
+                                            <input class="form-control" placeholder="备件名称" required>
+                                        </div>
 
-										<label class="control-label"  style="float: left">设备品牌</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="设备品牌">
-										</div>
-										
-										<label class="control-label"  style="float: left">设备原值</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="设备原值">
-										</div>
-										
-										<label class="control-label"  style="float: left">设备价格</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="设备价格">
-										</div>
-									</div>
-									<br>
-									<div class="row">
-										<label class="control-label"  style="float: left">采购人员</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="采购人员">
-										</div>
+                                        <label class="control-label" style="float: left">设备类型</label>
+                                        <div class="col-md-2">
+                                            <select class="form-control">
+                                                <option value="1">生产设备</option>
+                                                <option value="2">运营设备</option>
+                                                <option value="2">工具设备</option>
+                                                <option value="4">监控设备</option>
+                                            </select>
+                                        </div>
 
-										<label class="control-label"  style="float: left">设备用途</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="设备品牌">
-										</div>
-										
-									
-									</div>		
-									<span class="tools pull-right">
-										<button class="btn btn-primary" type="button">设备加入</button>
+                                        <label class="control-label" style="float: left">备件型号</label>
+                                        <div class="col-md-2">
+                                            <input class="form-control" placeholder="备件型号" required>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <label class="control-label"  style="float: left">备件数量</label>
+                                        <div class="col-md-2">
+                                            <input class="form-control" placeholder="备件数量">
+                                        </div>
+
+                                        <label class="control-label"  style="float: left">存放位置</label>
+                                        <div class="col-md-2">
+                                            <input class="form-control" placeholder="存放位置">
+                                        </div>
+
+                                    </div>
+                                    <br>
+
+                                    <span class="tools pull-right">
+										<button class="btn btn-primary" type="button" onclick="add()">备件加入</button>
 										<button class="btn btn-primary" type="reset">重 置</button>
 									</span>
-											
-										
-								</form>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<section class="panel">
-						<header class="panel-heading">
-							设备列表
-							<span class="tools pull-right">
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            备品备件分类
+                            <span class="tools pull-right">
+								<div class="btn-group">
+                                    <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
+                                        类别操作 <span class="caret"></span>
+                                    </button>
+                                    <ul role="menu" class="dropdown-menu">
+                                        <li><a href="#myModal2" data-toggle="modal">添加</a></li>
+                                        <li><a href="#">删除</a></li>
+                                    </ul>
+                               </div>
+							</span>
+                        </header>
+                        <div class="panel-body">
+                            <!--<div class="adv-table"></div>-->
+                            <div id="FlatTree" class="tree tree-plus-minus">
+                                <div class = "tree-folder" style="display:none;">
+                                    <div class="tree-folder-header">
+                                        <i class="fa fa-folder"></i>
+                                        <div class="tree-folder-name"></div>
+                                    </div>
+                                    <div class="tree-folder-content"></div>
+                                    <div class="tree-loader" style="display:none"></div>
+                                </div>
+                                <div class="tree-item" style="display:none;">
+                                    <i class="tree-dot"></i>
+                                    <div class="tree-item-name"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-sm-8">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            备品备件列表
+                            <span class="tools pull-right">
 								<div class="btn-group">
                                     <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
                                         批量操作 <span class="caret"></span>
@@ -418,774 +428,144 @@
                                     </ul>
                                </div>
 							</span>
-						</header>
-						<div class="panel-body">
-							<div class="adv-table">
-								<table class="display table table-bordered" id="hidden-table-info">
-									<thead>
-										<tr>
-											<th>设备编码</th>
-											<th>设备名称</th>
-											<th>设备类型</th>
-											<th>设备品牌</th>
-											<th>设备型号</th>
-											<th>设备规格</th>
-											<th>设备厂家</th>
-											<th>设备原值</th>
-											<th>设备价格</th>
-											<th>采购人员</th>
-											<th>设备状态</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171112231</td>
-											<td>电机-Explorer 4.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥2900</td>
-											<td >李钟硕</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171112112</td>
-											<td>电机-Explorer 5.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >IKS-421</td>
-											<td >XJS-421</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥3300</td>
-											<td >赵崆苏</td>
-											<td  style="background-color:yellow">涉外报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-2017111223</td>
-											<td>电机-Explorer 5.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >MXJ:sisk-292</td>
-											<td >KXIS-12</td>
-											<td >施耐德</td>
-											<td >93</td>
-											<td >￥2000</td>
-											<td >钱思思</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171112209</td>
-											<td>电机-Explorer 6</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >LL-350</td>
-											<td >LL-350</td>
-											<td >施耐德</td>
-											<td >900</td>
-											<td >￥2300</td>
-											<td >孙立新</td>
-											<td  style="background-color:yellow">涉外报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171112019</td>
-											<td>电机- Explorer 7</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >J-33</td>
-											<td >J-33-4</td>
-											<td >施耐德</td>
-											<td >100</td>
-											<td >￥300</td>
-											<td >采购组</td>
-											<td  style="background-color:yellow">设备已报废</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171112209</td>
-											<td>AOL browser (AOL desktop)</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >BH-22</td>
-											<td >BH-22-4</td>
-											<td >施耐德</td>
-											<td >100</td>
-											<td >￥2300</td>
-											<td >采购组</td>
-											<td  style="background-color:yellow">涉外报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>Firefox 1.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110217</td>
-											<td>Firefox 1.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥11300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>Firefox 2.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥10</td>
-											<td >胡英俊</td>
-											<td  style="background-color:red">设备已报废</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>Firefox 3.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥400</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>Camino 1.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥5500</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>Camino 1.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥3213</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>离心泵- 7.2</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1200</td>
-											<td >胡英俊</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>离心泵- Browser 8</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥4300</td>
-											<td >胡英俊</td>
-											<td  style="background-color:yellow">涉外报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>离心泵- Navigator 9</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥650</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.0</td>
-										<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥2300</td>
-											<td >胡英俊</td>
-											<td  style="background-color:yellow">设备已报废</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.1</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.2</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.3</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥170</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.4</td>
-										<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥9011</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥9300</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.6</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥900</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.7</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>栏栅- 1.8</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1330</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>泥水泵 1.1</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1000</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110017</td>
-											<td>离心泵 2.20</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥720</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110129</td>
-											<td>电闸门- 1.2</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥200</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110129</td>
-											<td>电闸门- 1.3</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110129</td>
-											<td>电闸门- 2.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥2200</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110129</td>
-											<td>电闸门- 3.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥100</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110129</td>
-											<td>OmniWeb 5.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1100</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110129</td>
-											<td>iPod Touch / iPhone</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1300</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110129</td>
-											<td>S60</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥200</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Opera 7.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Opera 7.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥2900</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Opera 8.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1100</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Opera 8.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥930</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Opera 9.0</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1100</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Opera 9.2</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥18200</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Opera 9.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1600</td>
-											<td >采购组</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Opera for Wii</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Nokia N800</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥100000</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TM-20171110390</td>
-											<td>Nintendo DS browser</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-SH-20171110297</td>
-											<td>Konqureror 3.1</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥90000</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-SH-20171110297</td>
-											<td>Konqureror 3.3</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-SH-20171110297</td>
-											<td>Konqureror 3.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1100</td>
-											<td >采购组</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TA-20171110202</td>
-											<td>电机- Explorer 4.5</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥10900</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TA-20171110202</td>
-											<td>电机- Explorer 5.1</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1201</td>
-											<td >采购组</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-TA-20171110202</td>
-											<td>电机- Explorer 5.2</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1220</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-MI-20171110200</td>
-											<td>NetFront 3.1</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-MI-20171110200</td>
-											<td>NetFront 3.4</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥160</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-MI-20171110200</td>
-											<td>Dillo 0.8</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-MI-20171110200</td>
-											<td>Links</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥17800</td>
-											<td >采购组</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-MI-20171110200</td>
-											<td>Lynx</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12300</td>
-											<td >胡英俊</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-MI-20171110200</td>
-											<td>IE Mobile</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥12560</td>
-											<td >采购组</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-MI-20171110200</td>
-											<td>PSP browser</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥1120</td>
-											<td >采购组</td>
-											<td >正常运营中</td>
-										</tr>
-										<tr class="gradeA">
-											<td>NBHM-OB-20171110200</td>
-											<td>All others</td>
-											<td>生产设备/td>
-											<td >施耐德Win 95+</td>
-											<td >SJH-4</td>
-											<td >SJH-4</td>
-											<td >施耐德</td>
-											<td >299</td>
-											<td >￥23400</td>
-											<td >采购组</td>
-											<td  style="background-color:yellow">内部报修中</td>
-										</tr>
-										</tbody>
-									</table>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
+                        </header>
+                        <div class="panel-body">
+                            <div class="adv-table">
+                                <table class="display table table-bordered" id="hidden-table-info">
+                                    <thead>
+                                    <tr>
+                                        <th>备件编码</th>
+                                        <th>备件名称</th>
+                                        <th>备件型号</th>
+                                        <th>备件数量</th>
+                                        <th>存放位置</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="gradeA">
+                                        <td style="color: #4792d9">BPBJ-TM-20171112231</td>
+                                        <td>电机-Explorer 4.0</td>
+                                        <td >SJH-4</td>
+                                        <td >392</td>
+                                        <td >4#仓库8#货架3层403</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
+                                                    设备操作 <span class="caret"></span>
+                                                </button>
+                                                <ul role="menu" class="dropdown-menu">
+
+                                                    <li><a href="#myModal" data-toggle="modal">编辑设备</a></li>
+                                                    <!-- li class="divider"></li -->
+                                                    <li><a href="javascript:delete_fun()">删除设备</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="gradeA">
+                                        <td style="color: #4792d9">BPBJ-TM-20171112231</td>
+                                        <td>电机-Explorer 4.0</td>
+                                        <td >SJH-4</td>
+                                        <td >392</td>
+                                        <td >4#仓库8#货架3层403</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
+                                                    设备操作 <span class="caret"></span>
+                                                </button>
+                                                <ul role="menu" class="dropdown-menu">
+
+                                                    <li><a href="#myModal" data-toggle="modal">编辑设备</a></li>
+                                                    <!-- li class="divider"></li -->
+                                                    <li><a href="javascript:delete_fun()">删除设备</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr><tr class="gradeA">
+                                        <td style="color: #4792d9">BPBJ-TM-20171112231</td>
+                                        <td>电机-Explorer 4.0</td>
+                                        <td >SJH-4</td>
+                                        <td >392</td>
+                                        <td >4#仓库8#货架3层403</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
+                                                    设备操作 <span class="caret"></span>
+                                                </button>
+                                                <ul role="menu" class="dropdown-menu">
+
+                                                    <li><a href="#myModal" data-toggle="modal">编辑设备</a></li>
+                                                    <!-- li class="divider"></li -->
+                                                    <li><a href="javascript:delete_fun()">删除设备</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr><tr class="gradeA">
+                                        <td style="color: #4792d9">BPBJ-TM-20171112231</td>
+                                        <td>电机-Explorer 4.0</td>
+                                        <td >SJH-4</td>
+                                        <td >392</td>
+                                        <td >4#仓库8#货架3层403</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
+                                                    设备操作 <span class="caret"></span>
+                                                </button>
+                                                <ul role="menu" class="dropdown-menu">
+
+                                                    <li><a href="#myModal" data-toggle="modal">编辑设备</a></li>
+                                                    <!-- li class="divider"></li -->
+                                                    <li><a href="javascript:delete_fun()">删除设备</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr><tr class="gradeA">
+                                        <td style="color: #4792d9">BPBJ-TM-20171112231</td>
+                                        <td>电机-Explorer 4.0</td>
+                                        <td >SJH-4</td>
+                                        <td >392</td>
+                                        <td >4#仓库8#货架3层403</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
+                                                    设备操作 <span class="caret"></span>
+                                                </button>
+                                                <ul role="menu" class="dropdown-menu">
+
+                                                    <li><a href="#myModal" data-toggle="modal">编辑设备</a></li>
+                                                    <!-- li class="divider"></li -->
+                                                    <li><a href="javascript:delete_fun()">删除设备</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr><tr class="gradeA">
+                                        <td style="color: #4792d9">BPBJ-TM-20171112231</td>
+                                        <td>电机-Explorer 4.0</td>
+                                        <td >SJH-4</td>
+                                        <td >392</td>
+                                        <td >4#仓库8#货架3层403</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
+                                                    设备操作 <span class="caret"></span>
+                                                </button>
+                                                <ul role="menu" class="dropdown-menu">
+
+                                                    <li><a href="#myModal" data-toggle="modal">编辑设备</a></li>
+                                                    <!-- li class="divider"></li -->
+                                                    <li><a href="javascript:delete_fun()">删除设备</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
         <!--body wrapper end-->
 
@@ -1199,7 +579,55 @@
     </div>
     <!-- main content end-->
 </section>
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">备品备件</h4>
+            </div>
+            <div class="modal-body">
 
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-2 control-label">备件编码</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" value="BPBJ-MI-20171110200">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-lg-2 col-sm-2 control-label">备件名称</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" value="电机- Explorer-Veide30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-lg-2 col-sm-2 control-label">备件类型</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" value="生产设备">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-lg-2 col-sm-2 control-label">备件数量</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" value="125">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button data-dismiss="modal" class="btn btn-primary" type="button">确定</button>
+                            <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- modal -->
 
 <!-- Placed js at the end of the document so the pages load faster -->
 <script src="../js/jquery-1.10.2.min.js"></script>
@@ -1208,19 +636,74 @@
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/modernizr.min.js"></script>
 <script src="../js/jquery.nicescroll.js"></script>
-
-
+<!-- <!--gritter css 小提示-->
+<script src="../js/gritter/js/jquery.gritter.js" type="text/javascript"></script>
+<script src="../js/gritter/js/gritter-init.js" type="text/javascript"></script>
 <!--dynamic table-->
 <script type="text/javascript" language="javascript" src="../js/advanced-datatable/js/jquery.dataTables.js"></script>
 <script type="text/javascript" src="../js/data-tables/DT_bootstrap.js"></script>
 <!--dynamic table initialization -->
 <script type="text/javascript" src="../js/dynamic_table_init.js"></script>
-
-
+<!--jquery-confirm-->
+<script src="../js/jquery-confirm/jquery-confirm.min.js"></script>
+<!--tree-->
+<script src="../js/fuelux/js/tree.min.js"></script>
+<script src="../js/tree-init.js"></script>
 <!--common scripts for all pages-->
 <script src="../js/scripts.js"></script>
 <script type="text/javascript">
-    	
+    jQuery(document).ready(function() {
+        TreeView.init();
+        //显示小提示
+        TipsNotice(null, "备品备件管理页面加载成功！");
+    });
+
+    function delete_fun() {
+        $.confirm({
+            icon: 'fa fa-warning',
+            title: '删除提示！',
+            content: '确定要删除该备品备件吗?',
+            type: 'dark',
+            autoClose: 'cancel|8000',
+            buttons: {
+                ok: {
+                    text: "确定",
+                    btnClass: 'btn-primary',
+                    keys: ['enter'],
+                    action: function(){
+                        TipsNotice(null, "您的备品备件删除成功！");
+                    }
+                },
+                cancel: {
+                    text: "取消",
+                    btnClass: 'btn-primary',
+                    keys: ['esc'],
+                    /*action:function () {
+                        console.info("你点击了取消按钮！")
+                    }*/
+                }
+            }
+        });
+    }
+
+    function add() {
+        $('#chevron-btn').removeClass("fa fa-chevron-down").addClass("fa fa-chevron-up");
+        $('#add-panel').hide();
+        TipsNotice(null,'备品备件添加成功！');
+    }
+
+    function TipsNotice(title, text) {
+        $.gritter.add({
+            title: title || " 温馨提示 NOTICE ",
+            text:  text || "没有消息！",
+            image:  '../images/notice.jpg',
+            sticky: false,
+            time: 3000,
+            speed:5000,
+            position: 'bottom-right',
+            class_name: 'gritter-light'
+        });
+    }
 </script>
 
 </body>
