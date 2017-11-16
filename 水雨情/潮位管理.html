@@ -55,7 +55,7 @@
 		}
 
      .tl-view {
-         width: 700px;
+         width: 500px;
          height: 400px;
          position: fixed ! important;
          right: 100px;
@@ -79,6 +79,7 @@
          border: 2px solid;
          border-radius: 10px;
      }
+
   </style>
 </head>
 
@@ -339,7 +340,7 @@
  <!-- main content start-->
     <div class="main-content" style="margin-left:0px;min-height:860px;">
 		<div id="waterMapView" style="height:860px;border:1px solid #000;margin:5px"></div>
-        <div class="button-group">
+        <div class="button-group" style="margin: 100px">
             <input type="button" class="button" value="显示热力图" onclick="heatmap.show()"/>
             <input type="button" class="button" value="关闭热力图" onclick="heatmap.hide()"/>
         </div>
@@ -373,7 +374,7 @@
                 <div class="panel-body">
                     <div class="tab-content">
                         <div class="tab-pane active" id="lang">
-                            <table  class="table table-bordered table-striped table-condensed">
+                            <table class="table table-bordered table-striped table-condensed">
                                 <thead>
                                 <tr>
                                     <th>#</th>
