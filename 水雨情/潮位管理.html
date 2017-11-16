@@ -14,9 +14,12 @@
   <link href="../js/iCheck/skins/square/square.css" rel="stylesheet">
   <link href="../js/iCheck/skins/square/red.css" rel="stylesheet">
   <link href="../js/iCheck/skins/square/blue.css" rel="stylesheet">
-  
-    <!--dashboard calendar-->
-  <link href="../css/clndr.css" rel="stylesheet">
+
+
+    <!--dynamic table-->
+    <link href="../js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="../js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link href="../js/data-tables/DT_bootstrap.css" rel="stylesheet" />
 
   <!--Morris Chart CSS -->
   <link rel="stylesheet" href="../js/morris-chart/morris.css">
@@ -34,7 +37,7 @@
 			width: 380px;
 			height: 50px;  
 			position: fixed ! important; 
-			right: 350px; 
+			right: 100px;
 			top: -300px;
 			z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/  
 			margin-top: 20%;  
@@ -52,10 +55,10 @@
 		}
 
      .tl-view {
-         width: 180px;
-         height: 450px;
+         width: 700px;
+         height: 400px;
          position: fixed ! important;
-         right: 350px;
+         right: 100px;
          top: -240px;
          z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/
          margin-top: 20%;
@@ -344,130 +347,171 @@
             <table>
                 <tbody>
                 <tr>
-                    <td><h4 style="width:135px; margin-top: 15px; margin-left: 20px">水情管理</h4></td>
+                    <td><h4 style="width:135px; margin-top: 15px; margin-left: 20px">潮位管理</h4></td>
                     <td></td>
                     <td><button type="button" class="btn btn-primary">返回首页</button></td>
-                    <td><button type="button" class="btn btn-primary" onclick="showT1View()">水位采集点列表</button></td>
+                    <td><button type="button" class="btn btn-primary" onclick="showT1View()">潮位信息</button></td>
                 </tr>
                 </tbody>
             </table>
         </div>
         <div id="tl-view" class="tl-view" data-id="1">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 滴水岩水库</p></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 东岙外庵水库</p></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 东风水库</p></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 东钱湖</p></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 大湖底水库</p></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 大池墩水库</p></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 陈家路水库</p></td>
-                    </tr><tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 大桥江</p></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 大松溪坑</p></td>
-                    </tr><tr>
-                        <td>
-                            <div class="square-blue single-row">
-                                <div class="checkbox ">
-                                    <input type="checkbox" checked>
-                                    <!--<label>Black Checkbox </label>-->
-                                </div>
-                            </div>
-                        </td>
-                        <td><p style="font-size: 15px; margin: 0 0 0px; color: #000000"> &nbsp 白礁水道</p></td>
-                    </tr>
-
-
-
-                </tbody>
-            </table>
+            <section class="panel">
+                <header class="panel-heading custom-tab dark-tab">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#lang" data-toggle="tab">海 浪</a>
+                        </li>
+                        <li class="">
+                            <a href="#feng" data-toggle="tab">海面风</a>
+                        </li>
+                        <li class="">
+                            <a href="#wen" data-toggle="tab">海 温</a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="lang">
+                            <table  class="table table-bordered table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>浪高(m)</th>
+                                    <th>浪向(°)</th>
+                                    <th>周期(s)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="gradeA">
+                                    <td>1</td>
+                                    <td>0.32</td>
+                                    <td>73</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr class="gradeA">
+                                    <td>2</td>
+                                    <td>0.21</td>
+                                    <td>82</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr class="gradeA">
+                                    <td>3</td>
+                                    <td>0.26</td>
+                                    <td>67</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr class="gradeA">
+                                    <td>4</td>
+                                    <td>0.46</td>
+                                    <td>60</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr class="gradeA">
+                                    <td>5</td>
+                                    <td>0.34</td>
+                                    <td>54</td>
+                                    <td>8</td>
+                                </tr>
+                                <tr class="gradeA">
+                                    <td>6</td>
+                                    <td>0.37</td>
+                                    <td>51</td>
+                                    <td>6</td>
+                                </tr>
+                                <tr class="gradeA">
+                                    <td>7</td>
+                                    <td>0.27</td>
+                                    <td>25</td>
+                                    <td>3</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="feng">
+                            <table  class="table table-bordered table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>区域</th>
+                                    <th>风速(米/秒)</th>
+                                    <th>风向(°)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>3#</td>
+                                    <td>8.8</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2#</td>
+                                    <td>9.0</td>
+                                    <td>45</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>6#</td>
+                                    <td>10.2</td>
+                                    <td>59</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>8#</td>
+                                    <td>8.4</td>
+                                    <td>90</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="wen">
+                            <table  class="table table-bordered table-striped table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>区域</th>
+                                    <th>温度(℃)</th>
+                                    <th>最高温(℃)</th>
+                                    <th>最低温(℃)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>3#</td>
+                                    <td>13.3</td>
+                                    <td>20.1</td>
+                                    <td>6.7</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>4#</td>
+                                    <td>12.4</td>
+                                    <td>22.5</td>
+                                    <td>7.3</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>6#</td>
+                                    <td>11.2</td>
+                                    <td>18.3</td>
+                                    <td>6.0</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>7#</td>
+                                    <td>10.1</td>
+                                    <td>18.1</td>
+                                    <td>5.7</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
 
@@ -494,29 +538,15 @@
 <script src="../js/modernizr.min.js"></script>
 <script src="../js/jquery.nicescroll.js"></script>
 
-
-<!--easy pie chart-->
-<script src="../js/easypiechart/jquery.easypiechart.js"></script>
-<script src="../js/easypiechart/easypiechart-init.js"></script>
-
-<!--Sparkline Chart-->
-<script src="../js/sparkline/jquery.sparkline.js"></script>
-<script src="../js/sparkline/sparkline-init.js"></script>
+<!--dynamic table-->
+<script type="text/javascript" language="javascript" src="../js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="../js/data-tables/DT_bootstrap.js"></script>
+<!--dynamic table initialization -->
+<script src="../js/dynamic_table_init.js"></script>
 
 <!--icheck -->
 <script src="../js/iCheck/jquery.icheck.js"></script>
 <script src="../js/icheck-init.js"></script>
-
-<!-- jQuery Flot Chart-->
-<script src="../js/flot-chart/jquery.flot.js"></script>
-<script src="../js/flot-chart/jquery.flot.tooltip.js"></script>
-<script src="../js/flot-chart/jquery.flot.resize.js"></script>
-
-
-<!--Morris Chart-->
-<script src="../js/morris-chart/morris.js"></script>
-<script src="../js/morris-chart/raphael-min.js"></script>
-
 
 <!--common scripts for all pages-->
 <script src="../js/scripts.js"></script>
@@ -535,49 +565,28 @@
         zoom: 11,
         expandZoomRange:true,
         zooms:[10,12],
-        center:[121.680676,29.804232]
+        center:[121.673123,30.076746]
     });
 
     var markerArr = [
-        { title: "雅戈尔动物园", point: "121.673123,29.801551", address: "0", tel: "1852345000",rainfall:"300"},
-        { title: "东钱湖小普陀景区 ", point: "121.659482,29.76876", address: "#", tel: "1823320000" ,rainfall:"282"},
-        { title: "外国语学校", point: "121.628583,29.740742", address: "#", tel: "18523500000" ,rainfall:"230"},
-        { title: "天童寺", point: "121.794408,29.800345", address: "#", tel: "12341000000",rainfall:"90" },
-        { title: "市政府", point: "121.625493,29.960507", address: "#", tel: "128234000",rainfall:"290" },
-        { title: "海洋公园:", point: "121.625493,29.860507", address: "0", tel: "1392800000",rainfall:"220" },
-        { title: "江南一品:", point: "121.619313,29.884919", address: "#", tel: "18209000000",rainfall:"120" },
-        { title: "天一广场:", point: "121.555455,29.870034", address: "0", tel: "182902000",rainfall:"180" },
-        { title: "汽车北站", point: "121.599057,29.903373", address: "#", tel: "1128372100",rainfall:"150" },
+        { title: "大目涂潮位", point: "121.20237,30.380003", address: "0", tel: "1852345000",rainfall:"1.203"},
+        { title: "东江下游 ", point: "121.263886,30.386483", address: "#", tel: "1823320000" ,rainfall:"1.282"},
+        { title: "澄浪堰潮位新", point: "121.348398,30.370531", address: "#", tel: "18523500000" ,rainfall:"1.230"},
+        { title: "姚江闸下新装", point: "121.423712,30.31418", address: "#", tel: "12341000000",rainfall:"0.903" },
+        { title: "宁波三江口", point: "121.499601,30.256798", address: "#", tel: "128234000",rainfall:"0.290" },
+        { title: "杨木碶潮位:", point: "121.642755,30.084448", address: "0", tel: "1392800000",rainfall:"0.220" },
+        { title: "镇海口:", point: "121.932512,29.942343", address: "#", tel: "18209000000",rainfall:"1.120" },
+        { title: "浃水潮位:", point: "122.139482,29.846156", address: "0", tel: "182902000",rainfall:"1.180" },
+        { title: "穿山潮位", point: "122.006102,29.59925", address: "#", tel: "1128372100",rainfall:"11.502" },
 
-        { title: "冠成汽车站", point: "121.404904,30.164134", address: "0", tel: "1852345000",rainfall:"110"},
-        { title: "慈溪市体育中心 ", point: "121.315983,30.201825", address: "#", tel: "1823320000" ,rainfall:"282"},
-        { title: "慈溪市客运中心", point: "121.316327,30.203012", address: "#", tel: "18523500000" ,rainfall:"230"},
-        { title: "郑家铺村", point: "121.42928,30.24573", address: "#", tel: "12341000000",rainfall:"90" },
-        { title: "宁波工程学院", point: "121.242169,30.316589", address: "#", tel: "128234000",rainfall:"20" },
-        { title: "国家湿地公园:", point: "121.154622,30.31481", address: "0", tel: "1392800000",rainfall:"102" },
-        { title: "余姚第二中学:", point: "121.127843,30.143651", address: "#", tel: "18209000000",rainfall:"120" },
-        { title: "四明湖:", point: "121.051282,29.943044", address: "0", tel: "182902000",rainfall:"420" },
-        { title: "黄海田岗", point: "121.001843,29.662573", address: "#", tel: "1128372100",rainfall:"150" },
-
-
-        { title: "象山客运中心", point: "121.867763,29.452329", address: "0", tel: "1852345000",rainfall:"1000"},
-        { title: "龙蛇坑 ", point: "121.771632,29.432596", address: "#", tel: "1823320000" ,rainfall:"282"},
-        { title: "送浪送国家公圆", point: "121.963206,29.431699", address: "#", tel: "18523500000" ,rainfall:"230"},
-        { title: "象山饮食成", point: "121.850596,29.279986", address: "#", tel: "12341000000",rainfall:"90" },
-        { title: "里龙塘森林公园", point: "121.689921,29.415252", address: "#", tel: "128234000",rainfall:"290" },
-        { title: "天台山国家风景区:", point: "121.103526,29.269205", address: "0", tel: "1392800000",rainfall:"1020" },
-        { title: "桑田政采集点", point: "121.415263,29.617814", address: "#", tel: "18209000000",rainfall:"120" },
-        { title: "白虎山:", point: "121.939689,29.878482", address: "0", tel: "182902000",rainfall:"1200" },
-        { title: "小山公园", point: "121.857635,29.907205", address: "#", tel: "1128372100",rainfall:"150" },
-
-        { title: "宁海森林温泉", point: "121.350399,29.374922", address: "#", tel: "1128372100",rainfall:"350" },
-        { title: "里南山", point: "121.196247,29.503488", address: "#", tel: "1128372100",rainfall:"550" },
-        { title: "风水山", point: "121.201225,29.62279", address: "#", tel: "1128372100",rainfall:"450" },
-
-
-
-        { title: "万科广场", point: "121.62206,29.923906", address: "#", tel: "18192832100",rainfall:"120" }
-
+        { title: "峙南潮位", point: "122.006102,29.462486", address: "0", tel: "1852345000",rainfall:"1.110"},
+        { title: "春晓潮位 ", point: "122.010701,29.313442", address: "#", tel: "1823320000" ,rainfall:"1.282"},
+        { title: "下三山潮位", point: "122.0199,29.164179", address: "#", tel: "18523500000" ,rainfall:"0.230"},
+        { title: "庆丰塘", point: "122.254465,29.679612", address: "#", tel: "128234000",rainfall:"1.201" },
+        { title: "四灶浦十二塘闸潮位:", point: "121.822129,30.288237", address: "0", tel: "1392800000",rainfall:"1.102" },
+        { title: "水云浦十一塘闸潮位:", point: "121.527772,30.539388", address: "#", tel: "18209000000",rainfall:"1.120" },
+        { title: "镇龙浦十塘闸潮位:", point: "121.233415,30.583172", address: "0", tel: "182902000",rainfall:"1.420" },
+        { title: "淡水泓十塘闸潮位", point: "122.190075,29.430279", address: "#", tel: "1128372100",rainfall:"1.150" }
     ]
     var markers = [];
     for (var i = 0; i < markerArr.length; i++) {
@@ -590,16 +599,16 @@
             map: map
         });
 
-        if ( Number(markerArr[i].rainfall) > 500) {
+        if ( Number(markerArr[i].rainfall) > 2) {
             marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                 offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'>" + markerArr[i].title + "</br> 水位：" + markerArr[i].rainfall + "ml" + "</p>"
+                content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'>" + markerArr[i].title + "</br> 浪高：" + markerArr[i].rainfall + " M" + "</p>"
             });
         }else {
             // 设置label标签
             marker.setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                 offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'>"+markerArr[i].title + "</br> 水位：" + markerArr[i].rainfall + "ml" + "</p>"
+                content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'>"+markerArr[i].title + "</br> 浪高：" + markerArr[i].rainfall + " M" + "</p>"
             });
         }
         markers.push(marker);
@@ -711,23 +720,23 @@
     });
 
     function addMarker() {
-//            var label = markers.length;
-        //console.info("marker label = " + markers.length)
+        var label = markers.length;
+        console.info("marker label = " + markers.length)
         for (var i = 0; i< markers.length; i ++) {
             //console.info("内容 --" + markers[i].getLabel().content)
             //console.info("内容 22--" + markers[i].getContent())
-            var rainfallNew  = Math.ceil(Math.random()*500) + Number(markerArr[i].rainfall);
+            var rainfallNew  = Math.ceil(Math.random()* 10) + Number(markerArr[i].rainfall);
 
-            if (Number(rainfallNew) > 500) {
+            if (Number(rainfallNew) > 3) {
                 markers[i].setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                     offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'>"+markerArr[i].title + "</br> 水位：" + rainfallNew + "ml" + "</p>"
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #d91e0b'>"+markerArr[i].title + "</br> 水位：" + rainfallNew + " M" + "</p>"
                 });
             }else {
                 // 设置label标签
                 markers[i].setLabel({//label默认蓝框白底左上角显示，样式className为：amap-marker-label
                     offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
-                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'>"+markerArr[i].title + "</br> 水位：" + rainfallNew + "ml" + "</p>"
+                    content: "<p class=\"my-desc\" style='margin: 0 0 0px;background-color: #00FF00'>"+markerArr[i].title + "</br> 水位：" + rainfallNew + " M" + "</p>"
                 });
             }
 
