@@ -1,0 +1,105 @@
+<html lang="en"> 
+<head> 
+	<meta charset="utf-8" /> 
+	<title>路书</title> 
+	<style type="text/css">
+		body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		#map_canvas{width:100%;height:500px;}
+		#result {width:100%}
+	</style>
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=XGSKrWdGxnjyfBNGI4GqPL27"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/LuShu/1.2/src/LuShu_min.js"></script>
+</head> 
+<body> 
+	<div id="map_canvas"></div> 
+	<div id="result"></div>
+	<button id="run">开始</button> 
+	<button id="stop">停止</button> 
+	<button id="pause">暂停</button> 
+	<button id="hide">隐藏信息窗口</button> 
+	<button id="show">展示信息窗口</button> 
+
+	<script> 
+
+
+	var map = new BMap.Map('map_canvas');
+
+
+	map.centerAndZoom(new BMap.Point(121.551308,29.908523), 14);
+
+	var myP1 = new BMap.Point(121.635856,29.914596);    //起点
+	var myP2 = new BMap.Point(121.635856,29.914596);    //终点
+	var myP3 = new BMap.Point(121.681275,29.809859);    //终点
+	var myP4 = new BMap.Point(121.640168,29.78629);
+
+
+var lushu;
+			
+var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/Mario.png", new BMap.Size(32, 70), {    //小车图片
+		imageOffset: new BMap.Size(0, 0)    //图片的偏移量。为了是图片底部中心对准坐标点。
+	  });
+
+var driving1 = new BMap.DrivingRoute(map);    //驾车实例
+var driving2 = new BMap.DrivingRoute(map);    //驾车实例
+var driving3 = new BMap.DrivingRoute(map);    //驾车实例
+
+		driving1.search(myP2, myP1);
+		driving2.search(myP1, myP3);
+		driving3.search(myP3, myP4);
+
+		driving3.setSearchCompleteCallback(function(){
+			var pts=new Array();
+
+			var pts1 = driving1.getResults().getPlan(0).getRoute(0).getPath();    //通过驾车实例，获得一系列点的数组
+			//alert('pts1的长度:'+pts1.length);
+			var pts2 = driving2.getResults().getPlan(0).getRoute(0).getPath();    //通过驾车实例，获得一系列点的数组
+			var pts3 = driving3.getResults().getPlan(0).getRoute(0).getPath();    //通过驾车实例，获得一系列点的数组
+
+			pts=pts.concat(pts1);
+			pts=pts.concat(pts2);
+			pts=pts.concat(pts3);
+			console.info(pts);
+			var paths = pts.length;    //获得有几个点
+
+					map.addOverlay(new BMap.Polyline(pts, {strokeColor: '#111'}));
+			lushu = new BMapLib.LuShu(map,pts,{
+				defaultContent:"",//"从天安门到百度大厦"
+				autoView:true,//是否开启自动视野调整，如果开启那么路书在运动过程中会根据视野自动调整
+				icon  : new BMap.Icon('http://developer.baidu.com/map/jsdemo/img/car.png', new BMap.Size(52,26),{anchor : new BMap.Size(27, 13)}),
+				speed: 4500,
+				enableRotation:true,//是否设置marker随着道路的走向进行旋转
+				landmarkPois: []
+				});  
+
+
+			//var carMk = new BMap.Marker(pts[0],{icon:myIcon});
+			//map.addOverlay(carMk);
+
+
+ 
+		});
+
+//绑定事件
+	$("run").onclick = function(){
+		lushu.start();
+	}
+	$("stop").onclick = function(){
+		lushu.stop();
+	}
+	$("pause").onclick = function(){
+		lushu.pause();
+	}
+	$("hide").onclick = function(){
+		lushu.hideInfoWindow();
+	}
+	$("show").onclick = function(){
+		lushu.showInfoWindow();
+	}
+	function $(element){
+		return document.getElementById(element);
+	}
+
+
+</script> 
+</body> 
+</html> 
