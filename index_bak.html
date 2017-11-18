@@ -7,30 +7,30 @@
   <meta name="author" content="ThemeBucket">
   <link rel="shortcut icon" href="#" type="image/png">
 
-  <title>巡检计划管理</title>
-
-    <!--icheck-->
-    <link href="../js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
-    <link href="../js/iCheck/skins/square/square.css" rel="stylesheet">
-    <link href="../js/iCheck/skins/square/red.css" rel="stylesheet">
-    <link href="../js/iCheck/skins/square/blue.css" rel="stylesheet">
-
+  <title>首页</title>
+  
+  <!--icheck-->
+  <link href="js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
+  <link href="js/iCheck/skins/square/square.css" rel="stylesheet">
+  <link href="js/iCheck/skins/square/red.css" rel="stylesheet">
+  <link href="js/iCheck/skins/square/blue.css" rel="stylesheet">
+  
     <!--dashboard calendar-->
-    <link href="../css/clndr.css" rel="stylesheet">
+  <link href="css/clndr.css" rel="stylesheet">
 
-    <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="../js/morris-chart/morris.css">
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/style-responsive.css" rel="stylesheet">
+  <!--Morris Chart CSS -->
+  <link rel="stylesheet" href="js/morris-chart/morris.css">
+
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-  <script src="../js/html5shiv.js"></script>
-  <script src="../js/respond.min.js"></script>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
   <![endif]-->
   <style type="text/css">
-
-		
+     
   </style>
 </head>
 
@@ -49,15 +49,15 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html">
-                    <img src="../images/tem-inner-logo.png" alt="">
+                    <img src="images/tem-inner-logo.png" alt="">
                 </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                 <ul class="nav navbar-nav">
-                    <li><a href="../index.html">首 页</a></li>
-                    <li><a href="综合管理.html">综合管理</a></li>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">首 页</a></li>
+                    <li><a href="zhgl.html">综合管理</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 运行控制管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -69,13 +69,15 @@
                         </ul>
                     </li>
                     <li><a href="#">设备自检管理</a></li>
-                    <li class="dropdown active">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">水雨情 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="#">雨情管理</a></li>
-                            <li><a href="#">风情管理</a></li>
-                            <li><a href="#">水情管理</a></li>
-                            <li><a href="#">潮位管理</a></li>
+                            <li><a href="syqgl/yqgl.html">雨情管理</a></li>
+                            <li><a href="syqgl/yqssgk.html">雨情实时概况</a></li>
+                            <li><a href="syqgl/yqbbfx.html">雨情报表分析</a></li>
+                            <li><a href="syqgl/sqgl.html">水情管理</a></li>
+                            <li><a href="syqgl/fqgl.html">风情管理</a></li>
+                            <li><a href="syqgl/cwgl.html">潮位管理</a></li>
                         </ul>
                     </li>
 					<li class="dropdown">
@@ -91,18 +93,25 @@
 					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">设备管理</a></li>
-                            <li><a href="#">巡检管理</a></li>
-                           
+                            <li><a href="ywgl/ysgl.html">设备管理.验收管理</a></li>
+							<li><a href="ywgl/thgl.html">设备管理.退货管理</a></li>
+							<li><a href="ywgl/gysgl.html">设备管理.供应商管理</a></li>
+							<li><a href="ywgl/sbtzgl.html">设备管理.台账管理</a></li>
+							<li><a href="ywgl/whgl.html">设备管理.维护管理</a></li>
+							<li><a href="ywgl/wxgl.html">设备管理.维修管理</a></li>
+							<li><a href="ywgl/bpbjgl.html">设备管理.备品备件管理</a></li>
+                            <li><a href="ywgl/xjjhgl.html">巡检管理.巡检计划管理</a></li>
+							<li><a href="ywgl/xjrwgl.html">巡检管理.巡检任务管理</a></li>
+							<li><a href="ywgl/xjtjgl.html">巡检管理.巡检统计管理</a></li>
                         </ul>
                     </li>
 					<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">应急响应管理</a></li>
-                            <li><a href="#">现场指挥管理</a></li>
-                            <li><a href="#">应急演练管理</a></li>
-                            <li><a href="#">应急信息管理</a></li>
+                            <li><a href="yjgl/yjxygl.html">应急响应管理</a></li>
+                            <li><a href="yjgl/xczhgl.html">现场指挥管理</a></li>
+                            <li><a href="yjgl/yjylgl.html">应急演练管理</a></li>
+                            <li><a href="yjgl/yjxxgl.html">应急信息管理</a></li>
                             
                         </ul>
                     </li>
@@ -201,7 +210,7 @@
                             <ul class="dropdown-list user-list">
                                 <li class="new">
                                     <a href="">
-                                        <span class="thumb"><img src="../images/photos/user1.png" alt="" /></span>
+                                        <span class="thumb"><img src="images/photos/user1.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">卢云晓 <span class="badge badge-success">new</span></span>
                                           <span class="msg">泵运行情况...</span>
@@ -210,7 +219,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="../images/photos/user2.png" alt="" /></span>
+                                        <span class="thumb"><img src="images/photos/user2.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">卢云晓</span>
                                           <span class="msg">帮忙批阅以下文件...</span>
@@ -220,7 +229,7 @@
                               
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="../images/photos/user4.png" alt="" /></span>
+                                        <span class="thumb"><img src="images/photos/user4.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">赵胤君</span>
                                           <span class="msg">日常更改巡检计划...</span>
@@ -229,7 +238,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <span class="thumb"><img src="../images/photos/user5.png" alt="" /></span>
+                                        <span class="thumb"><img src="images/photos/user5.png" alt="" /></span>
                                         <span class="desc">
                                           <span class="name">袁公子</span>
                                           <span class="msg">防止海潮倒灌办法...</span>
@@ -284,7 +293,7 @@
 					
 					
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="../images/photos/user-avatar.png"> 超级管理员 <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="images/photos/user-avatar.png"> 超级管理员 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">主页</a></li>
                             <li><a href="#">设置</a></li>
@@ -295,28 +304,38 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-	
-	
-    <!-- main content start-->
-    <div class="main-content"  style="margin-left: 120px; margin-right: 120px;">
 
+ <!-- main content start-->
+    <div class="main-content" style="    margin-left: 120px; margin-right: 120px;">
         <!-- page heading start-->
         <div class="page-heading">
-            <h3>
-                巡检统计管理
-            </h3>
+            <h3>HomePage</h3>
             <ul class="breadcrumb">
-                <li>
-                    <a href="../index.html">运维管理</a>
-                </li>
-                <li>
-                    <a href="#">巡检管理</a>
-                </li>
-                <li class="active"> 巡检统计管理 </li>
+                <li><a href="#">系统</a></li>
+                <li class="active"> 我的首页 </li>
             </ul>
+            <div class="state-info">
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="summary">
+                            <span>年度降水量</span>
+                            <h3 class="red-txt">T 45,600</h3>
+                        </div>
+                        <div id="income" class="chart-bar"></div>
+                    </div>
+                </section>
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="summary">
+                            <span>年度用水量</span>
+                            <h3 class="green-txt">T 30,600</h3>
+                        </div>
+                        <div id="expense" class="chart-bar"></div>
+                    </div>
+                </section>
+            </div>
         </div>
         <!-- page heading end-->
-
 
         <!--body wrapper start-->
         <div class="wrapper">
@@ -330,8 +349,8 @@
                                     <i class="fa fa-gavel"></i>
                                 </div>
                                 <div class="state-value">
-                                    <div class="value">2309</div>
-                                    <div class="title">巡检设备总数量</div>
+                                    <div class="value">230930</div>
+                                    <div class="title">设备总数量</div>
                                 </div>
                             </div>
                         </div>
@@ -341,8 +360,8 @@
                                     <i class="fa fa-tags"></i>
                                 </div>
                                 <div class="state-value">
-                                    <div class="value">390</div>
-                                    <div class="title">巡检任务总数量</div>
+                                    <div class="value">3490</div>
+                                    <div class="title">任务总数量</div>
                                 </div>
                             </div>
                         </div>
@@ -354,8 +373,8 @@
                                     <i class="fa fa-bell-o"></i>
                                 </div>
                                 <div class="state-value">
-                                    <div class="value">44</div>
-                                    <div class="title">巡检报警总数量</div>
+                                    <div class="value">22014</div>
+                                    <div class="title">报警总数量</div>
                                 </div>
                             </div>
                         </div>
@@ -384,10 +403,10 @@
                                 </div>
                                 <div class="col-md-5 col-sm-5 col-xs-5">
                                     <ul class="bar-legend">
-                                        <li><span class="blue"></span> 按时完成.</li>
-                                        <li><span class="green"></span> 延迟完成</li>
-                                        <li><span class="purple"></span> 超时未完成</li>
-                                        <li><span class="red"></span> 直接忽略</li>
+                                        <li><span class="blue"></span> 江河蓄水、流失...</li>
+                                        <li><span class="green"></span> 民用饮用水...</li>
+                                        <li><span class="purple"></span> 直接利用...</li>
+                                        <li><span class="red"></span> 工业用水...</li>
                                     </ul>
                                 </div>
                             </div>
@@ -397,12 +416,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <div class="panel">
                         <div class="panel-body">
                             <div class="row revenue-states">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <h4>巡检小组巡检数量</h4>
+                                    <h4>河流实时水位图</h4>
                                     <div class="icheck">
                                         <div class="square-red single-row">
                                             <div class="checkbox ">
@@ -421,7 +440,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <ul class="revenue-nav">
-                                        <li class="active"><a href="#">实时数据</a></li>
+										<li class="active"><a href="#">实时数据</a></li>
                                         <li><a href="#">周数据</a></li>
                                         <li><a href="#">月数据</a></li>
                                         <li><a href="#">年数据</a></li>
@@ -439,13 +458,13 @@
                                         <div id="main-chart-container" class="main-chart">
                                         </div>
                                     </div>
-
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--<div class="col-md-4">
+				<div class="col-md-4">
                     <div class="panel">
                         <header class="panel-heading">
                             待办任务列表
@@ -546,8 +565,8 @@
                             </div>
                         </div>
                     </div>
-                </div>-->
-                <!--
+                </div>
+				<!--
                 <div class="col-md-4">
                     <div class="panel">
                         <header class="panel-heading">
@@ -639,7 +658,7 @@
                         </div>
                     </div>
                 </div>
-                -->
+				-->
             </div>
 
             <div class="row">
@@ -683,6 +702,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
+
                     <div class="panel green-box">
                         <div class="panel-body extra-pad">
                             <div class="row">
@@ -706,13 +726,13 @@
                 </div>
             </div>
 
-
+           
         </div>
         <!--body wrapper end-->
 
         <!--footer section start-->
         <footer>
-            2017 &copy; 海绵 by <a href="#" target="_blank">hup</a>
+            2017 &copy; 海绵 by <a href="#" target="_blank">Hup</a>
         </footer>
         <!--footer section end-->
 
@@ -723,49 +743,52 @@
 
 
 <!-- Placed js at the end of the document so the pages load faster -->
-<script src="../js/jquery-1.10.2.min.js"></script>
-<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
-<script src="../js/jquery-migrate-1.2.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/modernizr.min.js"></script>
-<script src="../js/jquery.nicescroll.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
 
 
 <!--easy pie chart-->
-<script src="../js/easypiechart/jquery.easypiechart.js"></script>
-<script src="../js/easypiechart/easypiechart-init.js"></script>
+<script src="js/easypiechart/jquery.easypiechart.js"></script>
+<script src="js/easypiechart/easypiechart-init.js"></script>
 
 <!--Sparkline Chart-->
-<script src="../js/sparkline/jquery.sparkline.js"></script>
-<script src="../js/sparkline/sparkline-init.js"></script>
+<script src="js/sparkline/jquery.sparkline.js"></script>
+<script src="js/sparkline/sparkline-init.js"></script>
 
 <!--icheck -->
-<script src="../js/iCheck/jquery.icheck.js"></script>
-<script src="../js/icheck-init.js"></script>
+<script src="js/iCheck/jquery.icheck.js"></script>
+<script src="js/icheck-init.js"></script>
 
 <!-- jQuery Flot Chart-->
-<script src="../js/flot-chart/jquery.flot.js"></script>
-<script src="../js/flot-chart/jquery.flot.tooltip.js"></script>
-<script src="../js/flot-chart/jquery.flot.resize.js"></script>
+<script src="js/flot-chart/jquery.flot.js"></script>
+<script src="js/flot-chart/jquery.flot.tooltip.js"></script>
+<script src="js/flot-chart/jquery.flot.resize.js"></script>
 
 
 <!--Morris Chart-->
-<script src="../js/morris-chart/morris.js"></script>
-<script src="../js/morris-chart/raphael-min.js"></script>
+<script src="js/morris-chart/morris.js"></script>
+<script src="js/morris-chart/raphael-min.js"></script>
 
 <!--Calendar-->
-<script src="../js/calendar/clndr.js"></script>
-<script src="../js/calendar/evnt.calendar.init.js"></script>
-<script src="../js/calendar/moment-2.2.1.js"></script>
+<script src="js/calendar/clndr.js"></script>
+<script src="js/calendar/evnt.calendar.init.js"></script>
+<script src="js/calendar/moment-2.2.1.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 
 <!--common scripts for all pages-->
-<script src="../js/scripts.js"></script>
+<script src="js/scripts.js"></script>
 
 <!--Dashboard Charts-->
-<script src="../js/xj-chart-init.js"></script>
-<script type="text/javascript">
-    	
+<script src="js/dashboard-chart-init.js"></script>
+
+<!--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=1020aebdfa5dfd15c5bc40bd8fc88117"></script>-->
+
+ <script type="text/javascript">
+
 </script>
 
 </body>

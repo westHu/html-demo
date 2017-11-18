@@ -7,7 +7,7 @@
   <meta name="author" content="ThemeBucket">
   <link rel="shortcut icon" href="#" type="image/png">
 
-  <title>首页</title>
+  <title>综合管理</title>
   
   <!--icheck-->
   <link href="js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
@@ -30,7 +30,28 @@
   <script src="js/respond.min.js"></script>
   <![endif]-->
   <style type="text/css">
-     
+     .tl {  
+			width: 400px;  
+			height: 50px;  
+			position: fixed ! important; 
+			right: 350px; 
+			top: -300px;
+			z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/  
+			margin-top: 20%;  
+			margin-left: -209px;   
+			background-color :#ffffff;  
+			-webkit-transition: .5s ease-in-out;/* css的transition允许css的属性值在一定的时间内从一个状态平滑的过渡到另一个状态 */  
+			-moz-transition: .5s ease-in-out;/*这里为了兼容其他浏览器*/  
+			-o-transition: .5s ease-in-out;  
+			background-color :#ffffff;  
+			bolder: 1px #000;
+			border:2px solid;
+			border-radius:15px;
+			-moz-border-radius:15px; /* Old Firefox */
+			box-shadow: 10px 10px 5px #888888;
+		} 
+		
+		
   </style>
 </head>
 
@@ -80,7 +101,7 @@
                             <li><a href="syqgl/cwgl.html">潮位管理</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">管网分析 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">流量分析</a></li>
@@ -90,32 +111,32 @@
                             <li><a href="#">污染溯源分析</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="ywgl/ysgl.html">设备管理.验收管理</a></li>
-							<li><a href="ywgl/thgl.html">设备管理.退货管理</a></li>
-							<li><a href="ywgl/gysgl.html">设备管理.供应商管理</a></li>
-							<li><a href="ywgl/sbtzgl.html">设备管理.台账管理</a></li>
-							<li><a href="ywgl/whgl.html">设备管理.维护管理</a></li>
-							<li><a href="ywgl/wxgl.html">设备管理.维修管理</a></li>
-							<li><a href="ywgl/bpbjgl.html">设备管理.备品备件管理</a></li>
+                            <li><a href="ywgl/thgl.html">设备管理.退货管理</a></li>
+                            <li><a href="ywgl/gysgl.html">设备管理.供应商管理</a></li>
+                            <li><a href="ywgl/sbtzgl.html">设备管理.台账管理</a></li>
+                            <li><a href="ywgl/whgl.html">设备管理.维护管理</a></li>
+                            <li><a href="ywgl/wxgl.html">设备管理.维修管理</a></li>
+                            <li><a href="ywgl/bpbjgl.html">设备管理.备品备件管理</a></li>
                             <li><a href="ywgl/xjjhgl.html">巡检管理.巡检计划管理</a></li>
-							<li><a href="ywgl/xjrwgl.html">巡检管理.巡检任务管理</a></li>
-							<li><a href="ywgl/巡检统计管理.html">巡检管理.巡检统计管理</a></li>
+                            <li><a href="ywgl/xjrwgl.html">巡检管理.巡检任务管理</a></li>
+                            <li><a href="ywgl/xjtjgl.html">巡检管理.巡检统计管理</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="yjgl/yjxygl.html">应急响应管理</a></li>
                             <li><a href="yjgl/xczhgl.html">现场指挥管理</a></li>
                             <li><a href="yjgl/yjylgl.html">应急演练管理</a></li>
                             <li><a href="yjgl/yjxxgl.html">应急信息管理</a></li>
-                            
+
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">综合评价 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">国家和地方标准</a></li>
@@ -123,7 +144,7 @@
                             <li><a href="#">排水能力负荷</a></li>
                         </ul>
                     </li>
-					<li class="dropdown">
+                    <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">基础设置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">人员管理</a></li>
@@ -131,16 +152,16 @@
                             <li><a href="#">资源管理</a></li>
                             <li><a href="#">角色管理</a></li>
                             <li><a href="#">消息管理</a></li>
-							<li><a href="#">流程管理</a></li>
+                            <li><a href="#">流程管理</a></li>
                         </ul>
                     </li>
                 </ul>
-				
-				
-				
-				
-				
-				
+
+
+
+
+
+
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -150,8 +171,8 @@
                             </div>
                         </form>
                     </li>
-					
-					<li>
+
+                    <li>
                         <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
                             <i class="fa fa-tasks"></i>
                             <span class="badge">3</span>
@@ -194,13 +215,13 @@
                                             </div>
                                         </div>
                                     </a>
-                                </li>                              
+                                </li>
                                 <li class="new"><a href="">查看所有待办任务</a></li>
                             </ul>
                         </div>
                     </li>
-					
-					<li>
+
+                    <li>
                         <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
                             <i class="fa fa-envelope-o"></i>
                             <span class="badge">4</span>
@@ -226,7 +247,7 @@
                                         </span>
                                     </a>
                                 </li>
-                              
+
                                 <li>
                                     <a href="">
                                         <span class="thumb"><img src="images/photos/user4.png" alt="" /></span>
@@ -289,9 +310,9 @@
                             </ul>
                         </div>
                     </li>
-					
-					
-					
+
+
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="images/photos/user-avatar.png"> 超级管理员 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -306,428 +327,28 @@
     </nav>
 
  <!-- main content start-->
-    <div class="main-content" style="    margin-left: 120px; margin-right: 120px;">
+    <div class="main-content" style="margin-left:0px;min-height:860px;">
+		<div id="mapView" style="height:860px;border:1px solid #000;margin:5px"></div>
+		<div class="tl"></div>
         <!-- page heading start-->
-        <div class="page-heading">
-            <h3>HomePage</h3>
-            <ul class="breadcrumb">
-                <li><a href="#">系统</a></li>
-                <li class="active"> 我的首页 </li>
-            </ul>
-            <div class="state-info">
-                <section class="panel">
-                    <div class="panel-body">
-                        <div class="summary">
-                            <span>年度降水量</span>
-                            <h3 class="red-txt">T 45,600</h3>
-                        </div>
-                        <div id="income" class="chart-bar"></div>
-                    </div>
-                </section>
-                <section class="panel">
-                    <div class="panel-body">
-                        <div class="summary">
-                            <span>年度用水量</span>
-                            <h3 class="green-txt">T 30,600</h3>
-                        </div>
-                        <div id="expense" class="chart-bar"></div>
-                    </div>
-                </section>
-            </div>
-        </div>
+   
         <!-- page heading end-->
 
         <!--body wrapper start-->
-        <div class="wrapper">
-            <div class="row">
-                <div class="col-md-6">
-                    <!--statistics start-->
-                    <div class="row state-overview">
-                        <div class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel purple">
-                                <div class="symbol">
-                                    <i class="fa fa-gavel"></i>
-                                </div>
-                                <div class="state-value">
-                                    <div class="value">230930</div>
-                                    <div class="title">设备总数量</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel red">
-                                <div class="symbol">
-                                    <i class="fa fa-tags"></i>
-                                </div>
-                                <div class="state-value">
-                                    <div class="value">3490</div>
-                                    <div class="title">任务总数量</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row state-overview">
-                        <div class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel blue">
-                                <div class="symbol">
-                                    <i class="fa fa-bell-o"></i>
-                                </div>
-                                <div class="state-value">
-                                    <div class="value">22014</div>
-                                    <div class="title">报警总数量</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xs-12 col-sm-6">
-                            <div class="panel green">
-                                <div class="symbol">
-                                    <i class="fa fa-eye"></i>
-                                </div>
-                                <div class="state-value">
-                                    <div class="value">390/400</div>
-                                    <div class="title"> 评价考核数据</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--statistics end-->
-                </div>
-                <div class="col-md-6">
-                    <!--more statistics box start-->
-                    <div class="panel deep-purple-box">
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-md-7 col-sm-7 col-xs-7">
-                                    <div id="graph-donut" class="revenue-graph"></div>
-
-                                </div>
-                                <div class="col-md-5 col-sm-5 col-xs-5">
-                                    <ul class="bar-legend">
-                                        <li><span class="blue"></span> 江河蓄水、流失...</li>
-                                        <li><span class="green"></span> 民用饮用水...</li>
-                                        <li><span class="purple"></span> 直接利用...</li>
-                                        <li><span class="red"></span> 工业用水...</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--more statistics box end-->
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <div class="row revenue-states">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <h4>河流实时水位图</h4>
-                                    <div class="icheck">
-                                        <div class="square-red single-row">
-                                            <div class="checkbox ">
-                                                <input type="checkbox" checked>
-                                                <label>折线图</label>
-                                            </div>
-                                        </div>
-                                        <div class="square-blue single-row">
-                                            <div class="checkbox ">
-                                                <input type="checkbox">
-                                                <label>柱状图 </label>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <ul class="revenue-nav">
-										<li class="active"><a href="#">实时数据</a></li>
-                                        <li><a href="#">周数据</a></li>
-                                        <li><a href="#">月数据</a></li>
-                                        <li><a href="#">年数据</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="clearfix">
-                                        <div id="main-chart-legend" class="pull-right">
-                                        </div>
-                                    </div>
-
-                                    <div id="main-chart">
-                                        <div id="main-chart-container" class="main-chart">
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				<div class="col-md-4">
-                    <div class="panel">
-                        <header class="panel-heading">
-                            待办任务列表
-                        </header>
-                        <div class="panel-body">
-                            <ul class="to-do-list" id="sortable-todo">
-                                <li class="clearfix">
-                                    <span class="drag-marker">
-                                    <i></i>
-                                    </span>
-                                    <div class="todo-check pull-left">
-                                        <input type="checkbox" value="None" id="todo-check" checked/>
-                                        <label for="todo-check"></label>
-                                    </div>
-                                    <p class="todo-title line-through" style="color: red">
-                                        日常任务-设备巡检任务-1112 ：卢耘晓、赵胤君
-                                    </p>
-                                    <div class="todo-actionlist pull-right clearfix">
-
-                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="drag-marker">
-                                    <i></i>
-                                    </span>
-                                    <div class="todo-check pull-left">
-                                        <input type="checkbox" value="None" id="todo-check1"/>
-                                        <label for="todo-check1"></label>
-                                    </div>
-                                    <p class="todo-title">
-                                        日常任务-管网巡检任务-1112 ：管网巡查3#队
-                                    </p>
-                                    <div class="todo-actionlist pull-right clearfix">
-
-                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="drag-marker">
-                                    <i></i>
-                                    </span>
-                                    <div class="todo-check pull-left">
-                                        <input type="checkbox" value="None" id="todo-check2" checked/>
-                                        <label for="todo-check2"></label>
-                                    </div>
-                                    <p class="todo-title line-through" style="color: red">
-                                        日常任务-水位上报任务-1110 ：运维部门
-                                    </p>
-                                    <div class="todo-actionlist pull-right clearfix">
-
-                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="drag-marker">
-                                    <i></i>
-                                    </span>
-                                    <div class="todo-check pull-left">
-                                        <input type="checkbox" value="None" id="todo-check3"/>
-                                        <label for="todo-check3"></label>
-                                    </div>
-                                    <p class="todo-title">
-                                        紧急任务-闸站数据异常任务-1115 ： 数据中心
-                                    </p>
-                                    <div class="todo-actionlist pull-right clearfix">
-
-                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <span class="drag-marker">
-                                    <i></i>
-                                    </span>
-                                    <div class="todo-check pull-left">
-                                        <input type="checkbox" value="None" id="todo-check4"/>
-                                        <label for="todo-check4"></label>
-                                    </div>
-                                    <p class="todo-title">
-                                        一般任务-设备维护任务-1100 ：养护公司
-                                    </p>
-                                    <div class="todo-actionlist pull-right clearfix">
-
-                                        <a href="#" class="todo-remove"><i class="fa fa-times"></i></a>
-                                    </div>
-                                </li>
-
-                            </ul>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <form role="form" class="form-inline">
-                                        <div class="form-group todo-entry">
-                                            <input type="text" placeholder="搜索" class="form-control" style="width: 100%">
-                                        </div>
-                                        <button class="btn btn-primary pull-right" type="submit">查询</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-				<!--
-                <div class="col-md-4">
-                    <div class="panel">
-                        <header class="panel-heading">
-                            goal progress
-                            <span class="tools pull-right">
-                                <a href="javascript:;" class="fa fa-chevron-down"></a>
-                                <a href="javascript:;" class="fa fa-times"></a>
-                             </span>
-                        </header>
-                        <div class="panel-body">
-                            <ul class="goal-progress">
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="images/photos/user1.png" alt=""/>
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">John Doe</a> - Project Lead
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                                                <span class="">70%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="images/photos/user2.png" alt=""/>
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Cameron Doe</a> - Sales
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 91%">
-                                                <span class="">91%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="images/photos/user3.png" alt=""/>
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Hoffman Doe</a> - Support
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                <span class="">40%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="images/photos/user4.png" alt=""/>
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Jane Doe</a> - Marketing
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
-                                                <span class="">20%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="prog-avatar">
-                                        <img src="images/photos/user5.png" alt=""/>
-                                    </div>
-                                    <div class="details">
-                                        <div class="title">
-                                            <a href="#">Hoffman Doe</a> - Support
-                                        </div>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                                                <span class="">45%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="text-center"><a href="#">View all Goals</a></div>
-                        </div>
-                    </div>
-                </div>
-				-->
-            </div>
-
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="panel">
-                        <div class="panel-body extra-pad">
-                            <h4 class="pros-title">prospective <span>leads</span></h4>
-                            <div class="row">
-                                <div class="col-sm-4 col-xs-4">
-                                    <div id="p-lead-1"></div>
-                                    <p class="p-chart-title">Laptop</p>
-                                </div>
-                                <div class="col-sm-4 col-xs-4">
-                                    <div id="p-lead-2"></div>
-                                    <p class="p-chart-title">iPhone</p>
-                                </div>
-                                <div class="col-sm-4 col-xs-4">
-                                    <div id="p-lead-3"></div>
-                                    <p class="p-chart-title">iPad</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="panel">
-                        <div class="panel-body extra-pad">
-                            <div class="col-sm-6 col-xs-6">
-                                <div class="v-title">Visits</div>
-                                <div class="v-value">10,090</div>
-                                <div id="visit-1"></div>
-                                <div class="v-info">Pages/Visit</div>
-                            </div>
-                            <div class="col-sm-6 col-xs-6">
-                                <div class="v-title">Unique Visitors</div>
-                                <div class="v-value">8,173</div>
-                                <div id="visit-2"></div>
-                                <div class="v-info">Avg. Visit Duration</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-
-                    <div class="panel green-box">
-                        <div class="panel-body extra-pad">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-6">
-                                    <div class="knob">
-                                        <span class="chart" data-percent="79">
-                                            <span class="percent">79% <span class="sm">New Visit</span></span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-xs-6">
-                                    <div class="knob">
-                                        <span class="chart" data-percent="56">
-                                            <span class="percent">56% <span class="sm">Bounce rate</span></span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-           
-        </div>
+        <!-- div class="wrapper" style="height:750px">
+			<div class="row">
+					<div class="col-sm-12">
+						<section class="panel" style="height:700px">
+							
+							<div class="panel-body">
+								<div id="mapView" class="vmaps" style="height:685px"></div>
+							</div>
+						</section>
+					</div>
+				</div>
+				
+			</div -->
+        </div >
         <!--body wrapper end-->
 
         <!--footer section start-->
@@ -773,23 +394,22 @@
 <script src="js/morris-chart/morris.js"></script>
 <script src="js/morris-chart/raphael-min.js"></script>
 
-<!--Calendar-->
-<script src="js/calendar/clndr.js"></script>
-<script src="js/calendar/evnt.calendar.init.js"></script>
-<script src="js/calendar/moment-2.2.1.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 
 <!--common scripts for all pages-->
 <script src="js/scripts.js"></script>
 
-<!--Dashboard Charts-->
-<script src="js/dashboard-chart-init.js"></script>
-
-<!--<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=1020aebdfa5dfd15c5bc40bd8fc88117"></script>-->
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=1020aebdfa5dfd15c5bc40bd8fc88117"></script>
 
  <script type="text/javascript">
-
-</script>
+        var map = new AMap.Map('mapView',{
+            pitch:75,
+			
+			zoom: 13,
+			expandZoomRange:true,
+			zooms:[3,20],
+			center:[121.586777,29.8501]
+        });
+    </script>
 
 </body>
 </html>

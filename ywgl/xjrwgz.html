@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="#" type="image/png">
+
+    <title>巡检任务管理</title>
+
+    <!--dynamic table-->
+    <link href="../js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="../js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link href="../js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+    <!--gritter css 小提示-->
+    <link rel="stylesheet" type="text/css" href="../js/gritter/css/jquery.gritter.css" />
+    <!--jquery-confirm-->
+    <link rel="stylesheet" href="../js/jquery-confirm/jquery-confirm.min.css" />
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+
+
+    </style>
+</head>
+
+<body class="horizontal-menu-page">
+
+
+<section>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="../images/tem-inner-logo.png" alt="">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="../index.html">首 页</a></li>
+                    <li><a href="综合管理.html">综合管理</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 运行控制管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">土壤含水量监测</a></li>
+                            <li><a href="#">小区雨量监测</a></li>
+                            <li><a href="#">管道流量</a></li>
+                            <li><a href="#">河道监测</a></li>
+                            <li><a href="#">泵闸站监测</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">设备自检管理</a></li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">水雨情 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="active"><a href="#">雨情管理</a></li>
+                            <li><a href="#">风情管理</a></li>
+                            <li><a href="#">水情管理</a></li>
+                            <li><a href="#">潮位管理</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">管网分析 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">流量分析</a></li>
+                            <li><a href="#">横截面分析</a></li>
+                            <li><a href="#">纵界面分析</a></li>
+                            <li><a href="#">坡度分析</a></li>
+                            <li><a href="#">污染溯源分析</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">设备管理</a></li>
+                            <li><a href="#">巡检管理</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急管理 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">应急响应管理</a></li>
+                            <li><a href="#">现场指挥管理</a></li>
+                            <li><a href="#">应急演练管理</a></li>
+                            <li><a href="#">应急信息管理</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">综合评价 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">国家和地方标准</a></li>
+                            <li><a href="#">绩效和考核</a></li>
+                            <li><a href="#">排水能力负荷</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">基础设置 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">人员管理</a></li>
+                            <li><a href="#">组织管理</a></li>
+                            <li><a href="#">资源管理</a></li>
+                            <li><a href="#">角色管理</a></li>
+                            <li><a href="#">消息管理</a></li>
+                            <li><a href="#">流程管理</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="百度">
+                            </div>
+                        </form>
+                    </li>
+
+                    <li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-tasks"></i>
+                            <span class="badge">3</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">待办任务【3】</h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>设备巡检任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                <span class="">40%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>日常巡查任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar progress-bar-warning">
+                                                <span class="">90%</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div>日常水位记录任务</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div style="width: 66%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="66" role="progressbar" class="progress-bar progress-bar-warning">
+                                                <span class="">66% </span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">查看所有待办任务</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">邮件【4】 </h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user1.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">卢云晓 <span class="badge badge-success">new</span></span>
+                                          <span class="msg">泵运行情况...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user2.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">卢云晓</span>
+                                          <span class="msg">帮忙批阅以下文件...</span>
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user4.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">赵胤君</span>
+                                          <span class="msg">日常更改巡检计划...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        <span class="thumb"><img src="../images/photos/user5.png" alt="" /></span>
+                                        <span class="desc">
+                                          <span class="name">袁公子</span>
+                                          <span class="msg">防止海潮倒灌办法...</span>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">查看所有邮件</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle info-number" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-head pull-right">
+                            <h5 class="title">通知【4】</h5>
+                            <ul class="dropdown-list user-list">
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">机房日志.  </span>
+                                        <em class="small">机房今日运行正常...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">潮位通知.  </span>
+                                        <em class="small">今日最好潮位...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">泵站数据异常.  </span>
+                                        <em class="small">城内河泵站数据...</em>
+                                    </a>
+                                </li>
+                                <li class="new">
+                                    <a href="">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i></span>
+                                        <span class="name">会议通知.  </span>
+                                        <em class="small">今日下午2点会议...</em>
+                                    </a>
+                                </li>
+                                <li class="new"><a href="">查看所有通知</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img alt="" src="../images/photos/user-avatar.png"> 超级管理员 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">主页</a></li>
+                            <li><a href="#">设置</a></li>
+                            <li><a href="login.html">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+    <!-- main content start-->
+    <div class="main-content"  style="margin-left: 120px; margin-right: 120px;">
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                巡检任务跟踪
+            </h3>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="../index.html">巡检管理</a>
+                </li>
+                <li>
+                    <a href="xjrwgl.html">巡检任务</a>
+                </li>
+                <li class="active"> 巡检任务跟踪 </li>
+            </ul>
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-sm-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            巡检任务跟踪图 - <a href="xjrwgl.html">返回任务</a>
+                        </header>
+                        <div class="panel-body">
+                            <div id="map_canvas" style="width: 100%; height: 400px"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            巡检设备列表
+                            <span class="tools pull-right">
+                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+                            <a href="javascript:;" class="fa fa-times"></a>
+                         </span>
+                        </header>
+                        <div class="panel-body">
+                            <table class="table  table-hover general-table">
+                                <thead>
+                                <tr>
+                                    <th> 设备编码</th>
+                                    <th class="hidden-phone">巡检情况</th>
+                                    <th>巡检时间</th>
+                                    <th>状态</th>
+                                    <th>折旧进度</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792380002
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">正在巡检中..</td>
+                                        <td>2017-11-17 14:01:21 </td>
+                                        <td><span class="label label-success label-mini">进行中</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">80% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792384321
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">正在巡检中..</td>
+                                        <td>2017-11-17 14:04:20 </td>
+                                        <td><span class="label label-success label-mini">进行中</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 55%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">55% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792384738
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:50:11 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 70%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">70% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792384432
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:45:09 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">70% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792344321
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:40:13 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">70% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792311231
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:28:02 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">70% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792384093
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:30:43 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 73%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">73% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792387733
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备有漏水现象，设备指数不正常</td>
+                                        <td>2017-11-17 13:26:47 </td>
+                                        <td><span class="label label-danger label-mini">有异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">90% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792380093
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:12:11 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 75%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">75% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792389982
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:02:23 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 73%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">73% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792377653
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备指数不正常，声音太响</td>
+                                        <td>2017-11-17 13:06:47 </td>
+                                        <td><span class="label label-danger label-mini">有异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">90% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792384738
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:50:11 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 70%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">70% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792384432
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:45:09 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">70% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792344321
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:40:13 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">70% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792311231
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:28:02 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 92%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">70% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792384093
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:30:43 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 73%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">73% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792387733
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备有漏水现象，设备指数不正常</td>
+                                        <td>2017-11-17 13:26:47 </td>
+                                        <td><span class="label label-danger label-mini">有异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">90% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792380093
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:12:11 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 75%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">75% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792389982
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备外观正常、声响正常、指数正常...</td>
+                                        <td>2017-11-17 13:02:23 </td>
+                                        <td><span class="label label-info label-mini">无异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 73%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">73% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="#">
+                                                SBTZ-HU-201792377653
+                                            </a>
+                                        </td>
+                                        <td class="hidden-phone">设备指数不正常，声音太响</td>
+                                        <td>2017-11-17 13:06:47 </td>
+                                        <td><span class="label label-danger label-mini">有异常</span></td>
+                                        <td>
+                                            <div class="progress progress-striped progress-xs">
+                                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-warning">
+                                                    <span class="sr-only">90% Complete (success)</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-sm-6">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            巡检任务时序图
+                        </header>
+                        <div class="panel-body">
+                            <div class="timeline">
+                                <article class="timeline-item alt">
+                                    <div class="text-right">
+                                        <div class="time-show first">
+                                            <a href="#" class="btn btn-primary">刚刚</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item alt">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="arrow-alt"></span>
+                                                <span class="timeline-icon"></span>
+                                                <span class="timeline-date">14:25 pm</span>
+                                                <h1 class="red">1 分钟前</h1>
+                                                <p>SBTZ-HU-201792380002 正在巡检... [29381] </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item ">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="arrow"></span>
+                                                <span class="timeline-icon"></span>
+                                                <span class="timeline-date">14:00 pm</span>
+                                                <h1 class="green">2017-11-17 13:50:11</h1>
+                                                <p>SBTZ-HU-201792384738 已巡检:正常; [29381]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item alt">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="arrow"></span>
+                                                <span class="timeline-icon"></span>
+                                                <span class="timeline-date">14:00 pm</span>
+                                                <h1 class="green">2017-11-17 13:43:32</h1>
+                                                <p>SBTZ-HU-201792384733 已巡检:正常; [29381]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="arrow"></span>
+                                                <span class="timeline-icon"></span>
+                                                <span class="timeline-date">14:00 pm</span>
+                                                <h1 class="green">2017-11-17 13:41:21</h1>
+                                                <p>SBTZ-HU-201792384221 已巡检:正常; [29381]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item alt">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="arrow"></span>
+                                                <span class="timeline-icon"></span>
+                                                <span class="timeline-date">14:00 pm</span>
+                                                <h1 class="green">2017-11-17 13:50:11</h1>
+                                                <p>SBTZ-HU-201792384738 已巡检:正常; [29381]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="timeline-item alt">
+                                    <div class="text-right">
+                                        <div class="time-show">
+                                            <a href="#" class="btn btn-primary">1 小时前</a>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="arrow"></span>
+                                                <span class="timeline-icon"></span>
+                                                <span class="timeline-date">14:00 pm</span>
+                                                <h1 class="green">2017-11-17 13:50:11</h1>
+                                                <p>SBTZ-HU-201792384738 已巡检:正常; [29381]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="timeline-item alt">
+                                    <div class="timeline-desk">
+                                        <div class="panel">
+                                            <div class="panel-body">
+                                                <span class="arrow"></span>
+                                                <span class="timeline-icon"></span>
+                                                <span class="timeline-date">14:00 pm</span>
+                                                <h1 class="green">2017-11-17 13:50:11</h1>
+                                                <p>SBTZ-HU-201792384738 已巡检:正常; [29381]</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                
+                                <article class="timeline-item alt">
+                                    <div class="text-right">
+                                        <div class="time-show">
+                                            <a href="#" class="btn btn-primary">加载更多...</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer>
+            2017 &copy; 海绵 by <a href="#" target="_blank">hup</a>
+        </footer>
+        <!--footer section end-->
+
+
+    </div>
+    <!-- main content end-->
+</section>
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">巡检任务</h4>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-lg-2 col-sm-2 control-label">设备编码</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" value="NBHM-MI-20171110200">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-lg-2 col-sm-2 control-label">设备名称</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" value="电机- Explorer-Veide30">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-lg-2 col-sm-2 control-label">设备类型</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" value="生产设备">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-lg-2 col-sm-2 control-label">设备品牌</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" value="施耐德Win 95+">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button data-dismiss="modal" class="btn btn-primary" type="button">确定</button>
+                            <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- modal -->
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="../js/jquery-migrate-1.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script src="../js/jquery.nicescroll.js"></script>
+<!-- <!--gritter css 小提示-->
+<script src="../js/gritter/js/jquery.gritter.js" type="text/javascript"></script>
+<script src="../js/gritter/js/gritter-init.js" type="text/javascript"></script>
+<!--dynamic table-->
+<script type="text/javascript" language="javascript" src="../js/advanced-datatable/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="../js/data-tables/DT_bootstrap.js"></script>
+<!--dynamic table initialization -->
+<script type="text/javascript" src="../js/dynamic_table_init.js"></script>
+<!--jquery-confirm-->
+<script src="../js/jquery-confirm/jquery-confirm.min.js"></script>
+<!--百度地图-->
+<script src="http://api.map.baidu.com/api?v=2.0&ak=XGSKrWdGxnjyfBNGI4GqPL27"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/LuShu/1.2/src/LuShu_min.js"></script>
+<!--common scripts for all pages-->
+<script src="../js/scripts.js"></script>
+<script>
+    var map = new BMap.Map('map_canvas');
+    //map.centerAndZoom(point, 12); // 初始化地图,设置中心点坐标和地图级别。
+    map.enableScrollWheelZoom(true); //启用滚轮放大缩小
+    //向地图中添加缩放控件
+    var ctrlNav = new window.BMap.NavigationControl({
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        type: BMAP_NAVIGATION_CONTROL_LARGE
+    });
+    map.addControl(ctrlNav);
+    //向地图中添加缩略图控件
+    var ctrlOve = new window.BMap.OverviewMapControl({
+        anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+        isOpen: 1
+    });
+    map.addControl(ctrlOve);
+    //向地图中添加比例尺控件
+    var ctrlSca = new window.BMap.ScaleControl({
+        anchor: BMAP_ANCHOR_BOTTOM_LEFT
+    });
+    map.addControl(ctrlSca);
+    map.centerAndZoom(new BMap.Point(121.638382,29.798907), 14);
+
+    var lushu;
+    var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/Mario.png", new BMap.Size(32, 70), {    //小车图片
+        imageOffset: new BMap.Size(0, 0)    //图片的偏移量。为了是图片底部中心对准坐标点。
+    });
+    var pts = new Array();
+    var pts_1 = [ new BMap.Point(121.638382,29.798907),new BMap.Point(121.638183,29.798705),new BMap.Point(121.638123,29.798564),new BMap.Point(121.638123,29.798564),new BMap.Point(121.638871,29.798663),new BMap.Point(121.639619,29.798811),new BMap.Point(121.640974,29.799198), new BMap.Point(121.640974,29.799199),new BMap.Point(121.640476,29.799842), new BMap.Point(121.640396,29.799911),new BMap.Point(121.639858,29.800174),new BMap.Point(121.639748,29.800253),new BMap.Point(121.639748,29.800253),new BMap.Point(121.640017,29.800646),new BMap.Point(121.640605,29.801484),new BMap.Point(121.640924,29.801898),new BMap.Point(121.641173,29.802341),new BMap.Point(121.641233,29.802462),new BMap.Point(121.641422,29.802904),new BMap.Point(121.665221,29.815134),new BMap.Point(121.666516,29.815256),new BMap.Point(121.66808,29.815341),new BMap.Point(121.668647,29.81536),new BMap.Point(121.668906,29.815374),new BMap.Point(121.669006,29.815376),new BMap.Point(121.670222,29.815424),new BMap.Point(121.6732,29.815512),new BMap.Point(121.675904,29.815614),new BMap.Point(121.676114,29.815616),new BMap.Point(121.679367,29.815703),new BMap.Point(121.680436,29.81555),new BMap.Point(121.680605,29.815531),new BMap.Point(121.6845,29.815434),new BMap.Point(121.688625,29.811366),new BMap.Point(121.689556,29.811174),new BMap.Point(121.690306,29.8112),new BMap.Point(121.690306,29.8111),new BMap.Point(121.690306,29.8161),new BMap.Point(121.693997,29.794932),new BMap.Point(121.694287,29.79412),new BMap.Point(121.694408,29.793729),new BMap.Point(121.694378,29.793479),new BMap.Point(121.694257,29.79331),new BMap.Point(121.693586,29.792825),new BMap.Point(121.693466,29.792606),new BMap.Point(121.693336,29.791947),new BMap.Point(121.693266,29.791657),new BMap.Point(121.693025,29.790699),new BMap.Point(121.692885,29.79048),new BMap.Point(121.692154,29.789814),new BMap.Point(121.691993,29.789555),new BMap.Point(121.691873,29.789156),new BMap.Point(121.691903,29.788856),new BMap.Point(121.692373,29.787553),new BMap.Point(121.692373,29.787483),new BMap.Point(121.692383,29.787263),new BMap.Point(121.692382,29.787262),new BMap.Point(121.692462,29.787331),new BMap.Point(121.692542,29.787391),new BMap.Point(121.692543,29.787391),new BMap.Point(121.692763,29.787359),new BMap.Point(121.693554,29.787334),new BMap.Point(121.694155,29.78701),new BMap.Point(121.694235,29.786929),new BMap.Point(121.694235,29.786929),new BMap.Point(121.695798,29.787126),new BMap.Point(121.696079,29.787284),new BMap.Point(121.696601,29.787859),new BMap.Point(121.697132,29.788144),new BMap.Point(121.697132,29.788144),new BMap.Point(121.697453,29.78813),new BMap.Point(121.698696,29.787627),new BMap.Point(121.699398,29.787769),new BMap.Point(121.699398,29.787769),new BMap.Point(121.699428,29.788068),new BMap.Point(121.701485,29.788152),new BMap.Point(121.70303,29.78776),new BMap.Point(121.703321,29.787716),new BMap.Point(121.703321,29.787716),new BMap.Point(121.70303,29.78776),new BMap.Point(121.701485,29.788152),new BMap.Point(121.699428,29.788068),new BMap.Point(121.699398,29.787769),new BMap.Point(121.699398,29.787769),new BMap.Point(121.698696,29.787627),new BMap.Point(121.697453,29.78813),new BMap.Point(121.697132,29.788144),new BMap.Point(121.697132,29.788144),new BMap.Point(121.696601,29.787859),new BMap.Point(121.696079,29.787284),new BMap.Point(121.695799,29.787127),new BMap.Point(121.694235,29.78693),new BMap.Point(121.694235,29.786929),new BMap.Point(121.694155,29.78701),new BMap.Point(121.693554,29.787334),new BMap.Point(121.692763,29.787359),new BMap.Point(121.692543,29.787391),new BMap.Point(121.692373,29.787482),new BMap.Point(121.692372,29.787482),new BMap.Point(121.692382,29.787262),new BMap.Point(121.692382,29.787212),new BMap.Point(121.692382,29.786652),new BMap.Point(121.692352,29.785622),new BMap.Point(121.692421,29.784531),new BMap.Point(121.692581,29.784261),new BMap.Point(121.692581,29.78426),new BMap.Point(121.692881,29.784068),new BMap.Point(121.693442,29.783665),new BMap.Point(121.694403,29.782918),new BMap.Point(121.694523,29.782667),new BMap.Point(121.694553,29.782416),new BMap.Point(121.694483,29.7827),new BMap.Point(121.694372,29.781648),new BMap.Point(121.694392,29.781378),new BMap.Point(121.694492,29.781167),new BMap.Point(121.694713,29.780985),new BMap.Point(121.694893,29.780914),new BMap.Point(121.695043,29.780863),new BMap.Point(121.695885,29.780735),new BMap.Point(121.696085,29.780644),new BMap.Point(121.696175,29.780553),new BMap.Point(121.696336,29.780131),new BMap.Point(121.696496,29.77994),new BMap.Point(121.696716,29.779898),new BMap.Point(121.696877,29.779986),new BMap.Point(121.697178,29.780303),new BMap.Point(121.697388,29.780361),new BMap.Point(121.697679,29.780288),new BMap.Point(121.69833,29.779761),new BMap.Point(121.698831,29.779246),new BMap.Point(121.6992,29.778972),new BMap.Point(121.699292,29.77866),new BMap.Point(121.699312,29.77855),new BMap.Point(121.699332,29.77844),new BMap.Point(121.699302,29.77816),new BMap.Point(121.69895,29.777464),new BMap.Point(121.69888,29.777175),new BMap.Point(121.69887,29.776915),new BMap.Point(121.69893,29.776605),new BMap.Point(121.69912,29.776222),new BMap.Point(121.700071,29.7744),new BMap.Point(121.700282,29.774028),new BMap.Point(121.700512,29.773885),new BMap.Point(121.700793,29.773831),new BMap.Point(121.701556,29.774021),new BMap.Point(121.701867,29.773967),new BMap.Point(121.702498,29.773608),new BMap.Point(121.702739,29.773545),new BMap.Point(121.703823,29.773509),new BMap.Point(121.704967,29.773482),new BMap.Point(121.705148,29.773469),new BMap.Point(121.705489,29.773353),new BMap.Point(121.7057,29.77315),new BMap.Point(121.705931,29.772796),new BMap.Point(121.706321,29.77217),new BMap.Point(121.706321,29.772166),new BMap.Point(121.705889,29.771963),new BMap.Point(121.705487,29.77156),new BMap.Point(121.705216,29.771294),new BMap.Point(121.70394,29.770094),new BMap.Point(121.704119,29.768971),new BMap.Point(121.704099,29.768831),new BMap.Point(121.704029,29.768562),new BMap.Point(121.703637,29.768178),new BMap.Point(121.703456,29.768001),new BMap.Point(121.703005,29.767697),new BMap.Point(121.701438,29.766729),new BMap.Point(121.701278,29.766641),new BMap.Point(121.701117,29.766483),new BMap.Point(121.700886,29.766226),new BMap.Point(121.700625,29.76577),new BMap.Point(121.700724,29.764738),new BMap.Point(121.700653,29.764089),new BMap.Point(121.700844,29.763617),new BMap.Point(121.701184,29.763182),new BMap.Point(121.701254,29.762291),new BMap.Point(121.701482,29.759507),new BMap.Point(121.701841,29.757892),new BMap.Point(121.701931,29.757561),new BMap.Point(121.701369,29.756949),new BMap.Point(121.701208,29.756791),new BMap.Point(121.7028,29.756403),new BMap.Point(121.7058,29.756263),new BMap.Point(121.701177,29.755521),new BMap.Point(121.701137,29.755152),new BMap.Point(121.701207,29.754731),new BMap.Point(121.701557,29.753896),new BMap.Point(121.701657,29.753685),new BMap.Point(121.70258,29.752952),new BMap.Point(121.70008,29.746776),new BMap.Point(121.699599,29.747152),new BMap.Point(121.698988,29.74789),new BMap.Point(121.697505,29.749416),new BMap.Point(121.696613,29.749795),new BMap.Point(121.695331,29.750737),new BMap.Point(121.694359,29.7525),new BMap.Point(121.693978,29.751238),new BMap.Point(121.693418,29.751362),new BMap.Point(121.692847,29.751486),new BMap.Point(121.692376,29.751549),new BMap.Point(121.691626,29.751663),new BMap.Point(121.690785,29.751947)];
+    var pts_2 = [new BMap.Point(121.635819,29.914582),new BMap.Point(121.635819,29.914582),new BMap.Point(121.635819,29.914582),new BMap.Point(121.635789,29.914821),new BMap.Point(121.63562,29.91481),new BMap.Point(121.63559,29.9152),new BMap.Point(121.63558,29.915359),new BMap.Point(121.6356,29.91578),new BMap.Point(121.63559,29.91672),new BMap.Point(121.63558,29.916769),new BMap.Point(121.63553,29.916929),new BMap.Point(121.63553,29.916929),new BMap.Point(121.635709,29.916931),new BMap.Point(121.635829,29.916982),new BMap.Point(121.635939,29.917093),new BMap.Point(121.636028,29.917263),new BMap.Point(121.636028,29.917263),new BMap.Point(121.637465,29.917257),new BMap.Point(121.637585,29.917259),new BMap.Point(121.638203,29.917265),new BMap.Point(121.638741,29.917261),new BMap.Point(121.638871,29.917253),new BMap.Point(121.63929,29.917258),new BMap.Point(121.639449,29.91726),new BMap.Point(121.640307,29.91725),new BMap.Point(121.640307,29.91737),new BMap.Point(121.640307,29.91737),new BMap.Point(121.639509,29.91738),new BMap.Point(121.638792,29.917392),new BMap.Point(121.636956,29.917412),new BMap.Point(121.636458,29.917407),new BMap.Point(121.635161,29.917436),new BMap.Point(121.634652,29.917452),new BMap.Point(121.634243,29.917459),new BMap.Point(121.633923,29.917466),new BMap.Point(121.633065,29.91749),new BMap.Point(121.631607,29.917522),new BMap.Point(121.631128,29.91754),new BMap.Point(121.62804,29.917501),new BMap.Point(121.62741,29.9174),new BMap.Point(121.62647,29.91717),new BMap.Point(121.62639,29.91715),new BMap.Point(121.62511,29.916741),new BMap.Point(121.62434,29.916473),new BMap.Point(121.623109,29.916067),new BMap.Point(121.622008,29.915701),new BMap.Point(121.620877,29.915337),new BMap.Point(121.620546,29.915219),new BMap.Point(121.619084,29.914739),new BMap.Point(121.618293,29.914465),new BMap.Point(121.617732,29.91426),new BMap.Point(121.616619,29.91389),new BMap.Point(121.615837,29.913627),new BMap.Point(121.615497,29.913511),new BMap.Point(121.614344,29.913144),new BMap.Point(121.613762,29.912951),new BMap.Point(121.613511,29.912874),new BMap.Point(121.61307,29.912729),new BMap.Point(121.612529,29.912556),new BMap.Point(121.612398,29.912518),new BMap.Point(121.612338,29.912489),new BMap.Point(121.612158,29.912431),new BMap.Point(121.611184,29.912094),new BMap.Point(121.610673,29.911941),new BMap.Point(121.610522,29.911884),new BMap.Point(121.610542,29.911763),new BMap.Point(121.610539,29.911761),new BMap.Point(121.610559,29.911101),new BMap.Point(121.610559,29.910841),new BMap.Point(121.610549,29.910651),new BMap.Point(121.610498,29.909452),new BMap.Point(121.610498,29.909332),new BMap.Point(121.610538,29.907921),new BMap.Point(121.610538,29.907921),new BMap.Point(121.610547,29.907401),new BMap.Point(121.610658,29.906969),new BMap.Point(121.611419,29.904718),new BMap.Point(121.612,29.903),new BMap.Point(121.612451,29.901664),new BMap.Point(121.613031,29.899947),new BMap.Point(121.613322,29.899063),new BMap.Point(121.613962,29.897265),new BMap.Point(121.614272,29.896372),new BMap.Point(121.614322,29.896241),new BMap.Point(121.614402,29.89599),new BMap.Point(121.614982,29.894303),new BMap.Point(121.615022,29.894163),new BMap.Point(121.615152,29.893742),new BMap.Point(121.615262,29.89349),new BMap.Point(121.615832,29.891634),new BMap.Point(121.615902,29.891433),new BMap.Point(121.616351,29.889739),new BMap.Point(121.616461,29.888877),new BMap.Point(121.61648,29.888387),new BMap.Point(121.61648,29.888317),new BMap.Point(121.616439,29.887457),new BMap.Point(121.616198,29.8863),new BMap.Point(121.615916,29.885172),new BMap.Point(121.615685,29.884274),new BMap.Point(121.615473,29.883396),new BMap.Point(121.615403,29.883147),new BMap.Point(121.615151,29.88228),new BMap.Point(121.6149,29.881422),new BMap.Point(121.613994,29.877972),new BMap.Point(121.613672,29.876765),new BMap.Point(121.613632,29.876586),new BMap.Point(121.612616,29.872678),new BMap.Point(121.612586,29.872548),new BMap.Point(121.612475,29.872169),new BMap.Point(121.611801,29.869618),new BMap.Point(121.611409,29.868073),new BMap.Point(121.611369,29.867954),new BMap.Point(121.610645,29.864823),new BMap.Point(121.610585,29.864534),new BMap.Point(121.610544,29.864435),new BMap.Point(121.610454,29.864086),new BMap.Point(121.610042,29.862292),new BMap.Point(121.60966,29.860897),new BMap.Point(121.60955,29.860909),new BMap.Point(121.60951,29.86078),new BMap.Point(121.609507,29.860776),new BMap.Point(121.608935,29.858525),new BMap.Point(121.608935,29.858525),new BMap.Point(121.608774,29.858097),new BMap.Point(121.608624,29.85753),new BMap.Point(121.608242,29.855736),new BMap.Point(121.607961,29.85474),new BMap.Point(121.607931,29.854451),new BMap.Point(121.606828,29.851579),new BMap.Point(121.606075,29.849611),new BMap.Point(121.606075,29.849611),new BMap.Point(121.605553,29.84815),new BMap.Point(121.605533,29.84798),new BMap.Point(121.605553,29.8476),new BMap.Point(121.605654,29.847328),new BMap.Point(121.605754,29.847197),new BMap.Point(121.605905,29.847054),new BMap.Point(121.606176,29.84689),new BMap.Point(121.606477,29.846825),new BMap.Point(121.606708,29.846831),new BMap.Point(121.60705,29.846895),new BMap.Point(121.607772,29.847144),new BMap.Point(121.608475,29.847273),new BMap.Point(121.609438,29.847308),new BMap.Point(121.610131,29.847268),new BMap.Point(121.610131,29.847267),new BMap.Point(121.610552,29.847232),new BMap.Point(121.611044,29.847165),new BMap.Point(121.611827,29.846994),new BMap.Point(121.613512,29.846553),new BMap.Point(121.616521,29.845871),new BMap.Point(121.616521,29.84587),new BMap.Point(121.616741,29.845718),new BMap.Point(121.617032,29.845596),new BMap.Point(121.619216,29.845078),new BMap.Point(121.619677,29.844965),new BMap.Point(121.620088,29.844952),new BMap.Point(121.620088,29.844952),new BMap.Point(121.620729,29.844788),new BMap.Point(121.62118,29.844646),new BMap.Point(121.624023,29.844315),new BMap.Point(121.624913,29.844193),new BMap.Point(121.626484,29.844122),new BMap.Point(121.627593,29.844092),new BMap.Point(121.631571,29.843954),new BMap.Point(121.633328,29.843905),new BMap.Point(121.635414,29.84396),new BMap.Point(121.636801,29.844033),new BMap.Point(121.638467,29.844101),new BMap.Point(121.639015,29.844117),new BMap.Point(121.640989,29.844211),new BMap.Point(121.641627,29.84424),new BMap.Point(121.642793,29.844266),new BMap.Point(121.643142,29.844281),new BMap.Point(121.64372,29.84428),new BMap.Point(121.645742,29.844131),new BMap.Point(121.646658,29.844067),new BMap.Point(121.648222,29.843903),new BMap.Point(121.651796,29.843508),new BMap.Point(121.651796,29.843507),new BMap.Point(121.652483,29.84334),new BMap.Point(121.653021,29.8432),new BMap.Point(121.653489,29.842899),new BMap.Point(121.653768,29.842605),new BMap.Point(121.654346,29.841826),new BMap.Point(121.654475,29.841548),new BMap.Point(121.654595,29.841111),new BMap.Point(121.654556,29.84042),new BMap.Point(121.654397,29.839997),new BMap.Point(121.654089,29.839282),new BMap.Point(121.653711,29.838505),new BMap.Point(121.653523,29.837911),new BMap.Point(121.653464,29.83751),new BMap.Point(121.653463,29.837509),new BMap.Point(121.651377,29.832481),new BMap.Point(121.650821,29.831192),new BMap.Point(121.650305,29.829782),new BMap.Point(121.649928,29.828426),new BMap.Point(121.649701,29.827062),new BMap.Point(121.649602,29.826181),new BMap.Point(121.649574,29.824701),new BMap.Point(121.649765,29.823135),new BMap.Point(121.649935,29.822278),new BMap.Point(121.650264,29.821064),new BMap.Point(121.651322,29.818554),new BMap.Point(121.651741,29.817193),new BMap.Point(121.651961,29.816437),new BMap.Point(121.652011,29.816148),new BMap.Point(121.652151,29.815421),new BMap.Point(121.652382,29.813096),new BMap.Point(121.652392,29.812976),new BMap.Point(121.652611,29.81301),new BMap.Point(121.65261,29.813009),new BMap.Point(121.654024,29.813255),new BMap.Point(121.661836,29.814654),new BMap.Point(121.664494,29.815041),new BMap.Point(121.664584,29.815053),new BMap.Point(121.665221,29.815134),new BMap.Point(121.666516,29.815256),new BMap.Point(121.66808,29.815341),new BMap.Point(121.668647,29.81536),new BMap.Point(121.668906,29.815374),new BMap.Point(121.669006,29.815376),new BMap.Point(121.670222,29.815424),new BMap.Point(121.673102,29.815512),new BMap.Point(121.675904,29.815614),new BMap.Point(121.676114,29.815616),new BMap.Point(121.679367,29.815703),new BMap.Point(121.680435,29.81555),new BMap.Point(121.680605,29.815531),new BMap.Point(121.681045,29.815434),new BMap.Point(121.682114,29.815079),new BMap.Point(121.682643,29.814811),new BMap.Point(121.683603,29.814245),new BMap.Point(121.685363,29.813068),new BMap.Point(121.685513,29.812968),new BMap.Point(121.686514,29.812289),new BMap.Point(121.686924,29.812069),new BMap.Point(121.686924,29.812068),new BMap.Point(121.686634,29.811548),new BMap.Point(121.686614,29.811528),new BMap.Point(121.686265,29.811059),new BMap.Point(121.686265,29.810759),new BMap.Point(121.686215,29.810619),new BMap.Point(121.685596,29.809729),new BMap.Point(121.685466,29.809669),new BMap.Point(121.685306,29.809649),new BMap.Point(121.685306,29.809648),new BMap.Point(121.684416,29.809907),new BMap.Point(121.684286,29.809916),new BMap.Point(121.684116,29.809876),new BMap.Point(121.684116,29.809876),new BMap.Point(121.684216,29.810046),new BMap.Point(121.684256,29.810116),new BMap.Point(121.684286,29.810186),new BMap.Point(121.684286,29.810186),new BMap.Point(121.684126,29.810576),new BMap.Point(121.684026,29.810716),new BMap.Point(121.683915,29.811115),new BMap.Point(121.683855,29.811285),new BMap.Point(121.683656,29.811585),new BMap.Point(121.683636,29.811645),new BMap.Point(121.683596,29.811694),new BMap.Point(121.683486,29.811804),new BMap.Point(121.683266,29.812073),new BMap.Point(121.683166,29.812223),new BMap.Point(121.682986,29.812422),new BMap.Point(121.682646,29.812641),new BMap.Point(121.682446,29.81277),new BMap.Point(121.682357,29.81281),new BMap.Point(121.681877,29.812918),new BMap.Point(121.681747,29.812907),new BMap.Point(121.681478,29.812916),new BMap.Point(121.681328,29.812905),new BMap.Point(121.681158,29.812845),new BMap.Point(121.680749,29.812643),new BMap.Point(121.680699,29.812622),new BMap.Point(121.680669,29.812602),new BMap.Point(121.680201,29.81222),new BMap.Point(121.679811,29.812007),new BMap.Point(121.679809,29.812007),new BMap.Point(121.680219,29.811709),new BMap.Point(121.680219,29.811709),new BMap.Point(121.680289,29.81154),new BMap.Point(121.680349,29.8113),new BMap.Point(121.680629,29.810842),new BMap.Point(121.681228,29.810245),new BMap.Point(121.681438,29.810057),new BMap.Point(121.681608,29.809927),new BMap.Point(121.681838,29.809478),new BMap.Point(121.682128,29.80932),new BMap.Point(121.682128,29.80932),new BMap.Point(121.682318,29.80932),new BMap.Point(121.682797,29.809312),new BMap.Point(121.682897,29.809333),new BMap.Point(121.683027,29.809373),new BMap.Point(121.683487,29.809474),new BMap.Point(121.683676,29.809615),new BMap.Point(121.684116,29.809876),new BMap.Point(121.684286,29.809916),new BMap.Point(121.684416,29.809907),new BMap.Point(121.685306,29.809648),new BMap.Point(121.685306,29.809648),new BMap.Point(121.685466,29.809668),new BMap.Point(121.685596,29.809728),new BMap.Point(121.686215,29.810618),new BMap.Point(121.686265,29.810758),new BMap.Point(121.686265,29.811058),new BMap.Point(121.686614,29.811528),new BMap.Point(121.686634,29.811548),new BMap.Point(121.686924,29.812068),new BMap.Point(121.687044,29.812168),new BMap.Point(121.687044,29.812168),new BMap.Point(121.686614,29.812408),new BMap.Point(121.685483,29.813138),new BMap.Point(121.683633,29.814384),new BMap.Point(121.682704,29.814921),new BMap.Point(121.682154,29.815169),new BMap.Point(121.681115,29.815574),new BMap.Point(121.680496,29.81569),new BMap.Point(121.679397,29.815813),new BMap.Point(121.678519,29.815817),new BMap.Point(121.676114,29.815746),new BMap.Point(121.675905,29.815734),new BMap.Point(121.673113,29.815653),new BMap.Point(121.670153,29.815543),new BMap.Point(121.669007,29.815506),new BMap.Point(121.668907,29.815505),new BMap.Point(121.668649,29.815491),new BMap.Point(121.668001,29.815461),new BMap.Point(121.666527,29.815377),new BMap.Point(121.665193,29.815275),new BMap.Point(121.664566,29.815184),new BMap.Point(121.664486,29.815172),new BMap.Point(121.662047,29.814829),new BMap.Point(121.656364,29.813781),new BMap.Point(121.653996,29.813376),new BMap.Point(121.652603,29.81312),new BMap.Point(121.652384,29.813096),new BMap.Point(121.649557,29.812614),new BMap.Point(121.648711,29.812439),new BMap.Point(121.647317,29.811965),new BMap.Point(121.646182,29.811376),new BMap.Point(121.645764,29.81112),new BMap.Point(121.645615,29.811047),new BMap.Point(121.644958,29.810647),new BMap.Point(121.644072,29.810103),new BMap.Point(121.643982,29.810052),new BMap.Point(121.643225,29.809601),new BMap.Point(121.642936,29.809447),new BMap.Point(121.64201,29.808934),new BMap.Point(121.639549,29.807892),new BMap.Point(121.639469,29.807861),new BMap.Point(121.639549,29.807742),new BMap.Point(121.639545,29.80774),new BMap.Point(121.639685,29.807492),new BMap.Point(121.640024,29.807016),new BMap.Point(121.640553,29.806253),new BMap.Point(121.640693,29.806055),new BMap.Point(121.641022,29.805569),new BMap.Point(121.641092,29.80543),new BMap.Point(121.641361,29.804824),new BMap.Point(121.641481,29.804285),new BMap.Point(121.641511,29.804006),new BMap.Point(121.641472,29.803616),new BMap.Point(121.641471,29.803615),new BMap.Point(121.641432,29.803364),new BMap.Point(121.641342,29.802923),new BMap.Point(121.641143,29.802471),new BMap.Point(121.641083,29.80234),new BMap.Point(121.640844,29.801937),new BMap.Point(121.640356,29.801271),new BMap.Point(121.639948,29.800686),new BMap.Point(121.639559,29.800161),new BMap.Point(121.638712,29.799242),new BMap.Point(121.638184,29.798706),new BMap.Point(121.638124,29.798565),new BMap.Point(121.638123,29.798564),new BMap.Point(121.638781,29.796672),new BMap.Point(121.638781,29.796672),new BMap.Point(121.638612,29.79669),new BMap.Point(121.638103,29.796574),new BMap.Point(121.637285,29.796386),new BMap.Point(121.636906,29.796302),new BMap.Point(121.636787,29.796271),new BMap.Point(121.636727,29.79617),new BMap.Point(121.636727,29.79617),new BMap.Point(121.636427,29.795757),new BMap.Point(121.636138,29.795265),new BMap.Point(121.636078,29.795044),new BMap.Point(121.635919,29.794333),new BMap.Point(121.635928,29.793643),new BMap.Point(121.635968,29.793383),new BMap.Point(121.636168,29.792765),new BMap.Point(121.636756,29.791451),new BMap.Point(121.637314,29.790186),new BMap.Point(121.637374,29.790067),new BMap.Point(121.637773,29.789241),new BMap.Point(121.638082,29.788595),new BMap.Point(121.638172,29.788396),new BMap.Point(121.638211,29.788326),new BMap.Point(121.63861,29.78744),new BMap.Point(121.639168,29.786217),new BMap.Point(121.639258,29.786128),new BMap.Point(121.639257,29.786127),new BMap.Point(121.639347,29.785918)];
+    var iit = parseInt(Math.random()*100)
+    if(iit > 50) {
+        pts = pts_1;
+    }else{
+        pts = pts_2;
+    }
+    var paths = parseInt(pts.length);    //获得有几个点
+    var startPoint = new BMap.Marker(pts[0]);
+    map.addOverlay(startPoint);
+    var endPoint = new BMap.Marker(pts[paths-1]);
+    map.addOverlay(endPoint);
+    for (var i = 0; i < 30; i ++) {
+        var marker = parseInt(Math.random()*paths)
+        var carMk = new BMap.Marker(pts[marker]);
+        map.addOverlay(carMk);
+    }
+    map.addOverlay(new BMap.Polyline(pts, {strokeColor: '#d91e0b'}));
+    lushu = new BMapLib.LuShu(map,pts,{
+        defaultContent:"",//"从天安门到百度大厦"
+        autoView:true,//是否开启自动视野调整，如果开启那么路书在运动过程中会根据视野自动调整
+        icon  : new BMap.Icon('http://developer.baidu.com/map/jsdemo/img/car.png', new BMap.Size(52,26),{anchor : new BMap.Size(27, 13)}),
+        speed: 200,
+        enableRotation:true,//是否设置marker随着道路的走向进行旋转
+        landmarkPois: []
+    });
+    lushu.start();
+</script>
+
+</body>
+</html>
