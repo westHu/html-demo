@@ -30,10 +30,6 @@
   <script src="js/respond.min.js"></script>
   <![endif]-->
   <style type="text/css">
-	.dataTable tr.odd.gradeA td.sorting_1, .dataTable tr.odd td.sorting_1, .dataTable tr.even.gradeA td.sorting_1 {
-		background-color: #f9f9f9;
-	)
-		
   </style>
 </head>
 
@@ -306,256 +302,263 @@
         <!-- page heading start-->
         <div class="page-heading">
             <h3>
-                巡检计划管理
+                应急演练归档
             </h3>
             <ul class="breadcrumb">
                 <li>
-                    <a href="../index.html">运维管理</a>
+                    <a href="../index.html">应急管理</a>
                 </li>
                 <li>
-                    <a href="#">巡检管理</a>
+                    <a href="#">应急演练</a>
                 </li>
-                <li class="active"> 巡检计划管理 </li>
+                <li class="active"> 应急演练归档 </li>
             </ul>
         </div>
         <!-- page heading end-->
 
-        
+
+
         <!--body wrapper start-->
         <div class="wrapper">
-			<div class="row">
-				<div class="col-sm-12">
-					<section class="panel">
-						<header class="panel-heading">
-							制定巡检计划
-							<span class="tools pull-right">
-								<a href="javascript:;" class="fa fa-chevron-up"></a>
-							 </span>
-						</header>
-						<div class="panel-body" style="display: none;">
-							<div class="col-sm-12">
-								<form class="device-inbound-form" method="post">
-									
-									<div class="row">
-										<label class="control-label"  style="float: left">计划编号</label>
-										<div class="col-md-2">
-											
-											<input class="form-control"  value=".系统生成" readonly>
-										</div>
+            <div class="row blog">
+                <div class="col-md-4">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <input type="text" placeholder="Search Blog" class="form-control blog-search">
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-post">
+                                <h3>Latest Blog Post</h3>
+                                <div class="media">
+                                    <a href="javascript:;" class="pull-left">
+                                        <img alt="" src="images/blog/blog-thumb-1.jpg" class=" ">
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
+                                        <p>
+                                            Donec id elit non mi porta gravida at eget metus amet int
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a href="javascript:;" class="pull-left">
+                                        <img alt="" src="images/blog/blog-thumb-2.jpg" class=" ">
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
+                                        <p>
+                                            Donec id elit non mi porta gravida at eget metus amet int
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media">
+                                    <a href="javascript:;" class="pull-left">
+                                        <img alt="" src="images/blog/blog-thumb-3.jpg" class=" ">
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
+                                        <p>
+                                            Donec id elit non mi porta gravida at eget metus amet int
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-post">
+                                <h3>recent comments</h3>
+                                <ul>
+                                    <li><a href="javascript:;"><i class="  fa fa-comments-o"></i> admin on Vestiblulum quis dolor </a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-comments-o"></i> admin on Nam sed arcu tellus</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-comments-o"></i> monster002 on Fringilla ut vel ipsum </a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-comments-o"></i> admin on Vestiblulum quis dolor sit</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-post">
+                                <h3>category</h3>
+                                <ul>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Animals</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Landscape</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Portait</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Wild Life</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Video</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-post">
+                                <h3>blog archive</h3>
+                                <ul>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> May 2013</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> April 2013</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> March 2013</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> February 2013</a></li>
+                                    <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> January 2013</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-										<label class="control-label"  style="float: left">巡检人员</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="巡检人员" required>
-										</div>
+                <div class="col-md-8">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <h1 class="text-center mtop35"><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class="text-center auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2014   | <a href="#">5 Comments</a>
+                            </p>
+                            <div class="blog-img-wide">
+                                <img src="images/blog/blog-wide-img.jpg" alt="">
+                            </div>
+                            <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                            </p>
+                            <a href="#" class="more">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="blog-img-wide">
+                                <img src="images/blog/blog-wide-img.jpg" alt="">
+                            </div>
+                            <h1 class=""><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2014   | <a href="#">5 Comments</a>
+                            </p>
 
-										<label class="control-label" style="float: left">巡检周期</label>
-										<div class="col-md-2">
-											<select class="form-control">
-												<option value="1">每天计划</option>
-												<option value="2">每周计划</option>
-												<option value="2">每月计划</option>
-											</select>
-										</div>
-										
-										<label class="control-label" style="float: left">巡检设备</label>
-										<div class="col-md-2">
-											<input class="form-control" placeholder="巡检设备" required>
-										</div>
-									</div>
-									
-									
-									<br>
-									<div class="row">
-										<label class="control-label"  style="float: left">注意事项</label>
-										<div class="col-sm-4">
-											<textarea rows="3" class="form-control textarea">请填写巡检注意事项</textarea>
-										</div>
-									</div>
-										
-										
-										
-									<span class="tools pull-right">
-										<button class="btn btn-primary" type="button">添加巡检计划</button>
-										<button class="btn btn-primary" type="reset">重 置</button>
-									</span>
-											
-										
-								</form>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<section class="panel">
-						<header class="panel-heading">
-							巡检计划列表
-							<span class="tools pull-right">
-								<div class="btn-group">
-                                    <button data-toggle="dropdown" type="button" class="btn btn-primary btn-sm dropdown-toggle">
-                                        批量操作 <span class="caret"></span>
-                                    </button>
-                                    <ul role="menu" class="dropdown-menu">
-                                        <li><a href="#myModal2" data-toggle="modal">导入巡检计划</a></li>
-                                        <li><a href="#">导出巡检计划</a></li>
-                                    </ul>
-                               </div>
-							</span>
-						</header>
-						<div class="panel-body">
-							<div class="adv-table">
-								<table class="display table table-bordered table-striped" id="dynamic-table">
-									<thead>
-										<tr>
-											<th>计划编号</th>
-											<th>巡检人员</th>
-											<th>巡检时间</th>
-											<th>巡检周期</th>
-											<th>巡检设备</th>
-											<th>注意事项</th>
-											<th>操作</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>XJJH-HU-20171102211</td>
-											<td>高雪、李兴业</td>
-											<td> 09:00:00 ~ 15:00:00</td>
-											<td>每天计划</td>
-											<td>3#泵、4#泵、12#泵、13#泵、18#泵、3#电机、4#电机、5#电机...</td>
-											<td>图像、声音、数据都得监测</td>
-											<td>
-												<div class="btn-group">
-													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
-														巡检计划操作 <span class="caret"></span>
-													</button>
-													<ul role="menu" class="dropdown-menu">
-														<li><a href="#">编辑计划单</a></li>
-														<li><a href="#">删除计划单</a></li>
-														<li><a href="#">巡检执行提醒</a></li>
-													</ul>
-												</div>
-												<button type="button" class="btn btn-primary">推荐路线</button>
-											</td>
-										</tr>
-										<tr>
-											<td>XJJH-HU-20171102211</td>
-											<td>高雪、李兴业</td>
-											<td> 09:00:00 ~ 15:00:00</td>
-											<td>每天计划</td>
-											<td>3#泵、4#泵、12#泵、13#泵、18#泵、3#电机、4#电机、5#电机...</td>
-											<td>图像、声音、数据都得监测</td>
-											<td>
-												<div class="btn-group">
-													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
-														巡检计划操作 <span class="caret"></span>
-													</button>
-													<ul role="menu" class="dropdown-menu">
-														<li><a href="#">编辑计划单</a></li>
-														<li><a href="#">删除计划单</a></li>
-														<li><a href="#">巡检执行提醒</a></li>
-													</ul>
-												</div>
-												<button type="button" class="btn btn-primary">推荐路线</button>
-											</td>
-										</tr>
-										<tr>
-											<td>XJJH-HU-20171102211</td>
-											<td>高雪、李兴业</td>
-											<td> 09:00:00 ~ 15:00:00</td>
-											<td>每天计划</td>
-											<td>3#泵、4#泵、12#泵、13#泵、18#泵、3#电机、4#电机、5#电机...</td>
-											<td>图像、声音、数据都得监测</td>
-											<td>
-												<div class="btn-group">
-													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
-														巡检计划操作 <span class="caret"></span>
-													</button>
-													<ul role="menu" class="dropdown-menu">
-														<li><a href="#">编辑计划单</a></li>
-														<li><a href="#">删除计划单</a></li>
-														<li><a href="#">巡检执行提醒</a></li>
-													</ul>
-												</div>
-												<button type="button" class="btn btn-primary">推荐路线</button>
-											</td>
-										</tr>
-										<tr>
-											<td>XJJH-HU-20171102211</td>
-											<td>高雪、李兴业</td>
-											<td> 09:00:00 ~ 15:00:00</td>
-											<td>每天计划</td>
-											<td>3#泵、4#泵、12#泵、13#泵、18#泵、3#电机、4#电机、5#电机...</td>
-											<td>图像、声音、数据都得监测</td>
-											<td>
-												<div class="btn-group">
-													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
-														巡检计划操作 <span class="caret"></span>
-													</button>
-													<ul role="menu" class="dropdown-menu">
-														<li><a href="#">编辑计划单</a></li>
-														<li><a href="#">删除计划单</a></li>
-														<li><a href="#">巡检执行提醒</a></li>
-													</ul>
-												</div>
-												<button type="button" class="btn btn-primary">推荐路线</button>
-											</td>
-										</tr>
-										<tr>
-											<td>XJJH-HU-20171102211</td>
-											<td>高雪、李兴业</td>
-											<td> 09:00:00 ~ 15:00:00</td>
-											<td>每天计划</td>
-											<td>3#泵、4#泵、12#泵、13#泵、18#泵、3#电机、4#电机、5#电机...</td>
-											<td>图像、声音、数据都得监测</td>
-											<td>
-												<div class="btn-group">
-													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
-														巡检计划操作 <span class="caret"></span>
-													</button>
-													<ul role="menu" class="dropdown-menu">
-														<li><a href="#">编辑计划单</a></li>
-														<li><a href="#">删除计划单</a></li>
-														<li><a href="#">巡检执行提醒</a></li>
-													</ul>
-												</div>
-												<button type="button" class="btn btn-primary">推荐路线</button>
-											</td>
-										</tr>
-										<tr>
-											<td>XJJH-HU-20171102211</td>
-											<td>高雪、李兴业</td>
-											<td> 09:00:00 ~ 15:00:00</td>
-											<td>每天计划</td>
-											<td>3#泵、4#泵、12#泵、13#泵、18#泵、3#电机、4#电机、5#电机...</td>
-											<td>图像、声音、数据都得监测</td>
-											<td>
-												<div class="btn-group">
-													<button data-toggle="dropdown" type="button" class="btn btn-success btn-sm dropdown-toggle">
-														巡检计划操作 <span class="caret"></span>
-													</button>
-													<ul role="menu" class="dropdown-menu">
-														<li><a href="#">编辑计划单</a></li>
-														<li><a href="#">删除计划单</a></li>
-														<li><a href="#">巡检执行提醒</a></li>
-													</ul>
-												</div>
-												<button type="button" class="btn btn-primary">推荐路线</button>
-											</td>
-										</tr>
-										
-										
-										
-										
-										
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
+                            <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                            </p>
+                            <a href="#" class="more">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="blog-img-sm">
+                                        <img src="images/blog/blog-sm-img.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h1 class=""><a href="#">Neque porro quisquam est qui dolo</a></h1>
+                                    <p class=" auth-row">
+                                        By <a href="#">Anthony Jones</a>   |   27 December 2014   | <a href="#">5 Comments</a>
+                                    </p>
+
+                                    <p>Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                                    </p>
+                                    <a href="#" class="more">Continue Reading</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body text-center">
+                            <h1 class="mtop35"><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2014   | <a href="#">5 Comments</a>
+                            </p>
+                            <p class="">Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                            </p>
+                            <a href="#" class="more mbot20">Continue Reading</a>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body text-center">
+                            <i class="fa fa-quote-left"></i>
+                            <h1 class="">Proin sit amet sapien euismod, pretium ligula quis, tempus dui. Nam varius arcu id elit tristique consequat.</h1>
+                            <p class=" auth-row">
+                                <em> Anthony Jones</em>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <h1 class="mtop35"><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2014   | <a href="#">5 Comments</a>
+                            </p>
+                            <p class="">Donec ultrices faucibus rutrum. Phasellus sodales vulputate urna, vel accumsan augue egestas ac. Donec vitae leo at sem lobortis porttitor eu consequat risus. Mauris sed congue orci.
+                            </p>
+                            <a href="#" class="more mbot20">Continue Reading</a>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div id="c-slide" class="carousel slide auto">
+                                <ol class="carousel-indicators out">
+                                    <li class="active" data-slide-to="0" data-target="#c-slide"></li>
+                                    <li class="" data-slide-to="1" data-target="#c-slide"></li>
+                                    <li class="" data-slide-to="2" data-target="#c-slide"></li>
+                                </ol>
+                                <div class="carousel-inner blog-img-wide">
+                                    <div class="item text-center active">
+                                        <img src="images/blog/image2.jpg" alt="">
+                                    </div>
+                                    <div class="item text-center">
+                                        <img src="images/blog/image3.jpg" alt="">
+                                    </div>
+                                    <div class="item text-center">
+                                        <img src="images/blog/blog-wide-img.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h1 class=""><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2014   | <a href="#">5 Comments</a>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-body">
+                            <p class="">
+                                <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/53814789&amp;color=ff5500&amp;auto_play=false&amp;show_artwork=true"></iframe>
+                            </p>
+                            <h1 class=""><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2014   | <a href="#">5 Comments</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-body">
+                            <p class="">
+                                <iframe width="560" height="315" src="//www.youtube.com/embed/lq_BVyou38s" frameborder="0" allowfullscreen></iframe>
+                            </p>
+                            <h1 class=""><a href="#">Neque porro quisquam est qui dolo rem ipsum quio</a></h1>
+                            <p class=" auth-row">
+                                By <a href="#">Anthony Jones</a>   |   27 December 2014   | <a href="#">5 Comments</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <ul class="pagination blog-pagination">
+                            <li><a href="#">PREV</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">NEXT</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
         <!--body wrapper end-->
 
