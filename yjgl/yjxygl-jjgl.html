@@ -337,9 +337,9 @@
 					<section class="panel">
 						<header class="panel-heading">
 							接警处理
-							<span class="tools pull-right">
+							<!--<span class="tools pull-right">
 								<a href="javascript:;" class="fa fa-chevron-down"></a>
-							 </span>
+							 </span>-->
 						</header>
 						<div class="panel-body">
 							<div class="col-sm-12">
@@ -467,6 +467,48 @@
         zooms:[3,20],
         center:[121.586777,29.8501]
     });
+    //121.673123,29.801551
+
+    var icon = new AMap.Icon({
+        image : '../images/baojing-02.gif',//24px*24px
+        //icon可缺省，缺省时为默认的蓝色水滴图标，
+        size : new AMap.Size(150,150)
+    });
+
+    var points = "121.586777,29.8501;121.639169,29.8331;121.546887,29.8351";
+    for (var i = 0; i < 3; i ++) {
+        var	marker = new AMap.Marker({
+            icon : icon,//24px*24px
+            position: points.split(";")[i].split(","),
+            offset: new AMap.Pixel(-12,-12),
+            zIndex: 1001,
+            title: "警报点" + i,
+            map: map
+        });
+        var circle = new AMap.Circle({
+            center: points.split(";")[i].split(","),// 圆心位置
+            radius: 1500, //半径
+            strokeColor: "#ff0000", //线颜色
+            strokeOpacity: 0.5, //线透明度
+            strokeWeight: 1, //线粗细度
+            fillColor: "#ff0000", //填充颜色
+            fillOpacity: 0.40//填充透明度
+        });
+        circle.setMap(map);
+    }
+
+    /*var	marker = new AMap.Marker({
+        icon : icon,//24px*24px
+        position: "121.586777,29.8501".split(","),
+        offset: new AMap.Pixel(-12,-12),
+        zIndex: 1001,
+        title: "警报点",
+        map: map
+    });*/
+
+//    map.setFitView();
+
+
 </script>
 
 </body>

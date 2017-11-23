@@ -30,7 +30,18 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
     <style type="text/css">
-
+        .amap-marker-label {
+            position: absolute;
+            z-index: 2;
+             border: 1px solid #4f4f4f;
+            background-color: #95d6fe;
+            white-space: nowrap;
+            cursor: default;
+             /*padding: 3px;*/
+            font-size: 12px;
+            line-height: 14px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -347,6 +358,7 @@
                                     <th>位置</th>
                                     <th>车载人员</th>
                                     <th>GPS点</th>
+                                    <th>状态</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -354,36 +366,41 @@
                                     <td>1</td>
                                     <td>浙B87220</td>
                                     <td>宁波东枢纽十字路口 [121.29283,29.292811]</td>
-                                    <td>应急小组1#</td>
-                                    <td>应急小组1#</td>
+                                    <td>应急小组2393#</td>
+                                    <td>应急小组2393#</td>
+                                    <td style="color: #00FF00">执勤中</td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
                                     <td>浙B577KA</td>
                                     <td>宁波东湖花园北门出口 [121.29283,29.292811]</td>
-                                    <td>应急小组1#</td>
-                                    <td>应急小组1#</td>
+                                    <td>应急小组2812#</td>
+                                    <td>应急小组2812#</td>
+                                    <td style="color: #00FF00">执勤中</td>
                                 </tr>
                                 <tr>
                                     <td>3</td>
                                     <td>浙BZK779</td>
                                     <td>宁波银翼时代广场东门 [121.29283,29.292811]</td>
-                                    <td>应急小组1#</td>
-                                    <td>应急小组1#</td>
+                                    <td>应急小组0291#</td>
+                                    <td>应急小组0291#</td>
+                                    <td style="color: #00FF00">执勤中</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
                                     <td>浙BK06OK</td>
                                     <td>宁波老外滩 [121.29283,29.292811]</td>
-                                    <td>应急小组1#</td>
-                                    <td>应急小组1#</td>
+                                    <td>应急小组0200#</td>
+                                    <td>应急小组0200#</td>
+                                    <td>停泊</td>
                                 </tr>
                                 <tr>
                                     <td>5</td>
                                     <td>浙B9800K</td>
                                     <td>宁波李惠利医院正大门 [121.29283,29.292811]</td>
-                                    <td>应急小组1#</td>
-                                    <td>应急小组1#</td>
+                                    <td>应急小组3329#</td>
+                                    <td>应急小组3329#</td>
+                                    <td>停泊</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -402,6 +419,42 @@
     </div>
     <!-- main content end-->
 </section>
+
+<!-- Modal -->
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title">现场车载GPS</h4>
+            </div>
+            <div class="modal-body row">
+                <div class="col-md-6 img-modal">
+                    <img src="../images/jiankong-00.jpg" alt="">
+                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 转向</a>
+                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-eye"></i> 全屏</a>
+
+                    <p class="mtop10"><strong>载体 :</strong> 浙B577KA </p>
+                    <p><strong>时间:</strong> 2017-11-18 13:20:29</p>
+                    <p><strong>地点:</strong> 宁波东枢纽十字路口 [121.29283,29.292811]</p>
+                    <!--<p><strong>执勤人员:</strong> <a href="#">应急小组38272</a></p>-->
+                </div>
+                <div class="col-md-6 img-modal">
+                    <img src="../images/jiankong-01.jpg" alt="">
+                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-pencil"></i> 转向</a>
+                    <a href="#" class="btn btn-white btn-sm"><i class="fa fa-eye"></i> 全屏</a>
+
+                    <p class="mtop10"><strong>载体 :</strong> 浙BZJ792 </p>
+                    <p><strong>时间:</strong> 2017-11-18 13:20:29</p>
+                    <p><strong>地点:</strong> 宁波东湖花园北门出口 [121.29283,29.292811]</p>
+                    <!--<p><strong>执勤人员:</strong> <a href="#">应急小组38272</a></p>-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- modal -->
 
 
 <!-- Placed js at the end of the document so the pages load faster -->
@@ -433,6 +486,7 @@
 <!--common scripts for all pages-->
 <script src="../js/scripts.js"></script>
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=1020aebdfa5dfd15c5bc40bd8fc88117"></script>
+<script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
 <script type="text/javascript">
     var map = new AMap.Map('mapView',{
         pitch:75,
@@ -441,6 +495,45 @@
         zooms:[3,20],
         center:[121.586777,29.8501]
     });
+    //121.673123,29.801551
+
+    var icon = new AMap.Icon({
+        image : '../images/car-00.png',//24px*24px
+        //icon可缺省，缺省时为默认的蓝色水滴图标，
+        title:"应急救险车辆",
+        size : new AMap.Size(150,150)
+//        imageSize: new AMap.Size(80,80)
+    });
+
+    var points = "121.586777,29.8501;121.639169,29.8331;121.546887,29.8351";
+    var carNo  = "浙B87220,浙B577KA,浙BZK779,";
+    var teamNo = "应急小组2393,应急小组2812,应急小组0291";
+    for (var i = 0; i < 3; i ++) {
+        var	marker = new AMap.Marker({
+            icon : icon,//24px*24px
+            position: points.split(";")[i].split(","),
+            offset: new AMap.Pixel(-12,-12),
+            zIndex: 1001,
+            title: "警报点" + i,
+            map: map
+        });
+        marker.setLabel({
+            offset: new AMap.Pixel(0, 30),
+            content: "<p class=\"my-desc\" style='margin: 0px;'> 车牌："+ carNo.split(",")[i] +"</br> 人员：" + teamNo.split(",")[i] + "</p>"
+        });
+
+        marker.on('click', function() {
+            viewCar();
+        });
+//
+    }
+
+    function viewCar() {
+        $('#myModal').modal('toggle');
+    }
+
+
+
 </script>
 
 </body>

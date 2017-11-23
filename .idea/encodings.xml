@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8" />
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/images/baojing-01.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/baojing-02.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/camion.ico" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/car-00.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/car-01.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/car-01.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/car-02.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/car-02.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/car-03.gif" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/car-03.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/car-04.png" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/jiankong-00.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/jiankong-01.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/images/weixiepin.png" charset="UTF-8" />
+  </component>
 </project>
