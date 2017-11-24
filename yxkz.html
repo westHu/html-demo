@@ -7,22 +7,22 @@
   <meta name="author" content="ThemeBucket">
   <link rel="shortcut icon" href="#" type="image/png">
 
-  <title>应急接警处理</title>
+  <title>综合管理</title>
   
-   <!--pickers css-->
-  <link rel="stylesheet" type="text/css" href="../js/bootstrap-datepicker/css/datepicker-custom.css" />
-  <link rel="stylesheet" type="text/css" href="../js/bootstrap-timepicker/css/timepicker.css" />
-  <link rel="stylesheet" type="text/css" href="../js/bootstrap-colorpicker/css/colorpicker.css" />
-  <link rel="stylesheet" type="text/css" href="../js/bootstrap-daterangepicker/daterangepicker-bs3.css" />
-  <link rel="stylesheet" type="text/css" href="../js/bootstrap-datetimepicker/css/datetimepicker-custom.css" />
+  <!--icheck-->
+  <link href="js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
+  <link href="js/iCheck/skins/square/square.css" rel="stylesheet">
+  <link href="js/iCheck/skins/square/red.css" rel="stylesheet">
+  <link href="js/iCheck/skins/square/blue.css" rel="stylesheet">
   
-  <!--dynamic table-->
-  <link href="../js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
-  <link href="../js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
-  <link href="../js/data-tables/DT_bootstrap.css" rel="stylesheet" />
+    <!--dashboard calendar-->
+  <link href="css/clndr.css" rel="stylesheet">
 
-  <link href="../css/style.css" rel="stylesheet">
-  <link href="../css/style-responsive.css" rel="stylesheet">
+  <!--Morris Chart CSS -->
+  <link rel="stylesheet" href="js/morris-chart/morris.css">
+
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -30,7 +30,28 @@
   <script src="js/respond.min.js"></script>
   <![endif]-->
   <style type="text/css">
-
+     .tl {  
+			width: 400px;  
+			height: 50px;  
+			position: fixed ! important; 
+			right: 350px; 
+			top: -300px;
+			z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/  
+			margin-top: 20%;  
+			margin-left: -209px;   
+			background-color :#ffffff;  
+			-webkit-transition: .5s ease-in-out;/* css的transition允许css的属性值在一定的时间内从一个状态平滑的过渡到另一个状态 */  
+			-moz-transition: .5s ease-in-out;/*这里为了兼容其他浏览器*/  
+			-o-transition: .5s ease-in-out;  
+			background-color :#ffffff;  
+			bolder: 1px #000;
+			border:2px solid;
+			border-radius:15px;
+			-moz-border-radius:15px; /* Old Firefox */
+			box-shadow: 10px 10px 5px #888888;
+		} 
+		
+		
   </style>
 </head>
 
@@ -48,16 +69,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="../index.html">
-                    <img src="../images/tem-inner-logo.png" alt="">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/tem-inner-logo.png" alt="">
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="../index.html">首 页</a></li>
-                    <li><a href="../zhgl.html">综合管理</a></li>
-                    <li><a href="../yxkz.html">运行控制管理</a></li>
+                    <li><a href="index.html">首 页</a></li>
+                    <li><a href="zhgl.html">综合管理</a></li>
+                    <li class="active"><a href="yxkz.html">运行控制管理</a></li>
                     <!--<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 运行控制管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -71,15 +92,15 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">水雨情 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../syqgl/yqgl.html">雨情管理</a></li>
-                            <li><a href="../syqgl/yqssgk.html">雨情实时概况</a></li>
-                            <li><a href="../syqgl/yqbbfx.html">雨情报表分析</a></li>
-                            <li><a href="../syqgl/sqgl.html">水情管理</a></li>
-                            <li><a href="../syqgl/fqgl.html">风情管理</a></li>
-                            <li><a href="../syqgl/cwgl.html">潮位管理</a></li>
+                            <li><a href="syqgl/yqgl.html">雨情管理</a></li>
+                            <li><a href="syqgl/yqssgk.html">雨情实时概况</a></li>
+                            <li><a href="syqgl/yqbbfx.html">雨情报表分析</a></li>
+                            <li><a href="syqgl/sqgl.html">水情管理</a></li>
+                            <li><a href="syqgl/fqgl.html">风情管理</a></li>
+                            <li><a href="syqgl/cwgl.html">潮位管理</a></li>
                         </ul>
                     </li>
-                    <li><a href="../gwfx.html">管网分析</a></li>
+                    <li><a href="gwfx.html">管网分析</a></li>
                     <!--<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">管网分析 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -93,29 +114,29 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">运维管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../ywgl/ysgl.html">设备管理.验收管理</a></li>
-                            <li><a href="../ywgl/thgl.html">设备管理.退货管理</a></li>
-                            <li><a href="../ywgl/gysgl.html">设备管理.供应商管理</a></li>
-                            <li><a href="../ywgl/sbtzgl.html">设备管理.台账管理</a></li>
-                            <li><a href="../ywgl/whgl.html">设备管理.维护管理</a></li>
-                            <li><a href="../ywgl/wxgl.html">设备管理.维修管理</a></li>
-                            <li><a href="../ywgl/bpbjgl.html">设备管理.备品备件管理</a></li>
-                            <li><a href="../ywgl/xjjhgl.html">巡检管理.巡检计划管理</a></li>
-                            <li><a href="../ywgl/xjrwgl.html">巡检管理.巡检任务管理</a></li>
-                            <li><a href="../ywgl/xjtjgl.html">巡检管理.巡检统计管理</a></li>
+                            <li><a href="ywgl/ysgl.html">设备管理.验收管理</a></li>
+                            <li><a href="ywgl/thgl.html">设备管理.退货管理</a></li>
+                            <li><a href="ywgl/gysgl.html">设备管理.供应商管理</a></li>
+                            <li><a href="ywgl/sbtzgl.html">设备管理.台账管理</a></li>
+                            <li><a href="ywgl/whgl.html">设备管理.维护管理</a></li>
+                            <li><a href="ywgl/wxgl.html">设备管理.维修管理</a></li>
+                            <li><a href="ywgl/bpbjgl.html">设备管理.备品备件管理</a></li>
+                            <li><a href="ywgl/xjjhgl.html">巡检管理.巡检计划管理</a></li>
+                            <li><a href="ywgl/xjrwgl.html">巡检管理.巡检任务管理</a></li>
+                            <li><a href="ywgl/xjtjgl.html">巡检管理.巡检统计管理</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">应急管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="yjxygl-jjgl.html">应急响应管理</a></li>
-                            <li><a href="xczhgl.html">现场指挥管理</a></li>
-                            <li><a href="yjylgl.html">应急演练管理</a></li>
-                            <li><a href="yjxxgl.html">应急信息管理</a></li>
+                            <li><a href="yjgl/yjxygl-jjgl.html">应急响应管理</a></li>
+                            <li><a href="yjgl/xczhgl.html">现场指挥管理</a></li>
+                            <li><a href="yjgl/yjylgl.html">应急演练管理</a></li>
+                            <li><a href="yjgl/yjxxgl.html">应急信息管理</a></li>
 
                         </ul>
                     </li>
-                    <li><a href="../zhpj.html">综合评价</a></li>
+                    <li><a href="zhpj.html">综合评价</a></li>
                     <!--<li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">综合评价 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -127,7 +148,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">基础设置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../jcsz/rygl.html">人员管理</a></li>
+                            <li><a href="jcsz/rygl.html">人员管理</a></li>
                             <li><a href="#">组织管理</a></li>
                             <li><a href="#">资源管理</a></li>
                             <li><a href="#">角色管理</a></li>
@@ -299,221 +320,75 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
-	
-	
-    <!-- main content start-->
-    <div class="main-content"  style="margin-left: 120px; margin-right: 120px;">
 
+ <!-- main content start-->
+    <div class="main-content" style="margin-left:0px;min-height:860px;">
+		<!--<div id="mapView" style="height:860px;border:1px solid #000;margin:5px"></div>-->
+		<!--<div class="tl"></div>-->
         <!-- page heading start-->
-        <div class="page-heading">
-            <h3>
-                应急接警处理
-            </h3>
-            <ul class="breadcrumb">
-                <li>
-                    <a href="../index.html">应急管理</a>
-                </li>
-                <li>
-                    <a href="#">应急响应管理</a>
-                </li>
-                <li class="active"> 应急接警处理</li>
-            </ul>
-        </div>
+   
         <!-- page heading end-->
 
-        
         <!--body wrapper start-->
-        <div class="wrapper">
-            <div class="row">
-                <div class="col-sm-12">
-                    <section class="panel">
-                        <header class="panel-heading">
-                            应急响应地图
-                        </header>
-                        <div class="panel-body">
-                            <div id="mapView" style="width: 100%; height: 400px"></div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-			<div class="row">
-				<div class="col-sm-12">
-					<section class="panel">
-						<header class="panel-heading">
-							接警处理
-							<!--<span class="tools pull-right">
-								<a href="javascript:;" class="fa fa-chevron-down"></a>
-							 </span>-->
-						</header>
-						<div class="panel-body">
-							<div class="col-sm-12">
-								<form class="device-inbound-form" method="post">
-									<div class="row">
-										<label class="control-label"  style="float: left">问题来源</label>
-										<div class="col-md-2">
-                                            <select class="form-control">
-                                                <option value="1">-请选择类型-</option>
-                                                <option value="2">电话上报</option>
-                                                <option value="2">公众报告</option>
-                                                <option value="2">巡检报告</option>
-                                                <option value="2">其他方式</option>
-                                            </select>
-										</div>
+        <div class="container ">
 
-										<label class="control-label"  style="float: left">问题类型</label>
-										<div class="col-md-2">
-                                            <select class="form-control">
-                                                <option value="1">-请选择类型-</option>
-                                                <option value="2">污染事件</option>
-                                                <option value="2">爆管事件</option>
-                                                <option value="2">其他事件</option>
-                                            </select>
-										</div>
-
-										<label class="control-label" style="float: left">所属街道</label>
-										<div class="col-md-2">
-                                            <input class="form-control" placeholder="所属街道" required>
-										</div>
-
-                                        <label class="control-label" style="float: left">位置坐标</label>
-                                        <div class="col-md-2">
-                                            <input class="form-control" placeholder="位置坐标" required>
-                                        </div>
-
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <label class="control-label" style="float: left">事故地址</label>
-                                        <div class="col-md-2">
-                                            <input class="form-control" placeholder="事故地址" required>
-                                        </div>
-
-                                        <label class="control-label" style="float: left">处理意见</label>
-                                        <div class="col-md-2">
-                                            <input class="form-control" placeholder="处理意见" required>
-                                        </div>
-
-                                        <label class="control-label" style="float: left">举报人员</label>
-                                        <div class="col-md-2">
-                                            <input class="form-control" placeholder="举报人员" required>
-                                        </div>
-
-                                        <label class="control-label" style="float: left">联系方式</label>
-                                        <div class="col-md-2">
-                                            <input class="form-control" placeholder="联系方式" required>
-                                        </div>
-									</div>
-									<br>
-									<div class="row">
-										<label class="control-label"  style="float: left">问题描述</label>
-										<div class="col-sm-4">
-											<textarea rows="3" class="form-control textarea">请填写问题描述</textarea>
-										</div>
-									</div>
-									<span class="tools pull-right">
-										<button class="btn btn-primary" type="button">立案</button>
-										<button class="btn btn-primary" type="reset">重置</button>
-									</span>
-											
-										
-								</form>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
+            <section class="error-wrapper text-center">
+                <h1><img alt="" src="images/500-error.png"></h1>
+                <h2>OOOPS!!!</h2>
+                <h3>抱歉！ 运行控制管理 报错了</h3>
+                <p class="nrml-txt">请刷新下页面试试 ? 或者请 <a href="#">联系管理员</a> 如果问题一直存在</p>
+                <a class="back-btn" href="index.html"> 返回首页</a>
+            </section>
         </div>
         <!--body wrapper end-->
+
         <!--footer section start-->
-        <footer>
-            2017 &copy; 海绵 by <a href="#" target="_blank">hup</a>
-        </footer>
+       <!-- <footer>
+            2017 &copy; 海绵 by <a href="#" target="_blank">Hup</a>
+        </footer>-->
         <!--footer section end-->
+
+
     </div>
     <!-- main content end-->
 </section>
 
 
 <!-- Placed js at the end of the document so the pages load faster -->
-<script src="../js/jquery-1.10.2.min.js"></script>
-<script src="../js/jquery-ui-1.9.2.custom.min.js"></script>
-<script src="../js/jquery-migrate-1.2.1.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/modernizr.min.js"></script>
-<script src="../js/jquery.nicescroll.js"></script>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/jquery.nicescroll.js"></script>
 
 
-<!--dynamic table-->
-<script type="text/javascript" language="javascript" src="../js/advanced-datatable/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="../js/data-tables/DT_bootstrap.js"></script>
-<!--dynamic table initialization -->
-<script type="text/javascript" src="../js/dynamic_table_init.js"></script>
+<!--easy pie chart-->
+<script src="js/easypiechart/jquery.easypiechart.js"></script>
+<script src="js/easypiechart/easypiechart-init.js"></script>
+
+<!--Sparkline Chart-->
+<script src="js/sparkline/jquery.sparkline.js"></script>
+<script src="js/sparkline/sparkline-init.js"></script>
+
+<!--icheck -->
+<script src="js/iCheck/jquery.icheck.js"></script>
+<script src="js/icheck-init.js"></script>
+
+<!-- jQuery Flot Chart-->
+<script src="js/flot-chart/jquery.flot.js"></script>
+<script src="js/flot-chart/jquery.flot.tooltip.js"></script>
+<script src="js/flot-chart/jquery.flot.resize.js"></script>
 
 
-<!--pickers plugins-->
-<script type="text/javascript" src="../js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script type="text/javascript" src="../js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
-<script type="text/javascript" src="../js/bootstrap-daterangepicker/moment.min.js"></script>
-<script type="text/javascript" src="../js/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script type="text/javascript" src="../js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-<script type="text/javascript" src="../js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<!--Morris Chart-->
+<script src="js/morris-chart/morris.js"></script>
+<script src="js/morris-chart/raphael-min.js"></script>
 
-<!--pickers initialization-->
-<script type="text/javascript" src="../js/pickers-init.js"></script>
+
 <!--common scripts for all pages-->
-<script src="../js/scripts.js"></script>
-<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=1020aebdfa5dfd15c5bc40bd8fc88117"></script>
-<script type="text/javascript">
-    var map = new AMap.Map('mapView',{
-        pitch:75,
-        zoom: 13,
-        expandZoomRange:true,
-        zooms:[3,20],
-        center:[121.586777,29.8501]
-    });
-    //121.673123,29.801551
+<script src="js/scripts.js"></script>
 
-    var icon = new AMap.Icon({
-        image : '../images/baojing-02.gif',//24px*24px
-        //icon可缺省，缺省时为默认的蓝色水滴图标，
-        size : new AMap.Size(150,150)
-    });
-
-    var points = "121.586777,29.8501;121.639169,29.8331;121.546887,29.8351";
-    for (var i = 0; i < 3; i ++) {
-        var	marker = new AMap.Marker({
-            icon : icon,//24px*24px
-            position: points.split(";")[i].split(","),
-            offset: new AMap.Pixel(-12,-12),
-            zIndex: 1001,
-            title: "警报点" + i,
-            map: map
-        });
-        var circle = new AMap.Circle({
-            center: points.split(";")[i].split(","),// 圆心位置
-            radius: 1500, //半径
-            strokeColor: "#ff0000", //线颜色
-            strokeOpacity: 0.5, //线透明度
-            strokeWeight: 1, //线粗细度
-            fillColor: "#ff0000", //填充颜色
-            fillOpacity: 0.40//填充透明度
-        });
-        circle.setMap(map);
-    }
-
-    /*var	marker = new AMap.Marker({
-        icon : icon,//24px*24px
-        position: "121.586777,29.8501".split(","),
-        offset: new AMap.Pixel(-12,-12),
-        zIndex: 1001,
-        title: "警报点",
-        map: map
-    });*/
-
-//    map.setFitView();
-
-
-</script>
 
 </body>
 </html>
