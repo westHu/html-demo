@@ -14,7 +14,7 @@
   <link href="js/iCheck/skins/square/square.css" rel="stylesheet">
   <link href="js/iCheck/skins/square/red.css" rel="stylesheet">
   <link href="js/iCheck/skins/square/blue.css" rel="stylesheet">
-  
+  <link rel="stylesheet" href="css/loading.css">
     <!--dashboard calendar-->
   <link href="css/clndr.css" rel="stylesheet">
 
@@ -56,7 +56,16 @@
 </head>
 
 <body class="horizontal-menu-page">
-
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_one"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_four"></div>
+        </div>
+    </div>
+</div>
 
 <section>
     <nav class="navbar navbar-default" role="navigation">
@@ -395,6 +404,11 @@
 
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.0&key=1020aebdfa5dfd15c5bc40bd8fc88117"></script>
 
+<script>
+    $(window).load(function() {
+        $("#loading").delay(1200).fadeOut(500);
+    })
+</script>
  <script type="text/javascript">
     var map = new AMap.Map('mapView',{
         pitch:75,
