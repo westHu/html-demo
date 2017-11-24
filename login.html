@@ -23,88 +23,184 @@
   <script src="js/templatemo_custom.js"></script>
 
   <script type="text/javascript" src="js/login.js"></script>
+  <style>
+    #loading{
+      background-color: #cf4a30;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      margin-top: 0px;
+      top: 0px;
+    }
+    #loading-center{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    #loading-center-absolute {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      height: 60px;
+      width: 60px;
+      margin-top: -30px;
+      margin-left: -30px;
+      -webkit-animation: loading-center-absolute 1s infinite;
+      animation: loading-center-absolute 1s infinite;
+
+    }
+    .object{
+      width: 20px;
+      height: 20px;
+      background-color: #FFF;
+      float: left;
+      -moz-border-radius: 50% 50% 50% 50%;
+      -webkit-border-radius: 50% 50% 50% 50%;
+      border-radius: 50% 50% 50% 50%;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+    .object:nth-child(2n+0) {
+      margin-right: 0px;
+
+    }
+    #object_one{
+      -webkit-animation: object_one 1s infinite;
+      animation: object_one 1s infinite;
+    }
+    #object_two{
+      -webkit-animation: object_two 1s infinite;
+      animation: object_two 1s infinite;
+    }
+    #object_three{
+      -webkit-animation: object_three 1s infinite;
+      animation: object_three 1s infinite;
+    }
+    #object_four{
+      -webkit-animation: object_four 1s infinite;
+      animation: object_four 1s infinite;
+    }
+
+    @-webkit-keyframes loading-center-absolute{
+      100% {
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+
+    }
+    @keyframes loading-center-absolute{
+      100% {
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+
+
+
+    @-webkit-keyframes object_one{
+      50% {
+        -ms-transform: translate(20px,20px);
+        -webkit-transform: translate(20px,20px);
+        transform: translate(20px,20px);
+      }
+    }
+    @keyframes object_one{
+      50% {
+        -ms-transform: translate(20px,20px);
+        -webkit-transform: translate(20px,20px);
+        transform: translate(20px,20px);
+      }
+    }
+
+
+    @-webkit-keyframes object_two{
+      50% {
+        -ms-transform: translate(-20px,20px);
+        -webkit-transform: translate(-20px,20px);
+        transform: translate(-20px,20px);
+      }
+    }
+    @keyframes object_two{
+      50% {
+        -ms-transform: translate(-20px,20px);
+        -webkit-transform: translate(-20px,20px);
+        transform: translate(-20px,20px);
+      }
+    }
+
+
+
+    @-webkit-keyframes object_three{
+      50% {
+        -ms-transform: translate(20px,-20px);
+        -webkit-transform: translate(20px,-20px);
+        transform: translate(20px,-20px);
+      }
+    }
+    @keyframes object_three{
+      50% {
+        -ms-transform: translate(20px,-20px);
+        -webkit-transform: translate(20px,-20px);
+        transform: translate(20px,-20px);
+      }
+    }
+
+
+
+    @-webkit-keyframes object_four{
+      50% {
+        -ms-transform: translate(-20px,-20px);
+        -webkit-transform: translate(-20px,-20px);
+        transform: translate(-20px,-20px);
+      }
+    }
+    @keyframes object_four{
+      50% {
+        -ms-transform: translate(-20px,-20px);
+        -webkit-transform: translate(-20px,-20px);
+        transform: translate(-20px,-20px);
+      }
+    }
+
+
+
+  </style>
 <script language=javascript>
+
+$(window).load(function() {
+    $("#loading").delay(2000).fadeOut(500);
+})
+
 $(document).ready(function(){
-    init();
-    
-    
+  init();
 });
 
 function loginHandler(){
-
     //点击登录按钮，call后台时，禁止登录按钮操作，直到后台返回结果
     $("#loginBtn").attr("disabled",true);
     $("#loginBtn").removeClass("normal").addClass("disabledBtn");
-	
     window.location.href="index.html";
-/*  
-    var strTxtName = encodeURI($("#freename").val());
-    var strTxtPass = encodeURI($("#freepassword").val());
-    var strTxtCheckcode = encodeURI($("#checkcode").val());
-    
-    $.ajax({
-        url: "login.aspx",
-        dataType: "html",
-        data: {txtName:strTxtName, txtPass:strTxtPass, txtCheckcode:strTxtCheckcode},
-        success:function(strValue){
-            //根据返回值进行状态显示
-            alert(strValue);
-            //用户不存在，则用户输入框显示错误；其余验证图标都不显示；
-            if(strValue==1){
-                alert(1);
-                $("em").css("display","none");
-                $("#freename").next("em").removeClass().addClass("error").show();
-            }
-            //当用户存在的情况下 密码错误，用户验证显示正确，密码验证显示错误，其余验证显示不显示；
-            else if(strValue==2){
-                $("em").css("display","none");
-                $("#freename").next("em").removeClass().addClass("error success").show();
-                $("#freepassword").next("em").removeClass().addClass("error").show();
-            }
-            //用户名、密码正确，验证码错误，其余验证显示正确，验证码验证显示错误。
-            else if(strValue==3){
-                $("#checkcode").next("em").removeClass().addClass("error").show();
-            }
-            else{
-                $.ajax({
-                    url: "index.html",
-                    dataType: "html"
-                });
-            }
-        }
-    });
-    */
-    var strTxtName = $("#freename").val();
-    var strTxtPass = $("#freepassword").val();
-    var strTxtCheckcode = $("#checkcode").val();
-    //用户不存在
-    if(strTxtName != "admin"){
-        //alert(1);
-        $("em").css("display","none");
-        $("#freename").next("em").removeClass().addClass("error").show();
-    }
-    //当用户存在的情况下 密码错误
-    else if(strTxtName == "admin" && strTxtPass != "123456"){
-        //alert(2);
-        $("em").css("display","none");
-        $("#freename").next("em").removeClass().addClass("error success").show();
-        $("#freepassword").next("em").removeClass().addClass("error").show();
-    }
-    //用户名、密码正确，验证码错误
-    else if(strTxtName == "admin" && strTxtPass == "123456" && strTxtCheckcode != "hv5s"){
-        //alert(3);
-        $("#checkcode").next("em").removeClass().addClass("error").show();
-    }
-    //全部正确
-    else{
-        window.location.href="index.html";
-    }
 }
 
 </script>
 </head>
 
 <body>
+<div id="loading">
+  <div id="loading-center">
+    <div id="loading-center-absolute">
+      <div class="object" id="object_one"></div>
+      <div class="object" id="object_two"></div>
+      <div class="object" id="object_three"></div>
+      <div class="object" id="object_four"></div>
+    </div>
+  </div>
+
+</div>
   <div class="site-header">
     <div class="container">
       <div class="row templatemo_gallerygap">
